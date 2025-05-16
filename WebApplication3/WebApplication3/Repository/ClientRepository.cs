@@ -1,35 +1,31 @@
-﻿
-
+﻿using Microsoft.EntityFrameworkCore;
 using WebApplication3.Interfaces;
+using WebApplication3.Models;
 
 namespace WebApplication3.Repository
 {
-    public class ClientRepository:IReposytory<Models.Client>
+    public class ClientRepository:IRepository<Client>
     {
-        private Models.ClientContext db;//Через контекст для каждой сущьности нужно делать 
-         Models.ApplicationContext db2; //Через контекст общий ????
-        public void Add(Models.Client bb) 
+        private ApplicationContext db;//Через контекст для каждой сущьности нужно делать 
+
+        public ClientRepository(ApplicationContext database)
         {
-            db.Add(bb);
+            db = database;
         }
-        public bool Delete(Models.Client bb)
+        public async Task Add(Client bb, CancellationToken tokken) 
         {
-            if (db.clients.Find(bb)!=null) {
-                db.clients.Remove(bb);
-                return true; 
-            }
-            return false;
+           await db.AddAsync(bb,tokken);
+           await db.SaveChangesAsync(tokken);
         }
-        public bool Update(Models.Client bb)
+        public async Task Delete(Client bb, CancellationToken tokken)
         {
-            Models.Client buff = db.clients.Find(bb);
-            if (buff!=null) 
-            {
-                db.clients.Remove(bb);
-                db.clients.Add(bb);
-                return true;
-            }
-            return false; 
+             await db.Clients.AddAsync(bb,tokken);
+             await db.SaveChangesAsync(tokken);
+        }
+        public async Task Update(Client bb, CancellationToken tokken)
+        {
+            db.Clients.Update(bb);
+            await db.SaveChangesAsync(tokken);
         }
       
     }

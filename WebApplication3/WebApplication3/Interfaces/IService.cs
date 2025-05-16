@@ -2,9 +2,9 @@
 {
     public interface IService<T> where T:class
     {
-       void  CreateAsync(T obj);
-       bool  DeleteAsync(T obj);
-       bool UpdateAsync(T obj);
+       Task  CreateAsync(T obj, CancellationToken tokken);
+       Task  DeleteAsync(T obj, CancellationToken tokken);
+       Task UpdateAsync(T obj,CancellationToken tokken);
     
     }
 }
