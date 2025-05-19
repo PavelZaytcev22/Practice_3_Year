@@ -12,5 +12,7 @@ namespace WebApplication3.Models
 
         public int DISCOUNT {get;set; }
 
+        public List<Cheque> Cheques { get; set; } = new List<Cheque>();
+
     }
 }
