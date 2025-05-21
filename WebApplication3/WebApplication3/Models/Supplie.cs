@@ -1,5 +1,8 @@
 ﻿namespace WebApplication3.Models
 {
+    /// <summary>
+    /// Модель поставки
+    /// </summary>
     public class Supplie
     {
         public int SUPPLIE_ID{ get; set; }
@@ -8,6 +11,6 @@
         public string DATE { get; set;  }
         public int TOTAL_SUM { get; set; }
 
-        public List<Supplie_Medicine> Suppl_Med = new List<Supplie_Medicine>();
+        
     }
 }

@@ -1,5 +1,8 @@
 ﻿namespace WebApplication3.Models
 {
+    /// <summary>
+    /// Модель чека
+    /// </summary>
     public class Cheque
     {
         public int CHEQUE_ID { get; set; }
@@ -9,8 +12,6 @@
         public Employer EMPLOEYER { get; set; } = null!;
         public string DATE { get; set; }
         public int TOTAL_SUM { get; set; }
-        public int SUM_DISCUNT { get; set; }
-
-        public List<Sale_Medicine> Sale_Medicines = new List<Sale_Medicine>();
+        public int SUM_DISCUNT { get; set; }        
     }
 }
