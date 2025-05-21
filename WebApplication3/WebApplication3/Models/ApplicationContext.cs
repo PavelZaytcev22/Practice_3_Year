@@ -16,9 +16,9 @@ namespace WebApplication3.Models
         public DbSet<Manufacturer> Manufacturers { get; set; } = null!;
         public DbSet<Medicine> Medicines { get; set; } = null!;
         public DbSet<Post> Posts { get; set; } =null!;
-        public DbSet<Sale_Medicine> Sale_Medicines { get; set; } = null!;
+        public DbSet<SaleMedicine> SaleMedicines { get; set; } = null!;
         public DbSet<Supplie> Supplies { get; set; } = null!;
-        public DbSet<SupplieMedicine> Supplie_Medicines { get; set; } = null!;
+        public DbSet<SupplieMedicine> SupplieMedicines { get; set; } = null!;
         public DbSet<Supplier> Suppliers { get; set; } = null!;
 
         #endregion
@@ -92,15 +92,15 @@ namespace WebApplication3.Models
 
 
             //Для сущности sale_Medicine
-            modelBuilder.Entity<Sale_Medicine>().HasKey(u => u.SALE_MEDICINE_ID);
+            modelBuilder.Entity<SaleMedicine>().HasKey(u => u.SALE_MEDICINE_ID);
 
-            modelBuilder.Entity<Sale_Medicine>()
+            modelBuilder.Entity<SaleMedicine>()
                 .HasOne(u => u.CHEQUE)
                 .WithMany()
                 .HasForeignKey(u => u.CHEQUE_ID)
                 .IsRequired();
 
-            modelBuilder.Entity<Sale_Medicine>()
+            modelBuilder.Entity<SaleMedicine>()
                .HasOne(u => u.MEDICINE)
                .WithMany()
                .HasForeignKey(u => u.MEDICINE_ID)

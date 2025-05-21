@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public class Sale_Medicine
+    public class SaleMedicine
     {
         public int SALE_MEDICINE_ID { get; set; }
         public int MEDICINE_ID { get; set; }

@@ -24,37 +24,37 @@ namespace WebApplication3.Repository
         /// Метод добавление в БД Клиента
         /// </summary>
         /// <param name="bb">Новый Клиент</param>
-        /// <param name="tokken">Токкен для асинхронных операций </param>
+        /// <param name="token">Токкен для асинхронных операций </param>
         /// <returns>Возвращает id нового кдиента </returns>
-        public async Task<int> Add(Client bb, CancellationToken tokken) 
+        public async Task<int> Add(Client obj, CancellationToken token) 
         {
-           await db.Clients.AddAsync(bb,tokken);
-           await db.SaveChangesAsync(tokken);
-           return (int)db.Clients.Entry(bb).Property("CLIENT_ID").CurrentValue;
+           await db.Clients.AddAsync(obj, token);
+           await db.SaveChangesAsync(token);
+           return (int)db.Clients.Entry(obj).Property("CLIENT_ID").CurrentValue;
         }
 
         /// <summary>
         /// Метод для удаления записей из БД 
         /// </summary>
-        /// <param name="bb">Клиент под удаление</param>
-        /// <param name="tokken">Токкен для асинхронных операций</param>
-        /// <returns></returns>
-        public async Task Delete(Client bb, CancellationToken tokken)
+        /// <param name="obj">Клиент под удаление</param>
+        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <returns>void</returns>
+        public async Task Delete(Client obj, CancellationToken token)
         {
-             await db.Clients.AddAsync(bb,tokken);
-             await db.SaveChangesAsync(tokken);
+             db.Clients.Remove(obj);
+             await db.SaveChangesAsync(token);
         }
 
         /// <summary>
         /// Метод для обновления данных в БД
         /// </summary>
-        /// <param name="bb">Клиент под удаление</param>
-        /// <param name="tokken">Токкен для асинхронных операций</param>
-        /// <returns></returns>
-        public async Task Update(Client bb, CancellationToken tokken)
+        /// <param name="obj">Клиент под удаление</param>
+        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <returns>void</returns>
+        public async Task Update(Client obj, CancellationToken token)
         {
-            db.Clients.Update(bb);
-            await db.SaveChangesAsync(tokken);
+            db.Clients.Update(obj);
+            await db.SaveChangesAsync(token);
         }
       
     }

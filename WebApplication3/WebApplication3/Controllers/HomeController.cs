@@ -3,7 +3,7 @@
 namespace WebApplication3.Controllers
 {
     /// <summary>
-    /// 
+    /// Контроллер всего приложения
     /// </summary>
     [ApiController]
     public class HomeController : Controller
