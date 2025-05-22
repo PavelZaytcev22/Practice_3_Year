@@ -1,7 +1,7 @@
 ﻿namespace WebApplication3.Models
 {
     /// <summary>
-    /// 
+    /// модель продажи
     /// </summary>
     public class SaleMedicine
     {

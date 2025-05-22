@@ -1,7 +1,7 @@
 ﻿namespace WebApplication3.Models
 {
     /// <summary>
-    /// 
+    /// Модель части поставки
     /// </summary>
     public class SupplieMedicine
     {
