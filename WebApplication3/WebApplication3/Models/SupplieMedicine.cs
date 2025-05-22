@@ -5,12 +5,12 @@
     /// </summary>
     public class SupplieMedicine
     {
-        public int SUPPL_MEDICINE_ID { get; set;  }
-        public int SUPLIE_ID { get; set; }
-        public Supplie SUPPLIE { get; set; } = null!;
-        public int MEDICINE_ID { get; set; }
-        public Medicine MEDICINE { get; set; } = null!;
-        public int COUNT { get; set;  }
-        public int PRICE_PAY_ONE { get; set; }
+        public int SuplieMedicineId { get; set;  }
+        public int SuplieId { get; set; }
+        public Supplie Suplie { get; set; } = null!;
+        public int MedicineId { get; set; }
+        public Medicine Medicine { get; set; } = null!;
+        public int Count { get; set;  }
+        public int PricePayOne { get; set; }
     }
 }

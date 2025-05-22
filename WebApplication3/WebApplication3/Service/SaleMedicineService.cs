@@ -4,6 +4,9 @@ using WebApplication3.Repository;
 
 namespace WebApplication3.Service
 {
+    /// <summary>
+    /// Сервис продажи
+    /// </summary>
     public class SaleMedicineService:IService<SaleMedicine>
     {
         IRepository<SaleMedicine> repository;

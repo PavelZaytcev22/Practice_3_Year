@@ -5,11 +5,11 @@
     /// </summary>
     public class Medicine
     {
-        public int MEDICINE_ID { get; set; }
-        public int MUNUFACTURER_ID { get; set; }
-        public Manufacturer MANUFACTURER { get; set; } = null!;
-        public string MEDICINE_NAME { get; set; }
-        public int PRICE_BUY_ONE { get; set;  }
+        public int MedicineId { get; set; }
+        public int ManufacturerId{ get; set; }
+        public Manufacturer Manufacturer { get; set; } = null!;
+        public string MedicineName { get; set; }
+        public int PriceBuyOne { get; set;  }
         
     }
 }

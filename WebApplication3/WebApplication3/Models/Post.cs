@@ -5,9 +5,9 @@
     /// </summary>
     public class Post
     {
-        public int POST_ID { get; set; }
-        public string POST_NAME { get; set; }
-        public int SALARY { get; set;  }
+        public int PostId { get; set; }
+        public string PostName { get; set; }
+        public int Salary { get; set;  }
 
     }
 }

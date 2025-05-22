@@ -9,9 +9,9 @@ namespace WebApplication3.Models
     /// </summary>
     public class Client
     {
-        public int CLIENT_ID { get; set;}
-        public string PHONE_NUMBER { get; set; }
-        public int DISCOUNT {get;set; }       
+        public int ClientId { get; set;}
+        public string PhoneNumber { get; set; }
+        public int Discount {get;set; }       
 
     }
 }

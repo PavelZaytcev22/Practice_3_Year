@@ -5,13 +5,13 @@
     /// </summary>
     public class Cheque
     {
-        public int CHEQUE_ID { get; set; }
-        public int CLIENT_ID { get; set; }
-        public Client CLIENT { get; set; } = null!;
-        public int EMPLOYER_ID { get; set; }
-        public Employer EMPLOEYER { get; set; } = null!;
-        public string DATE { get; set; }
-        public int TOTAL_SUM { get; set; }
-        public int SUM_DISCUNT { get; set; }        
+        public int ChequeId { get; set; }
+        public int ClientId { get; set; }
+        public Client Client { get; set; } = null!;
+        public int EmployerId { get; set; }
+        public Employer Employer { get; set; } = null!;
+        public string Date { get; set; }
+        public int Total_Sum { get; set; }
+        public int SumDiscount { get; set; }        
     }
 }

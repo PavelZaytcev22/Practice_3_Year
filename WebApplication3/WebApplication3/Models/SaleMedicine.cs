@@ -5,12 +5,12 @@
     /// </summary>
     public class SaleMedicine
     {
-        public int SALE_MEDICINE_ID { get; set; }
-        public int MEDICINE_ID { get; set; }
-        public Medicine MEDICINE { get; set; } = null!;
-        public int CHEQUE_ID { get; set; }
-        public Cheque CHEQUE { get; set; } = null!;
-        public int COUNT { get; set; }
-        public int PRICE_SELL_ONE { get; set;  }
+        public int SaleMedecineId { get; set; }
+        public int MedecineId { get; set; }
+        public Medicine Medecine { get; set; } = null!;
+        public int ChequeId { get; set; }
+        public Cheque Cheque { get; set; } = null!;
+        public int Count { get; set; }
+        public int PriceSellOne { get; set;  }
     }
 }

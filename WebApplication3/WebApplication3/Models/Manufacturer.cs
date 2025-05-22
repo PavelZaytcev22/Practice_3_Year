@@ -5,7 +5,7 @@
     /// </summary>
     public class Manufacturer
     {
-        public int MUNUFACTURER_ID { get; set; }
-        public string MUNUFACTURER_NAME { get; set; }       
+        public int ManufacturerId { get; set; }
+        public string ManufacturerName { get; set; }       
     }
 }

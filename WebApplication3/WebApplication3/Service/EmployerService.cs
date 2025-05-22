@@ -4,6 +4,9 @@ using WebApplication3.Repository;
 
 namespace WebApplication3.Service
 {
+    /// <summary>
+    /// Сервис работник
+    /// </summary>
     public class EmployerService:IService<Employer>
     {
         private IRepository<Employer> repository;

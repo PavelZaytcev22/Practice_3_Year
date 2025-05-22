@@ -5,6 +5,9 @@ using WebApplication3.Repository;
 
 namespace WebApplication3.Service
 {
+    /// <summary>
+    /// Сервис частипоставки
+    /// </summary>
     public class SupplieMedicineService:IService<SupplieMedicine>
     {
         IRepository<SupplieMedicine> repository;

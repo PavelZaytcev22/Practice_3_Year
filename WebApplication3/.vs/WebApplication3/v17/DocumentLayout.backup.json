@@ -3,36 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\supplieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\supplieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\salemedicine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\salemedicine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\suppliemedicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\suppliemedicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\salemedicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\salemedicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\suppliemedicine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\suppliemedicine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\supplie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\supplie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\manufacturerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\manufacturerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\medicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\medicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\medicine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\medicine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\employerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\employerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\manufacturer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\manufacturer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\employer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\employer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\cheque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\cheque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\chequeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,8 +59,36 @@
       "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\models\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\employerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\employerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\manufacturerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\manufacturerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\medicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\medicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\salemedicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\salemedicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\suppliemedicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\suppliemedicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\service\\supplieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\service\\supplieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,17 +98,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
               "Title": "ApplicationContext.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\ApplicationContext.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\ApplicationContext.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\ApplicationContext.cs",
               "RelativeToolTip": "WebApplication3\\Models\\ApplicationContext.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAIA3wBQAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAwIIAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T13:08:10.737Z",
               "IsPinned": true,
@@ -72,111 +116,254 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "Supplier.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Supplier.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\Supplier.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Supplier.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\Supplier.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:49:10.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SupplieMedicine.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\SupplieMedicine.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\SupplieMedicine.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\SupplieMedicine.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\SupplieMedicine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:48:02.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Supplie.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Supplie.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\Supplie.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Supplie.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\Supplie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:47:18.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SaleMedicine.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\SaleMedicine.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\SaleMedicine.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\SaleMedicine.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\SaleMedicine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:46:19.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Post.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\Post.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Post.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\Post.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:45:56.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Medicine.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Medicine.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\Medicine.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Medicine.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\Medicine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:44:56.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Manufacturer.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Manufacturer.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\Manufacturer.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Manufacturer.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\Manufacturer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:44:29.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Employer.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Employer.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\Employer.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Employer.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\Employer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:43:40.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\Client.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Client.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:34:28.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Cheque.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Cheque.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\Cheque.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Models\\Cheque.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\Cheque.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:34:25.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Functions.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Functions.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Functions.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Functions.cs",
+              "RelativeToolTip": "WebApplication3\\Functions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:27:02.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "SupplieService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\SupplieService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Service\\SupplieService.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\SupplieService.cs",
               "RelativeToolTip": "WebApplication3\\Service\\SupplieService.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAADwvy4AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:19:30.547Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 20,
               "Title": "SupplierService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\SupplierService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Service\\SupplierService.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\SupplierService.cs",
               "RelativeToolTip": "WebApplication3\\Service\\SupplierService.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCIAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:19:27.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 19,
               "Title": "SupplieMedicineService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\SupplieMedicineService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Service\\SupplieMedicineService.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\SupplieMedicineService.cs",
               "RelativeToolTip": "WebApplication3\\Service\\SupplieMedicineService.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwC0AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:19:23.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 18,
               "Title": "SaleMedicineService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\SaleMedicineService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Service\\SaleMedicineService.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\SaleMedicineService.cs",
               "RelativeToolTip": "WebApplication3\\Service\\SaleMedicineService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAowBYAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:19:20.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 17,
               "Title": "PostService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\PostService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Service\\PostService.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\PostService.cs",
               "RelativeToolTip": "WebApplication3\\Service\\PostService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBoAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:19:14.773Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "ManufacturerService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\ManufacturerService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Service\\ManufacturerService.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\ManufacturerService.cs",
               "RelativeToolTip": "WebApplication3\\Service\\ManufacturerService.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwCwAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:19:10.73Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "MedicineService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\MedicineService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Service\\MedicineService.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\MedicineService.cs",
               "RelativeToolTip": "WebApplication3\\Service\\MedicineService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBoAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:19:07.422Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "EmployerService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\EmployerService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Service\\EmployerService.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\EmployerService.cs",
               "RelativeToolTip": "WebApplication3\\Service\\EmployerService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCEAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:19:01.211Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "ClientService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\ClientService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Service\\ClientService.cs",
@@ -189,13 +376,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "ChequeService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\ChequeService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Service\\ChequeService.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Service\\ChequeService.cs",
               "RelativeToolTip": "WebApplication3\\Service\\ChequeService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBoAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:18:50.072Z",
               "EditorCaption": ""

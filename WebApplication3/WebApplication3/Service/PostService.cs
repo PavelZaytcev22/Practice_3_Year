@@ -5,7 +5,7 @@ using WebApplication3.Repository;
 namespace WebApplication3.Service
 {
     /// <summary>
-    /// Сервис для пдолжности
+    /// Сервис для должности
     /// </summary>
     public class PostService:IService<Post>
     {

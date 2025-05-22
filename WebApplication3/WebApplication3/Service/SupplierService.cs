@@ -4,6 +4,9 @@ using WebApplication3.Repository;
 
 namespace WebApplication3.Service
 {
+    /// <summary>
+    /// Сервис поставщика
+    /// </summary>
     public class SupplierService: IService<Supplier>
     {
         IRepository<Supplier> repository;

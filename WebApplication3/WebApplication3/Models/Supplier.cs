@@ -5,9 +5,8 @@
     /// </summary>
     public class Supplier
     {
-        public int SUPPLIER_ID { get; set;  }
-
-        public string SUPPLIER_NAME { get; set; }
+        public int SupplierId { get; set;  }
+        public string SupplierName { get; set; }
        
     }
 }

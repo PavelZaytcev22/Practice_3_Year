@@ -10,16 +10,16 @@ namespace WebApplication3.Models
 
         #region Коллекции БД 
 
-        public DbSet<Client> Clients { get; set; } = null!;
-        public DbSet<Cheque> Cheques { get; set; } = null!;
-        public DbSet<Employer> Emploers { get; set; } = null!;
-        public DbSet<Manufacturer> Manufacturers { get; set; } = null!;
-        public DbSet<Medicine> Medicines { get; set; } = null!;
-        public DbSet<Post> Posts { get; set; } =null!;
-        public DbSet<SaleMedicine> SaleMedicines { get; set; } = null!;
-        public DbSet<Supplie> Supplies { get; set; } = null!;
-        public DbSet<SupplieMedicine> SupplieMedicines { get; set; } = null!;
-        public DbSet<Supplier> Suppliers { get; set; } = null!;
+        public DbSet<Client> Client { get; set; } = null!;
+        public DbSet<Cheque> Cheque { get; set; } = null!;
+        public DbSet<Employer> Emploer { get; set; } = null!;
+        public DbSet<Manufacturer> Manufacturer { get; set; } = null!;
+        public DbSet<Medicine> Medicine { get; set; } = null!;
+        public DbSet<Post> Post { get; set; } =null!;
+        public DbSet<SaleMedicine> SaleMedicine { get; set; } = null!;
+        public DbSet<Supplie> Supplie { get; set; } = null!;
+        public DbSet<SupplieMedicine> SupplieMedicine { get; set; } = null!;
+        public DbSet<Supplier> Supplier { get; set; } = null!;
 
         #endregion
 
@@ -40,86 +40,97 @@ namespace WebApplication3.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Для сущности Client 
-            modelBuilder.Entity<Client>().HasKey(u => u.CLIENT_ID);//PK
+            modelBuilder.Entity<Client>().HasKey(u => u.ClientId);//PK
 
             //Для сущности Post 
-            modelBuilder.Entity<Post>().HasKey(u=>u.POST_ID);
+            modelBuilder.Entity<Post>().HasKey(u=>u.PostId);
 
             //Для сущности Manufacturer 
-            modelBuilder.Entity<Manufacturer>().HasKey(u=>u.MUNUFACTURER_ID);
+            modelBuilder.Entity<Manufacturer>().HasKey(u=>u.ManufacturerId);
             
             //Для сущности Suplier 
-            modelBuilder.Entity<Supplier>().HasKey(u=>u.SUPPLIER_ID);
+            modelBuilder.Entity<Supplier>().HasKey(u=>u.SupplierId);
 
             //Для сущности Employer 
-            modelBuilder.Entity<Employer>().HasKey(u=>u.EMPLOYER_ID);
+            modelBuilder.Entity<Employer>().HasKey(u=>u.EmployerId);
             modelBuilder.Entity<Employer>()
                 .HasOne(u => u.Post)
                 .WithMany()
-                .HasForeignKey(u=>u.POST_ID)
+                .HasForeignKey(u=>u.PostId)
                 .IsRequired();
 
             //Для сущности Medicine 
-            modelBuilder.Entity<Medicine>().HasKey(u => u.MEDICINE_ID);
+            modelBuilder.Entity<Medicine>().HasKey(u => u.MedicineId);
 
             modelBuilder.Entity<Medicine>()
-                .HasOne(u => u.MANUFACTURER)
+                .HasOne(u => u.Manufacturer)
                 .WithMany()
-                .HasForeignKey(u => u.MUNUFACTURER_ID)
+                .HasForeignKey(u => u.ManufacturerId)
                 .IsRequired();//Создание внешнего ключа 
 
             //Для сущности Supplie 
-            modelBuilder.Entity<Supplie>().HasKey(u => u.SUPPLIE_ID);
+            modelBuilder.Entity<Supplie>().HasKey(u => u.SupplieId);
             modelBuilder.Entity<Supplie>()
-                .HasOne(u => u.SUPPLIER)
+                .HasOne(u => u.Supplier)
                 .WithMany()
-                .HasForeignKey(u => u.SUPPLIER_ID)
+                .HasForeignKey(u => u.SupplierId)
                 .IsRequired();
             
             //Для сущности Supplie_Med
-            modelBuilder.Entity<SupplieMedicine>().HasKey(u => u.SUPPL_MEDICINE_ID);
+            modelBuilder.Entity<SupplieMedicine>().HasKey(u => u.SuplieMedicineId);
 
             modelBuilder.Entity<SupplieMedicine>()
-                .HasOne(u=>u.SUPPLIE)
+                .HasOne(u=>u.Suplie)
                 .WithMany()
-                .HasForeignKey(u=>u.SUPLIE_ID)
+                .HasForeignKey(u=>u.SuplieId)
                 .IsRequired();
             modelBuilder.Entity<SupplieMedicine>()
-               .HasOne(u => u.MEDICINE)
+               .HasOne(u => u.Medicine)
                .WithMany()
-               .HasForeignKey(u => u.MEDICINE_ID)
+               .HasForeignKey(u => u.MedicineId)
                .IsRequired();
 
 
             //Для сущности sale_Medicine
-            modelBuilder.Entity<SaleMedicine>().HasKey(u => u.SALE_MEDICINE_ID);
+            modelBuilder.Entity<SaleMedicine>().HasKey(u => u.SaleMedecineId);
 
             modelBuilder.Entity<SaleMedicine>()
-                .HasOne(u => u.CHEQUE)
+                .HasOne(u => u.Cheque)
                 .WithMany()
-                .HasForeignKey(u => u.CHEQUE_ID)
+                .HasForeignKey(u => u.ChequeId)
                 .IsRequired();
 
             modelBuilder.Entity<SaleMedicine>()
-               .HasOne(u => u.MEDICINE)
+               .HasOne(u => u.Medecine)
                .WithMany()
-               .HasForeignKey(u => u.MEDICINE_ID)
+               .HasForeignKey(u => u.MedecineId)
                .IsRequired();
 
             //Для сущности Cheque 
-            modelBuilder.Entity<Cheque>().HasKey(u => u.CHEQUE_ID);
+            modelBuilder.Entity<Cheque>().HasKey(u => u.ChequeId);
 
             modelBuilder.Entity<Cheque>()
-                .HasOne(u => u.CLIENT)
+                .HasOne(u => u.Client)
                 .WithMany()
-                .HasForeignKey(u => u.CLIENT_ID)
+                .HasForeignKey(u => u.ClientId)
                 .IsRequired();//Создание внешнего ключа 
 
             modelBuilder.Entity<Cheque>()
-               .HasOne(u => u.EMPLOEYER)
+               .HasOne(u => u.Employer)
                .WithMany()
-               .HasForeignKey(u => u.EMPLOYER_ID)
+               .HasForeignKey(u => u.EmployerId)
                .IsRequired();//Создание внешнего ключа 
+            
+            //Преобразование названий таблиц  и полей таблиц в UpperCase
+            foreach (var i in modelBuilder.Model.GetEntityTypes())
+            {
+                i.SetTableName(Functions.PascalCaseToUpperCase(i.GetTableName()));
+
+                foreach (var j in i.GetProperties())
+                {
+                    j.SetColumnName(Functions.PascalCaseToUpperCase(j.GetColumnName()));
+                }
+            }
 
         }
 
