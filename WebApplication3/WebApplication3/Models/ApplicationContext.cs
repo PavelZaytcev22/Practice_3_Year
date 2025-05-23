@@ -12,7 +12,7 @@ namespace WebApplication3.Models
 
         public DbSet<Client> Client { get; set; } = null!;
         public DbSet<Cheque> Cheque { get; set; } = null!;
-        public DbSet<Employer> Emploer { get; set; } = null!;
+        public DbSet<Employer> Employer { get; set; } = null!;
         public DbSet<Manufacturer> Manufacturer { get; set; } = null!;
         public DbSet<Medicine> Medicine { get; set; } = null!;
         public DbSet<Post> Post { get; set; } =null!;

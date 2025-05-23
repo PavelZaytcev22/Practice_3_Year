@@ -1,4 +1,6 @@
-﻿using WebApplication3.Interfaces;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Data.Entity;
+using WebApplication3.Interfaces;
 using WebApplication3.Models;
 
 namespace WebApplication3.Repository
@@ -24,33 +26,60 @@ namespace WebApplication3.Repository
         /// <param name="obj">Объект для добавления</param>
         /// <param name="token">Токен для асинхронных операций</param>
         /// <returns>id чека</returns>
-        public async Task<int> Add(Cheque obj, CancellationToken token ) 
+        public async Task<int> AddAsync(Cheque obj, CancellationToken token ) 
         {
-            await db.Cheques.AddAsync(obj, token);
+            await db.Cheque.AddAsync(obj, token);
             await db.SaveChangesAsync(token);
-            return (int)db.Cheques.Entry(obj).Property("CHEQUE_ID").CurrentValue;
+            return (int)db.Cheque.Entry(obj).Property("CHEQUE_ID").CurrentValue;
         }
+
         /// <summary>
         /// Метод для  удаления чека в БД 
         /// </summary>
         /// <param name="obj">Объект для уддаления</param>
         /// <param name="token">Токен для асинхронных операций</param>
-        /// <returns>void</returns>
-        public async Task Delete(Cheque obj, CancellationToken token) 
+        /// <returns>Асинхронная операций без возвращаемого значения</returns>
+        public async Task DeleteAsync(int  key, CancellationToken token) 
         {
-            db.Cheques.Remove(obj);
+            var obj = await GetByIdAsync(key, token);
+            if (obj != null)
+            {
+                db.Cheque.Remove(obj);
+            }
             await db.SaveChangesAsync(token);
         }
+
         /// <summary>
         /// Метод для обновления чека в БД 
         /// </summary>
         /// <param name="obj">Объект с новой информацией</param>
         /// <param name="token">Токен для асинхронных операций</param>
-        /// <returns>void</returns>
-        public async Task Update(Cheque obj, CancellationToken token)
+        /// <returns>Асинхронная операций без возвращаемого значения</returns>
+        public async Task UpdateAsync(Cheque obj, CancellationToken token)
         {
-            db.Cheques.Update(obj);
+            db.Cheque.Update(obj);
             await db.SaveChangesAsync(token);
+        }
+
+        /// <summary>
+        /// Метод получения всех атрибутов из БД 
+        /// </summary>
+        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <returns>Асинхронная операция с возвратом коллекции</returns>
+        public async Task<IEnumerable<Cheque>> GetAllAsync(CancellationToken token)
+        {
+            return await db.Cheque.ToListAsync(token);
+        }
+
+        /// <summary>
+        /// Метод получения записи по PK
+        /// </summary>
+        /// <param name="key">PK для сущности</param>
+        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <returns>Асинхронная операция без возвращаемого значения</returns>
+        public async Task<Cheque> GetByIdAsync(int key, CancellationToken token)
+        {
+            return await db.Cheque.FindAsync(new object[] { key }, token);
         }
 
     }

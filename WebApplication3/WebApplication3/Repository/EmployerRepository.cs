@@ -1,4 +1,6 @@
-﻿using WebApplication3.Interfaces;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Data.Entity;
+using WebApplication3.Interfaces;
 using WebApplication3.Models;
 
 namespace WebApplication3.Repository
@@ -25,22 +27,26 @@ namespace WebApplication3.Repository
         /// <param name="obj">Объект работник</param>
         /// <param name="token">Токен для асинхронных операций</param>
         /// <returns>id работника</returns>
-        public async Task<int> Add(Employer obj, CancellationToken token)
+        public async Task<int> AddAsync(Employer obj, CancellationToken token)
         {
-            await db.Emploers.AddAsync(obj, token);
+            await db.Employer.AddAsync(obj, token);
             await db.SaveChangesAsync(token);
-            return (int)db.Emploers.Entry(obj).Property("EMPLOYER_ID").CurrentValue;
+            return (int)db.Employer.Entry(obj).Property("EMPLOYER_ID").CurrentValue;
         }
 
         /// <summary>
         /// Метод для удаления записей из БД 
         /// </summary>
-        /// <param name="obj">Работник под удаление</param>
+        /// <param name="key">Работник под удаление</param>
         /// <param name="token">Токкен для асинхронных операций</param>
-        /// <returns>void</returns>
-        public async Task Delete(Employer obj, CancellationToken token)
+        /// <returns>Асинхронная операция без возвращаемого значения</returns>
+        public async Task DeleteAsync(int key, CancellationToken token)
         {
-            db.Emploers.Remove(obj);
+            var obj = await GetByIdAsync(key, token);
+            if (obj != null)
+            {
+                db.Employer.Remove(obj);
+            }
             await db.SaveChangesAsync(token);
         }
 
@@ -49,11 +55,33 @@ namespace WebApplication3.Repository
         /// </summary>
         /// <param name="obj">Работник под удаление</param>
         /// <param name="token">Токкен для асинхронных операций</param>
-        /// <returns>void</returns>
-        public async Task Update(Employer obj, CancellationToken token)
+        /// <returns>Асинхронная операция без возвращаемого значения</returns>
+        public async Task UpdateAsync(Employer obj, CancellationToken token)
         {
-            db.Emploers.Update(obj);
+            db.Employer.Update(obj);
             await db.SaveChangesAsync(token);
+        }
+
+
+        /// <summary>
+        /// Метод получения всех атрибутов из БД 
+        /// </summary>
+        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <returns>Асинхронная операция с возвратом коллекции</returns>
+        public async Task<IEnumerable<Employer>> GetAllAsync(CancellationToken token)
+        {
+            return await db.Employer.ToListAsync(token);
+        }
+
+        /// <summary>
+        /// Метод получения записи по PK
+        /// </summary>
+        /// <param name="key">PK для сущности</param>
+        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <returns>Асинхронная операция без возвращаемого значения</returns>
+        public async Task<Employer> GetByIdAsync(int key, CancellationToken token)
+        {
+            return await db.Employer.FindAsync(new object[] { key }, token);
         }
 
     }

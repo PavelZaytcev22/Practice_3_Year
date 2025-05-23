@@ -4,7 +4,7 @@ using WebApplication3.Repository;
 
 namespace WebApplication3.Service
 {
-    /// <summary>
+/// <summary>
     /// Сервис поставки
     /// </summary>
     public class SupplieService : IService<Supplie>
@@ -26,20 +26,20 @@ namespace WebApplication3.Service
         /// <param name="obj">Объект поставка</param>
         /// <param name="token">Токен для асинхронных операций</param>
         /// <returns>Id поставки</returns>
-        public async Task<int> Add(Supplie obj, CancellationToken token)
+        public async Task<int> AddAsync(Supplie obj, CancellationToken token)
         {
-            return await repository.Add(obj, token);
+            return await repository.AddAsync(obj, token);
         }
 
         /// <summary>
         /// Метод для удаления поставки из БД 
         /// </summary>
-        /// <param name="obj">Объект поставка</param>
+        /// <param name="key">PK атрибута сущьности</param>
         /// <param name="token">Токен для асинхронных операций</param>
         /// <returns>void</returns>
-        public async Task Delete(Supplie obj, CancellationToken token)
+        public async Task DeleteAsync(int key, CancellationToken token)
         {
-            await repository.Delete(obj, token);
+            await repository.DeleteAsync(key, token);
         }
 
         /// <summary>
@@ -48,12 +48,31 @@ namespace WebApplication3.Service
         /// <param name="obj">Объект поставка</param>
         /// <param name="token">Токен для асинхронных операций</param>
         /// <returns>void</returns>
-        public async Task Update(Supplie  obj, CancellationToken token)
+        public async Task UpdateAsync(Supplie  obj, CancellationToken token)
         {
-            await repository.Update(obj, token);
+            await repository.UpdateAsync(obj, token);
         }
 
+        /// <summary>
+        /// Метод получения всех записей сущности
+        /// </summary>
+        /// <param name="token">Токен для асинхронных операций</param>
+        /// <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        public async Task<IEnumerable<Supplie>> GetAllAsync(CancellationToken token)
+        {
+            return await repository.GetAllAsync(token);
+        }
 
+        /// <summary>
+        /// Метод получения записи из сущьности по PK
+        /// </summary>
+        /// <param name="key">PK сущности</param>
+        /// <param name="token">Токен для асинхронных операций</param>
+        /// <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        public async Task<Supplie> GetByIdAsync(int key, CancellationToken token)
+        {
+            return await repository.GetByIdAsync(key, token);
+        }
 
     }
 }

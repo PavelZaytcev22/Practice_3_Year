@@ -26,20 +26,20 @@ namespace WebApplication3.Service
         /// <param name="obj">Объект должность</param>
         /// <param name="token">Токен для асинхронных операций</param>
         /// <returns>id должности</returns>
-        public async Task<int> Add(Post obj, CancellationToken token)
+        public async Task<int> AddAsync(Post obj, CancellationToken token)
         {
-            return await repository.Add(obj, token);
+            return await repository.AddAsync(obj, token);
         }
 
         /// <summary>
         /// Метод для удаления должности из БД 
         /// </summary>
-        /// <param name="obj">Объект должность</param>
+        /// <param name="key">PK атрибута сущьности</param>
         /// <param name="token">Токен для асинхронных операций</param>
         /// <returns>void</returns>
-        public async Task Delete(Post obj, CancellationToken token)
+        public async Task DeleteAsync(int key, CancellationToken token)
         {
-            await repository.Delete(obj, token);
+            await repository.DeleteAsync(key, token);
         }
 
         /// <summary>
@@ -48,10 +48,30 @@ namespace WebApplication3.Service
         /// <param name="obj">Объект должность</param>
         /// <param name="token">Токен для асинхронных операций</param>
         /// <returns>void</returns>
-        public async Task Update(Post obj, CancellationToken token)
+        public async Task UpdateAsync(Post obj, CancellationToken token)
         {
-            await repository.Update(obj, token);
+            await repository.UpdateAsync(obj, token);
         }
 
+        /// <summary>
+        /// Метод получения всех записей сущности
+        /// </summary>
+        /// <param name="token">Токен для асинхронных операций</param>
+        /// <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        public async Task<IEnumerable<Post>> GetAllAsync(CancellationToken token)
+        {
+            return await repository.GetAllAsync(token);
+        }
+
+        /// <summary>
+        /// Метод получения записи из сущьности по PK
+        /// </summary>
+        /// <param name="key">PK сущности</param>
+        /// <param name="token">Токен для асинхронных операций</param>
+        /// <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        public async Task<Post> GetByIdAsync(int key, CancellationToken token)
+        {
+            return await repository.GetByIdAsync(key, token);
+        }
     }
 }

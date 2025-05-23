@@ -1,4 +1,6 @@
-﻿using WebApplication3.Interfaces;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Data.Entity;
+using WebApplication3.Interfaces;
 using WebApplication3.Models;
 
 namespace WebApplication3.Repository
@@ -14,39 +16,67 @@ namespace WebApplication3.Repository
         {
             db = dbContext;
         }
+
         /// <summary>
         /// Метод для добавления поставки в БД 
         /// </summary>
         /// <param name="obj">Объект поставки</param>
         /// <param name="token">Токен для асинхронных операций</param>
         /// <returns>Id поставки</returns>
-        public async Task<int> Add(Supplie obj, CancellationToken token)
+        public async Task<int> AddAsync(Supplie obj, CancellationToken token)
         {
-            await db.Supplies.AddAsync(obj, token);
+            await db.Supplie.AddAsync(obj, token);
             await db.SaveChangesAsync(token);
-            return (int)db.Supplies.Entry(obj).Property("SUPPLIE_ID").CurrentValue;
+            return (int)db.Supplie.Entry(obj).Property("SUPPLIE_ID").CurrentValue;
         }
+
         /// <summary>
         /// Метод для удаления поставки из БД 
         /// </summary>
         /// <param name="obj">Объект поставки</param>
         /// <param name="token">Токен для асинхронных операций</param>
-        /// <returns>void</returns>
-        public async Task Delete(Supplie obj, CancellationToken token)
+        /// <returns>Асинхронная операция без возвращаемого значения</returns>
+        public async Task DeleteAsync(int key, CancellationToken token)
         {
-            db.Supplies.Remove(obj);
+            var obj = await GetByIdAsync(key, token);
+            if (obj != null)
+            {
+                db.Supplie.Remove(obj);
+            }
             await db.SaveChangesAsync(token);
         }
+
         /// <summary>
         /// Метод для обновления поставки в БД 
         /// </summary>
         /// <param name="obj">Объект поставки</param>
         /// <param name="token">Токен для асинхронных операций</param>
-        /// <returns>void</returns>
-        public async Task Update(Supplie obj, CancellationToken token)
+        /// <returns>Асинхронная операция без возвращаемого значения</returns>
+        public async Task UpdateAsync(Supplie obj, CancellationToken token)
         {
-            db.Supplies.Update(obj);
+            db.Supplie.Update(obj);
             await db.SaveChangesAsync(token);
         }
+        /// <summary>
+        /// Метод получения всех атрибутов из БД 
+        /// </summary>
+        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <returns>Асинхронная операция с возвратом коллекции</returns>
+        public async Task<IEnumerable<Supplie>> GetAllAsync(CancellationToken token)
+        {
+            return await db.Supplie.ToListAsync(token);
+        }
+
+        /// <summary>
+        /// Метод получения записи по PK
+        /// </summary>
+        /// <param name="key">PK для сущности</param>
+        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <returns>Асинхронная операция без возвращаемого значения</returns>
+        public async Task<Supplie> GetByIdAsync(int key, CancellationToken token)
+        {
+            return await db.Supplie.FindAsync(new object[] { key }, token);
+        }
+
     }
 }

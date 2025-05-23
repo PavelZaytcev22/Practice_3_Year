@@ -12,6 +12,5 @@ namespace WebApplication3.Models
         public int ClientId { get; set;}
         public string PhoneNumber { get; set; }
         public int Discount {get;set; }       
-
     }
 }

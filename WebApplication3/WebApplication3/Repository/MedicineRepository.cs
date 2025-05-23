@@ -1,4 +1,6 @@
-﻿using WebApplication3.Interfaces;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Data.Entity;
+using WebApplication3.Interfaces;
 using WebApplication3.Models;
 
 namespace WebApplication3.Repository
@@ -19,33 +21,60 @@ namespace WebApplication3.Repository
         /// <param name="obj">Объект медикамент</param>
         /// <param name="token">Токен для асинхронных операций</param>
         /// <returns>id медикамента</returns>
-        public async Task<int> Add(Medicine obj, CancellationToken token)
+        public async Task<int> AddAsync(Medicine obj, CancellationToken token)
         {
-            await db.Medicines.AddAsync(obj, token);
+            await db.Medicine.AddAsync(obj, token);
             await db.SaveChangesAsync(token);
-            return (int)db.Medicines.Entry(obj).Property("MEDICINE_ID").CurrentValue;
+            return (int)db.Medicine.Entry(obj).Property("MEDICINE_ID").CurrentValue;
         }
+
         /// <summary>
         /// Метод для удаления медикамента из БД 
         /// </summary>
         /// <param name="obj">Объект медикамент</param>
         /// <param name="token">Токен для асинхронных операций</param>
-        /// <returns>void</returns>
-        public async Task Delete(Medicine obj, CancellationToken token)
+        /// <returns>Асинхронная операция без возвращаемого значения</returns>
+        public async Task DeleteAsync(int key, CancellationToken token)
         {
-            db.Medicines.Remove(obj);
+            var obj = await GetByIdAsync(key, token);
+            if (obj != null)
+            {
+                db.Medicine.Remove(obj);
+            }
             await db.SaveChangesAsync(token);
         }
+
         /// <summary>
         /// Метод для обновления медикамента в БД 
         /// </summary>
         /// <param name="obj">Объект медикамент</param>
         /// <param name="token">Токен для асинхронных операций</param>
-        /// <returns>void</returns>
-        public async Task Update(Medicine obj, CancellationToken token)
+        /// <returns>Асинхронная операция без возвращаемого значения</returns>
+        public async Task UpdateAsync(Medicine obj, CancellationToken token)
         {
-            db.Medicines.Update(obj);
+            db.Medicine.Update(obj);
             await db.SaveChangesAsync(token);
+        }
+
+        /// <summary>
+        /// Метод получения всех атрибутов из БД 
+        /// </summary>
+        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <returns>Асинхронная операция с возвратом коллекции</returns>
+        public async Task<IEnumerable<Medicine>> GetAllAsync(CancellationToken token)
+        {
+            return await db.Medicine.ToListAsync(token);
+        }
+
+        /// <summary>
+        /// Метод получения записи по PK
+        /// </summary>
+        /// <param name="key">PK для сущности</param>
+        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <returns>Асинхронная операция без возвращаемого значения</returns>
+        public async Task<Medicine> GetByIdAsync(int key, CancellationToken token)
+        {
+            return await db.Medicine.FindAsync(new object[] { key }, token);
         }
     }
 }

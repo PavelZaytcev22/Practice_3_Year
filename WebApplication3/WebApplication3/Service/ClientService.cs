@@ -8,7 +8,7 @@ namespace WebApplication3.Service
     /// </summary>
     public class ClientService: IService<Client>
     {
-        private IRepository<Client> clientReposytory;
+        private IRepository<Client> repository;
 
         /// <summary>
         /// Конструктор клиента 
@@ -16,7 +16,7 @@ namespace WebApplication3.Service
         /// <param name="clientRep">Репозиторий клиента</param>
         public ClientService(IRepository<Client> clientRep) 
         {
-            clientReposytory = clientRep;
+            repository = clientRep;
         }
         /// <summary>
         /// Иетод для добавления клиента в БД 
@@ -24,20 +24,20 @@ namespace WebApplication3.Service
         /// <param name="obj">Новый Клиент</param>
         /// <param name="tokken">Токкен для асинхронных операций</param>
         /// <returns>Возвращает Id Нового клиента</returns>
-        public async Task<int> Add(Client obj, CancellationToken tokken) 
+        public async Task<int> AddAsync(Client obj, CancellationToken tokken) 
         {
-            return await  clientReposytory.Add(obj,  tokken);
+            return await  repository.AddAsync(obj,  tokken);
         }
 
         /// <summary>
-        /// Метод для удаления клиента из БД
+        /// Метод удаления клиента из БД
         /// </summary>
-        /// <param name="obj">Удаляемый Клиент</param>
+        /// <param name="key">PK атрибута сущьности/param>
         /// <param name="tokken">Токкен для асинхронных операций</param>
         /// <returns>void</returns>
-        public async Task Delete(Client obj, CancellationToken tokken)
+        public async Task DeleteAsync(int key, CancellationToken tokken)
         {
-          await   clientReposytory.Delete(obj,  tokken);
+          await   repository.DeleteAsync(key,  tokken);
         }
         /// <summary>
         /// Метод для обновления данных Клиента в БД 
@@ -45,11 +45,31 @@ namespace WebApplication3.Service
         /// <param name="obj">класс с новыми данными клиента</param>
         /// <param name="tokken">Токкен для асинхронных операций</param>
         /// <returns>void </returns>
-        public async Task Update(Client obj, CancellationToken tokken)
+        public async Task UpdateAsync(Client obj, CancellationToken tokken)
         {
-            await clientReposytory.Update(obj, tokken);
+            await repository.UpdateAsync(obj, tokken);
         }
-        
+
+        /// <summary>
+        /// Метод получения всех записей сущности
+        /// </summary>
+        /// <param name="token">Токен для асинхронных операций</param>
+        /// <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        public async Task<IEnumerable<Client>> GetAllAsync(CancellationToken token)
+        {
+           return await repository.GetAllAsync(token);
+        }
+
+        /// <summary>
+        /// Метод получения записи из сущьности по PK
+        /// </summary>
+        /// <param name="key">PK сущности</param>
+        /// <param name="token">Токен для асинхронных операций</param>
+        /// <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        public async Task<Client> GetByIdAsync(int key, CancellationToken token) 
+        {
+            return await repository.GetByIdAsync(key,token);
+        }
 
     }
 }
