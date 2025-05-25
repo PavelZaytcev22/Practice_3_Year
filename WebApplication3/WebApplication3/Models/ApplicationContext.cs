@@ -1,15 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
 namespace WebApplication3.Models
-{
-    
+{    
     /// <summary>
     /// Контекст базы данных со всеми сущностями и настройками их ключей 
     /// <summary>
     public class ApplicationContext:DbContext
     {
-
         #region Коллекции БД 
-
         public DbSet<Client> Client { get; set; } = null!;
         public DbSet<Cheque> Cheque { get; set; } = null!;
         public DbSet<Employer> Employer { get; set; } = null!;
@@ -20,7 +19,6 @@ namespace WebApplication3.Models
         public DbSet<Supplie> Supplie { get; set; } = null!;
         public DbSet<SupplieMedicine> SupplieMedicine { get; set; } = null!;
         public DbSet<Supplier> Supplier { get; set; } = null!;
-
         #endregion
 
         /// <summary>
@@ -39,27 +37,35 @@ namespace WebApplication3.Models
         /// <param name="modelBuilder">Класс для конфигурации БД </param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Для сущности Client 
+            #region Для сущности Client 
             modelBuilder.Entity<Client>().HasKey(u => u.ClientId);//PK
+            modelBuilder.Entity<Client>().Property(p => p.ClientId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
+            modelBuilder.Entity<Client>().Property(p => p.PhoneNumber).IsRequired().HasMaxLength(11).HasAnnotation("RegularExpression",new Regex("^(7|8)(d{10})$"));
+            modelBuilder.Entity<Client>().Property(p => p.Discount).IsRequired().HasAnnotation("Range",new Range(0,100));
+            #endregion
 
-            //Для сущности Post 
+            #region Для сущности Post 
             modelBuilder.Entity<Post>().HasKey(u=>u.PostId);
+            #endregion
 
-            //Для сущности Manufacturer 
+            #region Для сущности Manufacturer 
             modelBuilder.Entity<Manufacturer>().HasKey(u=>u.ManufacturerId);
-            
-            //Для сущности Suplier 
-            modelBuilder.Entity<Supplier>().HasKey(u=>u.SupplierId);
+            #endregion
 
-            //Для сущности Employer 
+            #region Для сущности Suplier 
+            modelBuilder.Entity<Supplier>().HasKey(u=>u.SupplierId);
+            #endregion
+
+            #region Для сущности Employer 
             modelBuilder.Entity<Employer>().HasKey(u=>u.EmployerId);
             modelBuilder.Entity<Employer>()
                 .HasOne(u => u.Post)
                 .WithMany()
                 .HasForeignKey(u=>u.PostId)
                 .IsRequired();
+            #endregion
 
-            //Для сущности Medicine 
+            #region Для сущности Medicine 
             modelBuilder.Entity<Medicine>().HasKey(u => u.MedicineId);
 
             modelBuilder.Entity<Medicine>()
@@ -67,16 +73,18 @@ namespace WebApplication3.Models
                 .WithMany()
                 .HasForeignKey(u => u.ManufacturerId)
                 .IsRequired();//Создание внешнего ключа 
+            #endregion
 
-            //Для сущности Supplie 
+            #region Для сущности Supplie 
             modelBuilder.Entity<Supplie>().HasKey(u => u.SupplieId);
             modelBuilder.Entity<Supplie>()
                 .HasOne(u => u.Supplier)
                 .WithMany()
                 .HasForeignKey(u => u.SupplierId)
                 .IsRequired();
-            
-            //Для сущности Supplie_Med
+            #endregion
+
+            #region Для сущности Supplie_Med
             modelBuilder.Entity<SupplieMedicine>().HasKey(u => u.SuplieMedicineId);
 
             modelBuilder.Entity<SupplieMedicine>()
@@ -89,9 +97,9 @@ namespace WebApplication3.Models
                .WithMany()
                .HasForeignKey(u => u.MedicineId)
                .IsRequired();
+            #endregion
 
-
-            //Для сущности sale_Medicine
+            #region Для сущности sale_Medicine
             modelBuilder.Entity<SaleMedicine>().HasKey(u => u.SaleMedecineId);
 
             modelBuilder.Entity<SaleMedicine>()
@@ -105,8 +113,9 @@ namespace WebApplication3.Models
                .WithMany()
                .HasForeignKey(u => u.MedecineId)
                .IsRequired();
+            #endregion
 
-            //Для сущности Cheque 
+            #region Для сущности Cheque 
             modelBuilder.Entity<Cheque>().HasKey(u => u.ChequeId);
 
             modelBuilder.Entity<Cheque>()
@@ -120,7 +129,8 @@ namespace WebApplication3.Models
                .WithMany()
                .HasForeignKey(u => u.EmployerId)
                .IsRequired();//Создание внешнего ключа 
-            
+            #endregion
+
             //Преобразование названий таблиц  и полей таблиц в UpperCase
             foreach (var i in modelBuilder.Model.GetEntityTypes())
             {

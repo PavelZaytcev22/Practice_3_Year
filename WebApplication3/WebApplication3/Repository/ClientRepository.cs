@@ -23,14 +23,17 @@ namespace WebApplication3.Repository
         /// <summary>
         /// Метод добавление в БД Клиента
         /// </summary>
-        /// <param name="bb">Новый Клиент</param>
+        /// <param name="obj">Новый Клиент</param>
         /// <param name="token">Токкен для асинхронных операций </param>
         /// <returns>Асинхронная операция возвращает id нового кдиента </returns>
         public async Task<int> AddAsync(Client obj, CancellationToken token)
         {
             var i = await db.Client.AddAsync(obj, token);
             await db.SaveChangesAsync(token);
-            return (int)db.Client.Entry(obj).Property("CLIENT_ID").CurrentValue;
+            return obj.ClientId;//Поле автоинкремент(в modelBilder), после сохранения инициализируется
+            /*
+             * return (int)db.Client.Entry(obj).Property("CLIENT_ID").CurrentValue;
+             */          
         }
 
         /// <summary>
