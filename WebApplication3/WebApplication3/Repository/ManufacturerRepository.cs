@@ -12,9 +12,9 @@ namespace WebApplication3.Repository
         private ApplicationContext db;
 
         /// <summary>
-        /// 
+        /// Конструктор репозитория
         /// </summary>
-        /// <param name="dbContext"></param>
+        /// <param name="dbContext">Контекст репозитория </param>
         public ManufacturerRepository(ApplicationContext dbContext) 
         {
             db = dbContext;
@@ -29,9 +29,13 @@ namespace WebApplication3.Repository
         /// 
         public async Task<int> AddAsync(Manufacturer obj, CancellationToken token) 
         {
-            await db.Manufacturer.AddAsync(obj, token);
-            await db.SaveChangesAsync(token);
-            return (int)db.Manufacturer.Entry(obj).Property("MUNUFACTURER_ID").CurrentValue;
+            if (obj != null) 
+            {
+                await db.Manufacturer.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
+                return obj.ManufacturerId;
+            }
+            return -1;
         }
         /// <summary>
         ///  Метод для удаления поставщика из БД 
@@ -78,7 +82,7 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<Manufacturer> GetByIdAsync(int key, CancellationToken token)
         {
-            return await db.Manufacturer.FindAsync(new object[] { key }, token);
+            return await db.Manufacturer.FirstOrDefaultAsync(u => u.ManufacturerId == key, token);
         }
 
     }

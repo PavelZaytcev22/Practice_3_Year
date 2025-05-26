@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 using WebApplication3.Interfaces;
 using WebApplication3.Models;
 
@@ -28,12 +30,14 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция возвращает id нового кдиента </returns>
         public async Task<int> AddAsync(Client obj, CancellationToken token)
         {
-            var i = await db.Client.AddAsync(obj, token);
-            await db.SaveChangesAsync(token);
-            return obj.ClientId;//Поле автоинкремент(в modelBilder), после сохранения инициализируется
-            /*
-             * return (int)db.Client.Entry(obj).Property("CLIENT_ID").CurrentValue;
-             */          
+            if (obj != null)
+            {
+                await db.Client.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
+                return obj.ClientId;//Поле автоинкремент(в modelBilder), после сохранения инициализируется
+            }
+            return -1;
+            //throw new Exception("Объект null");       
         }
 
         /// <summary>
@@ -44,12 +48,8 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task DeleteAsync(int key, CancellationToken token)
         {
-            var obj = await GetByIdAsync(key,token);
-            if (obj!=null)
-            {
-                db.Client.Remove(obj);
-            }
-            await db.SaveChangesAsync(token);
+           await  db.Client.Where(u => u.ClientId == key).ExecuteDeleteAsync(token);
+           await db.SaveChangesAsync(token);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция с возвратом коллекции</returns>
         public async Task<IEnumerable<Client>> GetAllAsync(CancellationToken token)
         {
-            return await db.Client.ToListAsync(token);
+            return await db.Client.ToArrayAsync(token);
         }
 
         /// <summary>
@@ -82,7 +82,8 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<Client> GetByIdAsync(int key , CancellationToken token) 
         {
-            return await db.Client.FindAsync(new object[]{ key },token);
+            return await db.Client.FirstOrDefaultAsync(u=>u.ClientId==key, token);
+           // return await db.Client.FindAsync(new object[]{ key },token);
         }
     }
 

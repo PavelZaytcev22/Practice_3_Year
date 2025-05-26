@@ -24,7 +24,7 @@ namespace WebApplication3.Models
 
         public override bool Equals(object? obj)
         {
-            if (obj is Client ) 
+            if (obj is Client)
             {
                 Client obj2 = obj as Client;
                 return PhoneNumber.Equals(obj2.PhoneNumber);

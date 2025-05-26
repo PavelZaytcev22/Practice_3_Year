@@ -32,7 +32,7 @@
         /// <summary>
         /// Свойство для полной суммы чека всех продаж 
         /// </summary>
-        public int Total_Sum { get; set; }
+        public int TotalSum { get; set; }
         /// <summary>
         /// Свойство для полной суммы чека всех продаж по скидке
         /// </summary>

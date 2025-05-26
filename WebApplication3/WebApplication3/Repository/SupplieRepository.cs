@@ -25,9 +25,13 @@ namespace WebApplication3.Repository
         /// <returns>Id поставки</returns>
         public async Task<int> AddAsync(Supplie obj, CancellationToken token)
         {
-            await db.Supplie.AddAsync(obj, token);
-            await db.SaveChangesAsync(token);
-            return (int)db.Supplie.Entry(obj).Property("SUPPLIE_ID").CurrentValue;
+            if (obj!=null)
+            {
+                await db.Supplie.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
+                return obj.SupplieId;
+            }
+            return -1; 
         }
 
         /// <summary>
@@ -75,7 +79,7 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<Supplie> GetByIdAsync(int key, CancellationToken token)
         {
-            return await db.Supplie.FindAsync(new object[] { key }, token);
+            return await db.Supplie.FirstOrDefaultAsync(u=>u.SupplieId ==key,token);
         }
 
     }

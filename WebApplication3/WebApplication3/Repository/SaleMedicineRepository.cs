@@ -27,9 +27,13 @@ namespace WebApplication3.Repository
         /// <returns>id продажи</returns>
         public async Task<int> AddAsync(SaleMedicine obj, CancellationToken token)
         {
-            await db.SaleMedicine.AddAsync(obj, token);
-            await db.SaveChangesAsync(token);
-            return (int)db.SaleMedicine.Entry(obj).Property("SALE_MEDICINE_ID").CurrentValue;
+            if (obj != null)
+            {
+                await db.SaleMedicine.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
+                return obj.SaleMedecineId;
+            }
+            return -1; 
         }
         /// <summary>
         /// Метод для удаления продажи из БД 
@@ -76,7 +80,7 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<SaleMedicine> GetByIdAsync(int key, CancellationToken token)
         {
-            return await db.SaleMedicine.FindAsync(new object[] { key }, token);
+            return await db.SaleMedicine.FirstOrDefaultAsync(u => u.SaleMedecineId == key, token);
         }
 
     }

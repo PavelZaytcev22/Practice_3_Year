@@ -28,9 +28,13 @@ namespace WebApplication3.Repository
         /// <returns>id чека</returns>
         public async Task<int> AddAsync(Cheque obj, CancellationToken token ) 
         {
-            await db.Cheque.AddAsync(obj, token);
-            await db.SaveChangesAsync(token);
-            return (int)db.Cheque.Entry(obj).Property("CHEQUE_ID").CurrentValue;
+            if (obj != null)
+            {
+                await db.Cheque.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
+                return obj.ChequeId;
+            }
+            return -1; 
         }
 
         /// <summary>
@@ -79,7 +83,7 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<Cheque> GetByIdAsync(int key, CancellationToken token)
         {
-            return await db.Cheque.FindAsync(new object[] { key }, token);
+            return await db.Cheque.FirstOrDefaultAsync(u => u.ChequeId== key, token);
         }
 
     }

@@ -29,9 +29,13 @@ namespace WebApplication3.Repository
         /// <returns>id должности</returns>
         public async Task<int> AddAsync(Post obj, CancellationToken token)
         {
-            await db.Post.AddAsync(obj, token);
-            await db.SaveChangesAsync(token);
-            return (int)db.Post.Entry(obj).Property("POST_ID").CurrentValue;
+            if (obj!=null)
+            {
+                await db.Post.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
+                return obj.PostId;
+            }
+            return -1;
         }
         /// <summary>
         /// Метод для удаления должности из БД 
@@ -79,7 +83,7 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<Post> GetByIdAsync(int key, CancellationToken token)
         {
-            return await db.Post.FindAsync(new object[] { key }, token);
+            return await db.Post.FirstOrDefaultAsync(u => u.PostId == key, token);
         }
     }
 }

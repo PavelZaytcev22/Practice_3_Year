@@ -29,9 +29,13 @@ namespace WebApplication3.Repository
         /// <returns>id работника</returns>
         public async Task<int> AddAsync(Employer obj, CancellationToken token)
         {
-            await db.Employer.AddAsync(obj, token);
-            await db.SaveChangesAsync(token);
-            return (int)db.Employer.Entry(obj).Property("EMPLOYER_ID").CurrentValue;
+            if (obj !=null)
+            {
+                await db.Employer.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
+                return obj.EmployerId;
+            }
+            return -1;
         }
 
         /// <summary>
@@ -81,7 +85,7 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<Employer> GetByIdAsync(int key, CancellationToken token)
         {
-            return await db.Employer.FindAsync(new object[] { key }, token);
+            return await db.Employer.FirstOrDefaultAsync(u => u.EmployerId == key, token);
         }
 
     }

@@ -40,24 +40,28 @@ namespace WebApplication3.Models
             #region Для сущности Client 
             modelBuilder.Entity<Client>().HasKey(u => u.ClientId);//PK
             modelBuilder.Entity<Client>().Property(p => p.ClientId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
-            modelBuilder.Entity<Client>().Property(p => p.PhoneNumber).IsRequired().HasMaxLength(11).HasAnnotation("RegularExpression",new Regex("^(7|8)(d{10})$"));
+            modelBuilder.Entity<Client>().Property(p => p.PhoneNumber).HasMaxLength(11).HasAnnotation("RegularExpression",new Regex("^(7|8)(d{10})$"));
             modelBuilder.Entity<Client>().Property(p => p.Discount).IsRequired().HasAnnotation("Range",new Range(0,100));
             #endregion
 
             #region Для сущности Post 
             modelBuilder.Entity<Post>().HasKey(u=>u.PostId);
+            modelBuilder.Entity<Post>().Property(p => p.PostId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
             #endregion
 
             #region Для сущности Manufacturer 
             modelBuilder.Entity<Manufacturer>().HasKey(u=>u.ManufacturerId);
+            modelBuilder.Entity<Manufacturer>().Property(p => p.ManufacturerId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
             #endregion
 
             #region Для сущности Suplier 
             modelBuilder.Entity<Supplier>().HasKey(u=>u.SupplierId);
+            modelBuilder.Entity<Supplier>().Property(p => p.SupplierId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
             #endregion
 
             #region Для сущности Employer 
             modelBuilder.Entity<Employer>().HasKey(u=>u.EmployerId);
+            modelBuilder.Entity<Employer>().Property(p => p.EmployerId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
             modelBuilder.Entity<Employer>()
                 .HasOne(u => u.Post)
                 .WithMany()
@@ -67,7 +71,7 @@ namespace WebApplication3.Models
 
             #region Для сущности Medicine 
             modelBuilder.Entity<Medicine>().HasKey(u => u.MedicineId);
-
+            modelBuilder.Entity<Medicine>().Property(p => p.MedicineId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
             modelBuilder.Entity<Medicine>()
                 .HasOne(u => u.Manufacturer)
                 .WithMany()
@@ -77,6 +81,7 @@ namespace WebApplication3.Models
 
             #region Для сущности Supplie 
             modelBuilder.Entity<Supplie>().HasKey(u => u.SupplieId);
+            modelBuilder.Entity<Supplie>().Property(p => p.SupplierId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
             modelBuilder.Entity<Supplie>()
                 .HasOne(u => u.Supplier)
                 .WithMany()
@@ -84,9 +89,9 @@ namespace WebApplication3.Models
                 .IsRequired();
             #endregion
 
-            #region Для сущности Supplie_Med
+            #region Для сущности SupplieMed
             modelBuilder.Entity<SupplieMedicine>().HasKey(u => u.SuplieMedicineId);
-
+            modelBuilder.Entity<SupplieMedicine>().Property(p => p.SuplieMedicineId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
             modelBuilder.Entity<SupplieMedicine>()
                 .HasOne(u=>u.Suplie)
                 .WithMany()
@@ -99,9 +104,9 @@ namespace WebApplication3.Models
                .IsRequired();
             #endregion
 
-            #region Для сущности sale_Medicine
+            #region Для сущности SaleMedicine
             modelBuilder.Entity<SaleMedicine>().HasKey(u => u.SaleMedecineId);
-
+            modelBuilder.Entity<SaleMedicine>().Property(p => p.SaleMedecineId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
             modelBuilder.Entity<SaleMedicine>()
                 .HasOne(u => u.Cheque)
                 .WithMany()
@@ -117,7 +122,7 @@ namespace WebApplication3.Models
 
             #region Для сущности Cheque 
             modelBuilder.Entity<Cheque>().HasKey(u => u.ChequeId);
-
+            modelBuilder.Entity<Cheque>().Property(p => p.ChequeId).ValueGeneratedOnAdd().IsRequired();//Автоинкремент и not null
             modelBuilder.Entity<Cheque>()
                 .HasOne(u => u.Client)
                 .WithMany()

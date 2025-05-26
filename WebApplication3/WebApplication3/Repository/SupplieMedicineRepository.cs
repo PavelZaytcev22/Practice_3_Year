@@ -29,9 +29,13 @@ namespace WebApplication3.Repository
         /// <returns>Id части поставки</returns>
         public async Task<int> AddAsync(SupplieMedicine obj, CancellationToken token)
         {
-            await db.SupplieMedicine.AddAsync(obj, token);
-            await db.SaveChangesAsync(token);
-            return (int)db.SupplieMedicine.Entry(obj).Property("SUPPL_MEDICINE_ID").CurrentValue;
+            if (obj!=null)
+            {
+                await db.SupplieMedicine.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
+                return obj.SuplieMedicineId;
+            }           
+            return -1; 
         }
 
         /// <summary>
@@ -80,7 +84,7 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<SupplieMedicine> GetByIdAsync(int key, CancellationToken token)
         {
-            return await db.SupplieMedicine.FindAsync(new object[] { key }, token);
+            return await db.SupplieMedicine.FirstOrDefaultAsync(u => u.SuplieMedicineId == key, token);
         }
 
     }

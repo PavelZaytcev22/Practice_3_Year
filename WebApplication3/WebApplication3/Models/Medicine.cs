@@ -20,11 +20,6 @@
       /// <summary>
       /// Свойство с названием лекарства
       /// </summary>
-        public string MedicineName { get; set; }
-       /// <summary>
-       /// Свойство для хранения цены на закупку товара за штуку 
-       /// </summary>
-        public int PriceBuyOne { get; set;  }
-        
+        public string MedicineName { get; set; }        
     }
 }
