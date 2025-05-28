@@ -3,8 +3,14 @@ using WebApplication3.Models;
 
 namespace WebApplication3.Validators
 {
+    /// <summary>
+    /// Валидатор для работника
+    /// </summary>
     public class EmployerValidator : AbstractValidator<Employer>
     {
+        /// <summary>
+        /// Конструктор с настройкими валидации под каждый атрибут сущности
+        /// </summary>
         public EmployerValidator() 
         {
             RuleFor(u => u.EmployerId).NotNull().WithMessage("id должен быть");

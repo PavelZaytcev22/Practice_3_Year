@@ -23,7 +23,7 @@ namespace WebApplication3.Service
         /// Метод для добавления поставщика в БД
         /// </summary>
         /// <param name="obj">Объект поставщик</param>
-        /// <param name="token">Токен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>id поставщика</returns>
         public async Task<int> AddAsync(Supplier obj, CancellationToken token)
         {
@@ -35,7 +35,7 @@ namespace WebApplication3.Service
         /// Метод для удаления поставщика из БД
         /// </summary>
         /// <param name="key">PK атрибута сущьности</param>
-        /// <param name="token">Токен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>void</returns>
         public async Task DeleteAsync(int key , CancellationToken token)
         {
@@ -46,7 +46,7 @@ namespace WebApplication3.Service
         /// Метод для обновления поставщика в БД
         /// </summary>
         /// <param name="obj">Объект поставщик</param>
-        /// <param name="token">Токен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>void</returns>
         public async Task UpdateAsync(Supplier obj, CancellationToken token)
         {
@@ -56,7 +56,7 @@ namespace WebApplication3.Service
         /// <summary>
         /// Метод получения всех записей сущности
         /// </summary>
-        /// <param name="token">Токен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
         public async Task<IEnumerable<Supplier>> GetAllAsync(CancellationToken token)
         {
@@ -67,7 +67,7 @@ namespace WebApplication3.Service
         /// Метод получения записи из сущьности по PK
         /// </summary>
         /// <param name="key">PK сущности</param>
-        /// <param name="token">Токен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
         public async Task<Supplier> GetByIdAsync(int key, CancellationToken token)
         {

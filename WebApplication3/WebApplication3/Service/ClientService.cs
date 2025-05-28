@@ -22,7 +22,7 @@ namespace WebApplication3.Service
         /// Иетод для добавления клиента в БД 
         /// </summary>
         /// <param name="obj">Новый Клиент</param>
-        /// <param name="tokken">Токкен для асинхронных операций</param>
+        /// <param name="tokken">Токен hhtp запросов</param>
         /// <returns>Возвращает Id Нового клиента</returns>
         public async Task<int> AddAsync(Client obj, CancellationToken tokken) 
         {
@@ -33,7 +33,7 @@ namespace WebApplication3.Service
         /// Метод удаления клиента из БД
         /// </summary>
         /// <param name="key">PK атрибута сущьности/param>
-        /// <param name="tokken">Токкен для асинхронных операций</param>
+        /// <param name="tokken">Токен hhtp запросов</param>
         /// <returns>void</returns>
         public async Task DeleteAsync(int key, CancellationToken tokken)
         {
@@ -43,7 +43,7 @@ namespace WebApplication3.Service
         /// Метод для обновления данных Клиента в БД 
         /// </summary>
         /// <param name="obj">класс с новыми данными клиента</param>
-        /// <param name="tokken">Токкен для асинхронных операций</param>
+        /// <param name="tokken">Токен hhtp запросов</param>
         /// <returns>void </returns>
         public async Task UpdateAsync(Client obj, CancellationToken tokken)
         {

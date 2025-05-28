@@ -25,7 +25,7 @@ namespace WebApplication3.Repository
         /// Добавление работника в БД 
         /// </summary>
         /// <param name="obj">Объект работник</param>
-        /// <param name="token">Токен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>id работника</returns>
         public async Task<int> AddAsync(Employer obj, CancellationToken token)
         {
@@ -42,7 +42,7 @@ namespace WebApplication3.Repository
         /// Метод для удаления записей из БД 
         /// </summary>
         /// <param name="key">Работник под удаление</param>
-        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task DeleteAsync(int key, CancellationToken token)
         {
@@ -58,7 +58,7 @@ namespace WebApplication3.Repository
         /// Метод для обновления данных в БД
         /// </summary>
         /// <param name="obj">Работник под удаление</param>
-        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task UpdateAsync(Employer obj, CancellationToken token)
         {
@@ -70,7 +70,7 @@ namespace WebApplication3.Repository
         /// <summary>
         /// Метод получения всех атрибутов из БД 
         /// </summary>
-        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>Асинхронная операция с возвратом коллекции</returns>
         public async Task<IEnumerable<Employer>> GetAllAsync(CancellationToken token)
         {
@@ -81,7 +81,7 @@ namespace WebApplication3.Repository
         /// Метод получения записи по PK
         /// </summary>
         /// <param name="key">PK для сущности</param>
-        /// <param name="token">Токкен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<Employer> GetByIdAsync(int key, CancellationToken token)
         {

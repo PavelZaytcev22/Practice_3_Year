@@ -4,8 +4,14 @@ using WebApplication3.Models;
 
 namespace WebApplication3.Validators
 {
+    /// <summary>
+    /// Валидатор для поставки
+    /// </summary>
     public class SupplieValidator : AbstractValidator<Supplie>
     {
+        /// <summary>
+        /// Конструктор с настройкими валидации под каждый атрибут сущности
+        /// </summary>
         public SupplieValidator() 
         {
             RuleFor(g => g.SupplieId).NotNull().WithMessage("Нуже id поставки");

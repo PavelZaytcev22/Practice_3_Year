@@ -3,8 +3,14 @@ using WebApplication3.Models;
 
 namespace WebApplication3.Validators
 {
+    /// <summary>
+    /// Валидатор для чека
+    /// </summary>
     public class ChequeValidator:AbstractValidator<Cheque>
     {
+        /// <summary>
+        /// Конструктор с настройкими валидации под каждый атрибут сущности
+        /// </summary>
         public ChequeValidator()
         {
             RuleFor(u => u.ChequeId).NotNull().WithMessage("id должен быть");

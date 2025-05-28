@@ -3,9 +3,9 @@
 namespace WebApplication3.Controllers
 {
     /// <summary>
-    /// Контроллер всего приложения
+    /// Контроллер приложения
     /// </summary>
-    [ApiController]
+    [Controller]
     public class HomeController : Controller
     {
         /// <summary>
@@ -13,6 +13,12 @@ namespace WebApplication3.Controllers
         /// </summary>
         /// <returns> </returns>
         public IActionResult Index()
+        {
+            
+            return View();
+        }
+
+        public IActionResult Component()
         {
             return View();
         }

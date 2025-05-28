@@ -85,3 +85,9 @@ C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\obj\Debug\net8.0\WebApplication3.csproj.AssemblyReference.cache
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\obj\Debug\net8.0\WebAppli.18867FDF.Up2Date
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\obj\Debug\net8.0\WebApplication3.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\obj\Debug\net8.0\WebApplication3.RazorAssemblyInfo.cache
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\obj\Debug\net8.0\WebApplication3.RazorAssemblyInfo.cs

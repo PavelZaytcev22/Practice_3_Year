@@ -9,7 +9,7 @@ namespace WebApplication3.Validators
     public class ClientValidator : AbstractValidator<Client>
     {
         /// <summary>
-        /// Конструктор валидатора со всеми полями модели
+        /// Конструктор с настройкими валидации под каждый атрибут сущности
         /// </summary>
         public ClientValidator()
         {

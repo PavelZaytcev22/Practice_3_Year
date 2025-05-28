@@ -3,8 +3,14 @@ using WebApplication3.Models;
 
 namespace WebApplication3.Validators
 {
+    /// <summary>
+    /// Валидатор для должности
+    /// </summary>
     public class PostValidator : AbstractValidator<Post>
     {
+        /// <summary>
+        /// Конструктор с настройкими валидации под каждый атрибут сущности
+        /// </summary>
         PostValidator() 
         {
             RuleFor(u => u.PostId).NotNull().WithMessage("Id должен быть определен")

@@ -24,7 +24,7 @@ namespace WebApplication3.Repository
         /// Метод для добавления Чека в БД 
         /// </summary>
         /// <param name="obj">Объект для добавления</param>
-        /// <param name="token">Токен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>id чека</returns>
         public async Task<int> AddAsync(Cheque obj, CancellationToken token ) 
         {
@@ -41,7 +41,7 @@ namespace WebApplication3.Repository
         /// Метод для  удаления чека в БД 
         /// </summary>
         /// <param name="obj">Объект для уддаления</param>
-        /// <param name="token">Токен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>Асинхронная операций без возвращаемого значения</returns>
         public async Task DeleteAsync(int  key, CancellationToken token) 
         {
@@ -57,7 +57,7 @@ namespace WebApplication3.Repository
         /// Метод для обновления чека в БД 
         /// </summary>
         /// <param name="obj">Объект с новой информацией</param>
-        /// <param name="token">Токен для асинхронных операций</param>
+        /// <param name="token">Токен hhtp запросов</param>
         /// <returns>Асинхронная операций без возвращаемого значения</returns>
         public async Task UpdateAsync(Cheque obj, CancellationToken token)
         {

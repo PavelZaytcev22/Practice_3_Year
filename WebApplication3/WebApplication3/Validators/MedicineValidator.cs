@@ -3,8 +3,14 @@ using WebApplication3.Models;
 
 namespace WebApplication3.Validators
 {
+    /// <summary>
+    /// Валидатор для лекарства
+    /// </summary>
     public class MedicineValidator : AbstractValidator<Medicine>
     {
+        /// <summary>
+        /// Конструктор с настройкими валидации под каждый атрибут сущности
+        /// </summary>
         public MedicineValidator() 
         {
             RuleFor(u => u.ManufacturerId).NotNull().WithMessage("id должен быть");
