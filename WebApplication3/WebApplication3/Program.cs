@@ -6,17 +6,25 @@ using WebApplication3.Interfaces;
 using WebApplication3.Repository;
 using WebApplication3.Service;
 using WebApplication3.Validators;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();//Добавил контроллеры с представлениями
 builder.Services.AddControllers();//Добавил контроллеры
-builder.Services.AddFluentValidationAutoValidation();//Добавила валидацию 
+builder.Services.AddFluentValidationAutoValidation();//Добавил валидацию 
 
 builder.Services.AddDbContext<ApplicationContext>(
     options =>
     {
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreConnection"),
+        op =>
+        {
+            op.EnableRetryOnFailure(3);//количество повторных попыток
+        });
+        //много разных опций для настройки 
     }
     );
 //builder.Services.AddDbContext<ApplicationContext>();
