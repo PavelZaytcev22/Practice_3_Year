@@ -33,11 +33,9 @@ namespace WebApplication3.Repository
             if (obj != null)
             {
                 await db.Client.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
                 return obj.ClientId;//Поле автоинкремент(в modelBilder), после сохранения инициализируется
             }
-            return -1;
-            //throw new Exception("Объект null");       
+            throw new ArgumentNullException();      
         }
 
         /// <summary>
@@ -48,7 +46,11 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task DeleteAsync(int key, CancellationToken token)
         {
-           await  db.Client.Where(u => u.ClientId == key).ExecuteDeleteAsync(token);
+            if (key <= 0)
+            {
+                throw new Exception("id больше 0");
+            }
+            await  db.Client.Where(u => u.ClientId == key).ExecuteDeleteAsync(token);
         }
 
         /// <summary>
@@ -59,13 +61,17 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task UpdateAsync(Client obj, CancellationToken token)
         {
-            //Другой вариант 
-          /*  await db.Client.Where(u => u.ClientId == obj.ClientId).ExecuteUpdateAsync(
-                s => s.SetProperty(u => u.PhoneNumber, obj.PhoneNumber)
-                .SetProperty(u => u.Discount, obj.Discount),
-                token);*/
+            if (obj==null)
+            {
+                throw new ArgumentNullException();
+            }
             db.Client.Update(obj);
             await db.SaveChangesAsync(token);
+            //Другой вариант 
+            /*  await db.Client.Where(u => u.ClientId == obj.ClientId).ExecuteUpdateAsync(
+                  s => s.SetProperty(u => u.PhoneNumber, obj.PhoneNumber)
+                  .SetProperty(u => u.Discount, obj.Discount),
+                  token);*/
         }
 
         /// <summary>
@@ -86,7 +92,11 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<Client> GetByIdAsync(int key , CancellationToken token) 
         {
-            return await db.Client.FirstOrDefaultAsync(u=>u.ClientId==key, token);
+            if (key<=0)
+            {
+                throw new Exception("id больше 0");
+            }
+            return await db.Client.FirstOrDefaultAsync(u=>u.ClientId==key, token);//Проверить
            // return await db.Client.FindAsync(new object[]{ key },token);
         }
     }

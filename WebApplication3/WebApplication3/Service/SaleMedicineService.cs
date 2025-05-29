@@ -27,6 +27,10 @@ namespace WebApplication3.Service
         /// <returns>id продажи</returns>
         public async Task<int> AddAsync(SaleMedicine obj, CancellationToken token)
         {
+            if (obj == null)
+            {
+                throw new ArgumentNullException();
+            }
             return await repository.AddAsync(obj, token);
         }
 
@@ -38,6 +42,10 @@ namespace WebApplication3.Service
         /// <returns>void</returns>
         public async Task DeleteAsync(int  key, CancellationToken token)
         {
+            if (key <= 0)
+            {
+                throw new Exception("id не может быть 0");
+            }
             await repository.DeleteAsync(key, token);
         }
 
@@ -49,6 +57,10 @@ namespace WebApplication3.Service
         /// <returns>void</returns>
         public async Task UpdateAsync(SaleMedicine obj, CancellationToken token)
         {
+            if (obj == null)
+            {
+                throw new ArgumentNullException();
+            }
             await repository.UpdateAsync(obj, token);
         }
 
@@ -70,6 +82,10 @@ namespace WebApplication3.Service
         /// <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
         public async Task<SaleMedicine> GetByIdAsync(int key, CancellationToken token)
         {
+            if (key <= 0)
+            {
+                throw new Exception("id не может быть 0");
+            }
             return await repository.GetByIdAsync(key, token);
         }
     }

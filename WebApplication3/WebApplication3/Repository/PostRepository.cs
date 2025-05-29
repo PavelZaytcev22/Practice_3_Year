@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using WebApplication3.Interfaces;
 using WebApplication3.Models;
 
@@ -32,10 +32,9 @@ namespace WebApplication3.Repository
             if (obj!=null)
             {
                 await db.Post.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
                 return obj.PostId;
             }
-            return -1;
+            throw new ArgumentNullException();
         }
         /// <summary>
         /// Метод для удаления должности из БД 
@@ -45,12 +44,11 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task DeleteAsync(int key, CancellationToken token)
         {
-            var obj = await GetByIdAsync(key, token);
-            if (obj != null)
+            if (key <= 0)
             {
-                db.Post.Remove(obj);
+                throw new Exception("id больше 0");
             }
-            await db.SaveChangesAsync(token);
+            await db.Post.Where(u => u.PostId== key).ExecuteDeleteAsync(token);
         }
 
         /// <summary>
@@ -61,6 +59,10 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task UpdateAsync(Post obj, CancellationToken token)
         {
+            if (obj == null)
+            {
+                throw new ArgumentNullException();
+            }
             db.Post.Update(obj);
             await db.SaveChangesAsync(token);
         }

@@ -91,3 +91,9 @@ C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\obj\Debug\net8.0\WebApplication3.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\obj\Debug\net8.0\WebApplication3.RazorAssemblyInfo.cache
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\obj\Debug\net8.0\WebApplication3.RazorAssemblyInfo.cs
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Npgsql.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll

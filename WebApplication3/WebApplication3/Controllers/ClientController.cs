@@ -42,6 +42,10 @@ namespace WebApplication3.Controllers
         [HttpPost]
         public async Task<int> AddAsync(Client obj, CancellationToken token)
         {
+            if (obj == null) 
+            {
+                throw new ArgumentNullException();
+            }
             return await clientService.AddAsync(obj, token);
         }
 
@@ -54,6 +58,10 @@ namespace WebApplication3.Controllers
         [HttpGet("{id}")]
         public async Task<Client> GetByIdAsync(int id, CancellationToken token) 
         {
+            if (id<=0)
+            {
+                throw new Exception("id всегда больше 0");
+            }
             return await clientService.GetByIdAsync(id , token);
         }
 
@@ -66,6 +74,10 @@ namespace WebApplication3.Controllers
         [HttpDelete("{id}")]
         public async Task DeleteAsync(int id, CancellationToken token)
         {
+            if (id <= 0)
+            {
+                throw new Exception("id всегда больше 0");
+            }
             await clientService.DeleteAsync(id, token);
         }
 
@@ -78,6 +90,10 @@ namespace WebApplication3.Controllers
         [HttpPut]
         public async Task UpdateAsync(Client obj, CancellationToken token)
         {
+            if (obj == null)
+            {
+                throw new ArgumentNullException();
+            }
             await clientService.UpdateAsync(obj , token);
         }
 

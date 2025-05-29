@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
 using WebApplication3.Interfaces;
 using WebApplication3.Models;
 
@@ -32,10 +32,9 @@ namespace WebApplication3.Repository
             if (obj != null) 
             {
                 await db.Manufacturer.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
                 return obj.ManufacturerId;
             }
-            return -1;
+            throw new ArgumentNullException();
         }
         /// <summary>
         ///  Метод для удаления поставщика из БД 
@@ -45,12 +44,11 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения </returns>
         public async Task DeleteAsync(int key, CancellationToken token)
         {
-            var obj = await GetByIdAsync(key, token);
-            if (obj != null)
+            if (key <= 0)
             {
-                db.Manufacturer.Remove(obj);
+                throw new Exception("id больше 0");
             }
-            await db.SaveChangesAsync(token);
+            await db.Manufacturer.Where(u => u.ManufacturerId== key).ExecuteDeleteAsync(token);
         }
         /// <summary>
         ///  Метод для обновлении поставщика в БД 
@@ -60,6 +58,10 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task UpdateAsync(Manufacturer obj, CancellationToken token)
         {
+            if (obj == null)
+            {
+                throw new ArgumentNullException();
+            }
             db.Manufacturer.Update(obj);
             await db.SaveChangesAsync(token);
         }

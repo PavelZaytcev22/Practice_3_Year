@@ -26,6 +26,10 @@ namespace WebApplication3.Service
         /// <returns>Возвращает Id Нового клиента</returns>
         public async Task<int> AddAsync(Client obj, CancellationToken tokken) 
         {
+            if (obj==null) 
+            {
+                throw new ArgumentNullException();
+            }
             return await  repository.AddAsync(obj,  tokken);
         }
 
@@ -37,6 +41,10 @@ namespace WebApplication3.Service
         /// <returns>void</returns>
         public async Task DeleteAsync(int key, CancellationToken tokken)
         {
+            if (key<=0)
+            {
+                throw new Exception("id не может быть 0");
+            }
           await   repository.DeleteAsync(key,  tokken);
         }
         /// <summary>
@@ -47,6 +55,10 @@ namespace WebApplication3.Service
         /// <returns>void </returns>
         public async Task UpdateAsync(Client obj, CancellationToken tokken)
         {
+            if (obj == null)
+            {
+                throw new ArgumentNullException();
+            }
             await repository.UpdateAsync(obj, tokken);
         }
 
@@ -68,6 +80,10 @@ namespace WebApplication3.Service
         /// <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
         public async Task<Client> GetByIdAsync(int key, CancellationToken token) 
         {
+            if (key <= 0)
+            {
+                throw new Exception("id не может быть 0");
+            }
             return await repository.GetByIdAsync(key,token);
         }
 
