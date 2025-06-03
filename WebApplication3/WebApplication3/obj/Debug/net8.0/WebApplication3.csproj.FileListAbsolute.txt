@@ -97,3 +97,7 @@ C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Npgsql.dll
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll

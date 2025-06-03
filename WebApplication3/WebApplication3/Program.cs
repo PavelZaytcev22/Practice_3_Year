@@ -10,7 +10,6 @@ using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Controllers;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -26,6 +25,7 @@ builder.Services.AddDbContext<ApplicationContext>(
         //много разных опций для настройки 
     }
     );
+
 //builder.Services.AddDbContext<ApplicationContext>();
 #region Регистрация репозиториев
 builder.Services.AddScoped<IRepository<Client>, ClientRepository>();
@@ -61,11 +61,19 @@ builder.Services.AddControllers();//Добавил контроллеры
 builder.Services.AddFluentValidationAutoValidation();//Добавил валидацию 
 builder.Services.AddValidatorsFromAssemblyContaining<ClientValidator>();//зарегистрировал все валидаторы
 
+builder.Services.AddSwaggerGen(sw =>
+{
+    sw.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo()
+    {
+        Title = "api",
+        Version = "v1",
+        Description = "API",
+    });
+});
+
 var app = builder.Build();
 
-
-app.MapControllers();  
-
+//Check DB connetion 
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
@@ -82,6 +90,10 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.MapGet("/", () => "Hello World!!!!");
+app.MapControllers();
+app.UseSwagger();
+app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json","Demo"); });
+
 /*app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
