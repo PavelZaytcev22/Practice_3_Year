@@ -11,7 +11,7 @@ namespace WebApplication3.Validators
         /// <summary>
         /// Конструктор с настройкими валидации под каждый атрибут сущности
         /// </summary>
-        PostValidator() 
+        public PostValidator() 
         {
             RuleFor(u => u.PostId).NotNull().WithMessage("Id должен быть определен")
                 .GreaterThan(0).WithMessage("больше чем 0");

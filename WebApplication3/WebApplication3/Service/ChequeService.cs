@@ -15,7 +15,7 @@ namespace WebApplication3.Service
         /// Конструктор сервиса
         /// </summary>
         /// <param name="reposirory">Репозиторий для сервиса</param>
-        public ChequeService(ChequeReposirory reposirory) 
+        public ChequeService(IRepository<Cheque> reposirory) 
         {
             this.repository = reposirory;
         }

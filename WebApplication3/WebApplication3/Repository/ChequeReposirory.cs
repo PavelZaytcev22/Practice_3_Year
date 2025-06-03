@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.Data.Entity;
 using WebApplication3.Interfaces;
 using WebApplication3.Models;
 

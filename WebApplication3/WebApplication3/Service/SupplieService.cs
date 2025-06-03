@@ -15,7 +15,7 @@ namespace WebApplication3.Service
         /// Конструктор сервиса
         /// </summary>
         /// <param name="repository">Репозиторий для сервиса</param>
-        public SupplieService(SupplieRepository repository ) 
+        public SupplieService(IRepository<Supplie> repository ) 
         {
             this.repository = repository;
         }

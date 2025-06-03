@@ -15,7 +15,7 @@ namespace WebApplication3.Service
         /// Конструктор сервиса
         /// </summary>
         /// <param name="repository">Репозиторий для сервиса</param>
-        public PostService(PostRepository repository) 
+        public PostService(IRepository<Post> repository) 
         {
             this.repository = repository;
         }

@@ -2,22 +2,23 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Service;
 using WebApplication3.Models;
+using WebApplication3.Interfaces;
 
 namespace WebApplication3.Controllers
 {
     /// <summary>
     /// Контроллер для клиента
     /// </summary>
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class ClientController : ControllerBase
     {
-        private readonly ClientService clientService;
+        private readonly IService<Client> clientService;
         /// <summary>
         /// Конструктор контроллера
         /// </summary>
         /// <param name="clientService">Сервис контроллера</param>
-        public ClientController(ClientService clientService)
+        public ClientController(IService<Client> clientService)
         {
             this.clientService = clientService;
         }
@@ -39,8 +40,8 @@ namespace WebApplication3.Controllers
         /// <param name="obj">Объект клиент</param>
         /// <param name="token">Токен hhtp запросов</param>
         /// <returns></returns>
-        [HttpPost]
-        public async Task<int> AddAsync(Client obj, CancellationToken token)
+        [HttpPost("add")]
+        public async Task<int> AddAsync([FromBody] Client obj, CancellationToken token)
         {
             if (obj == null) 
             {

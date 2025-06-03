@@ -7,13 +7,12 @@ using WebApplication3.Repository;
 using WebApplication3.Service;
 using WebApplication3.Validators;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
+using Microsoft.AspNetCore.Mvc;
+using WebApplication3.Controllers;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();//Добавил контроллеры с представлениями
-builder.Services.AddControllers();//Добавил контроллеры
-builder.Services.AddFluentValidationAutoValidation();//Добавил валидацию 
 
 builder.Services.AddDbContext<ApplicationContext>(
     options =>
@@ -28,26 +27,61 @@ builder.Services.AddDbContext<ApplicationContext>(
     }
     );
 //builder.Services.AddDbContext<ApplicationContext>();
-
 #region Регистрация репозиториев
 builder.Services.AddScoped<IRepository<Client>, ClientRepository>();
 builder.Services.AddScoped<IRepository<Employer>, EmployerRepository>();
 builder.Services.AddScoped<IRepository<Manufacturer>, ManufacturerRepository>();
 builder.Services.AddScoped<IRepository<Medicine>, MedicineRepository>();
 builder.Services.AddScoped<IRepository<Post>, PostRepository>();
-builder.Services.AddScoped<IRepository<Supplie>,SupplieRepository>();
+builder.Services.AddScoped<IRepository<Supplie>, SupplieRepository>();
 builder.Services.AddScoped<IRepository<Supplier>, SupplierRepository>();
 builder.Services.AddScoped<IRepository<SaleMedicine>, SaleMedicineRepository>();
 builder.Services.AddScoped<IRepository<SupplieMedicine>, SupplieMedicineRepository>();
 builder.Services.AddScoped<IRepository<Cheque>, ChequeReposirory>();
 #endregion
 
-builder.Services.AddValidatorsFromAssemblyContaining<ClientValidator>();//зарегистрировал все валидаторы
+#region Registration Services 
+builder.Services.AddScoped<IService<Client>, ClientService>()
+.AddScoped<IService<Employer>, EmployerService>()
+.AddScoped<IService<Manufacturer>, ManufacturerService>()
+.AddScoped<IService<Medicine>, MedicineService>()
+.AddScoped<IService<Post>, PostService>()
+.AddScoped<IService<Supplie>, SupplieService>()
+.AddScoped<IService<Supplier>, SupplierService>()
+.AddScoped<IService<SaleMedicine>, SaleMedicineService>()
+.AddScoped<IService<SupplieMedicine>, SupplieMedicineService>()
+.AddScoped<IService<Cheque>, ChequeService>();
+#endregion
 
+#region Registration Controllers
+builder.Services.AddScoped<ControllerBase, ClientController>();
+#endregion
+
+builder.Services.AddControllers();//Добавил контроллеры
+builder.Services.AddFluentValidationAutoValidation();//Добавил валидацию 
+builder.Services.AddValidatorsFromAssemblyContaining<ClientValidator>();//зарегистрировал все валидаторы
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+
+app.MapControllers();  
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
+    try
+    {
+        dbContext.Database.OpenConnection();
+        dbContext.Database.CloseConnection();
+        Console.WriteLine("Подключение работает!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Ошибка подключения к БД: {ex.Message}");
+    }
+}
+
+app.MapGet("/", () => "Hello World!!!!");
 /*app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
