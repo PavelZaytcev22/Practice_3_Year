@@ -25,7 +25,7 @@ namespace WebApplication3.Repository
         /// Метод для добавления должности в БД 
         /// </summary>
         /// <param name="obj">Объект должность</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>id должности</returns>
         public async Task<int> AddAsync(Post obj, CancellationToken token)
         {
@@ -40,7 +40,7 @@ namespace WebApplication3.Repository
         /// Метод для удаления должности из БД 
         /// </summary>
         /// <param name="obj">Объект должность</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task DeleteAsync(int key, CancellationToken token)
         {
@@ -55,7 +55,7 @@ namespace WebApplication3.Repository
         /// Метод для обновления должности в БД 
         /// </summary>
         /// <param name="obj">Объект должность</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task UpdateAsync(Post obj, CancellationToken token)
         {

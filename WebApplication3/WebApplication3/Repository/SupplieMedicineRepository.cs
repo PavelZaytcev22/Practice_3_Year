@@ -25,7 +25,7 @@ namespace WebApplication3.Repository
         /// Метод для добавления части поставки в БД 
         /// </summary>
         /// <param name="obj">Объект часть поставки</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Id части поставки</returns>
         public async Task<int> AddAsync(SupplieMedicine obj, CancellationToken token)
         {
@@ -41,7 +41,7 @@ namespace WebApplication3.Repository
         /// Метод для удаления части поставки из БД 
         /// </summary>
         /// <param name="obj">Объект часть поставки</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения </returns>
         public async Task DeleteAsync(int key, CancellationToken token)
         {
@@ -56,7 +56,7 @@ namespace WebApplication3.Repository
         /// Метод для обновления части поставки в БД 
         /// </summary>
         /// <param name="obj">Объект часть поставки</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task UpdateAsync(SupplieMedicine obj, CancellationToken token)
         {

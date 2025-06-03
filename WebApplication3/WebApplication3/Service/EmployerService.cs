@@ -23,7 +23,7 @@ namespace WebApplication3.Service
         /// Метод для добавления работника в БД
         /// </summary>
         /// <param name="obj">Объект работник</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>id работника </returns>
         public async Task<int> AddAsync(Employer obj, CancellationToken token)
         {
@@ -38,7 +38,7 @@ namespace WebApplication3.Service
         /// Метод для удаления работника из БД 
         /// </summary>
         /// <param name="key">PK атрибута сущьности</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>void</returns>
         public async Task DeleteAsync(int key, CancellationToken token)
         {
@@ -53,7 +53,7 @@ namespace WebApplication3.Service
         /// 
         /// </summary>
         /// <param name="obj">Объект работник</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>void</returns>
         public async Task UpdateAsync(Employer obj, CancellationToken token)
         {
@@ -67,7 +67,7 @@ namespace WebApplication3.Service
         /// <summary>
         /// Метод получения всех записей сущности
         /// </summary>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
         public async Task<IEnumerable<Employer>> GetAllAsync(CancellationToken token)
         {
@@ -78,7 +78,7 @@ namespace WebApplication3.Service
         /// Метод получения записи из сущьности по PK
         /// </summary>
         /// <param name="key">PK сущности</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
         public async Task<Employer> GetByIdAsync(int key, CancellationToken token)
         {

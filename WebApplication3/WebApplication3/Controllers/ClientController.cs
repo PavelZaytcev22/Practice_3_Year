@@ -26,7 +26,7 @@ namespace WebApplication3.Controllers
         /// <summary>
         /// Метод получения всех клентов из БД
         /// </summary>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns></returns>
         [HttpGet]
         public async Task<IEnumerable<Client>> GetAllAsync(CancellationToken token)
@@ -38,7 +38,7 @@ namespace WebApplication3.Controllers
         /// Метод добавления клиентов в БД
         /// </summary>
         /// <param name="obj">Объект клиент</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns></returns>
         [HttpPost("add")]
         public async Task<int> AddAsync([FromBody] Client obj, CancellationToken token)
@@ -54,7 +54,7 @@ namespace WebApplication3.Controllers
         /// Метод получения клиента по id из БД
         /// </summary>
         /// <param name="id">id клиента</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<Client> GetByIdAsync(int id, CancellationToken token) 
@@ -70,7 +70,7 @@ namespace WebApplication3.Controllers
         /// Метод удаления клиента из БД
         /// </summary>
         /// <param name="id">id клиента</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task DeleteAsync(int id, CancellationToken token)
@@ -86,7 +86,7 @@ namespace WebApplication3.Controllers
         /// Метод обновления клиента в БД
         /// </summary>
         /// <param name="obj">Объект клиент</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns></returns>
         [HttpPut]
         public async Task UpdateAsync(Client obj, CancellationToken token)

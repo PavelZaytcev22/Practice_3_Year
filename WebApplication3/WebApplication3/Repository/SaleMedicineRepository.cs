@@ -23,7 +23,7 @@ namespace WebApplication3.Repository
         /// Метод для добавления продажи в БД 
         /// </summary>
         /// <param name="obj">Объект продажа</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>id продажи</returns>
         public async Task<int> AddAsync(SaleMedicine obj, CancellationToken token)
         {
@@ -38,7 +38,7 @@ namespace WebApplication3.Repository
         /// Метод для удаления продажи из БД 
         /// </summary>
         /// <param name="obj">Объект продажа</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task DeleteAsync(int key, CancellationToken token)
         {
@@ -52,7 +52,7 @@ namespace WebApplication3.Repository
         /// Метод для обновления продажи в БД 
         /// </summary>
         /// <param name="obj">Объект продажа</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task UpdateAsync(SaleMedicine obj, CancellationToken token)
         {

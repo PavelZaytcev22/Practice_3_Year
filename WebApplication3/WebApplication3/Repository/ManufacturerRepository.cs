@@ -24,7 +24,7 @@ namespace WebApplication3.Repository
         /// Метод для добавления поставщика в БД 
         /// </summary>
         /// <param name="obj">Объект потавщик</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>id производителя</returns>
         /// 
         public async Task<int> AddAsync(Manufacturer obj, CancellationToken token) 
@@ -40,7 +40,7 @@ namespace WebApplication3.Repository
         ///  Метод для удаления поставщика из БД 
         /// </summary>
         /// <param name="obj">Объект потавщик</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения </returns>
         public async Task DeleteAsync(int key, CancellationToken token)
         {
@@ -54,7 +54,7 @@ namespace WebApplication3.Repository
         ///  Метод для обновлении поставщика в БД 
         /// </summary>
         /// <param name="obj">Объект потавщик</param>
-        /// <param name="token">Токен hhtp запросов</param>
+        /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task UpdateAsync(Manufacturer obj, CancellationToken token)
         {
