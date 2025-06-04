@@ -1,4 +1,5 @@
-﻿namespace WebApplication3.Models
+﻿using System.Text.Json.Serialization;
+namespace WebApplication3.Models
 {
     /// <summary>
     /// Модель чека
@@ -16,7 +17,8 @@
         /// <summary>
         /// Навигационное свойство для внешнего ключа по клиентам
         /// </summary>
-        public Client Client { get; set; } = null!;
+        [JsonIgnore]
+        public Client? Client { get; set; } = null!;
         /// <summary>
         /// Внешний ключ по работникам
         /// </summary>
@@ -24,7 +26,8 @@
         /// <summary>
         /// Навигационное свойство для внешнего ключа по работникам 
         /// </summary>
-        public Employer Employer { get; set; } = null!;
+        [JsonIgnore]
+        public Employer? Employer { get; set; } = null!;
         /// <summary>
         /// Свойство для даты проведения чека 
         /// </summary>

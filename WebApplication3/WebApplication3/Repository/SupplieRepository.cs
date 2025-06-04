@@ -26,9 +26,10 @@ namespace WebApplication3.Repository
         public async Task<int> AddAsync(Supplie obj, CancellationToken token)
         {
             if (obj!=null)
-            {
-                await db.Supplie.AddAsync(obj, token);
-                return obj.SupplieId;
+            {               
+                    await db.Supplie.AddAsync(obj, token);
+                    await db.SaveChangesAsync(token);
+                    return obj.SupplieId;                 
             }
             throw new ArgumentNullException();
         }
@@ -46,6 +47,7 @@ namespace WebApplication3.Repository
                 throw new Exception("id больше 0");
             }
             await db.Supplie.Where(u => u.SupplieId== key).ExecuteDeleteAsync(token);
+            await db.SaveChangesAsync(token);
         }
 
         /// <summary>

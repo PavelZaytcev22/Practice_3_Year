@@ -9,6 +9,7 @@ using WebApplication3.Validators;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Controllers;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,7 +55,17 @@ builder.Services.AddScoped<IService<Client>, ClientService>()
 #endregion
 
 #region Registration Controllers
-builder.Services.AddScoped<ControllerBase, ClientController>();
+builder.Services.AddScoped<ControllerBase, ClientController>()
+    .AddScoped<ControllerBase, ManufacturerController>()
+    .AddScoped<ControllerBase, PostController>()
+    .AddScoped<ControllerBase, ChequeController>()
+    .AddScoped<ControllerBase, EmployerController>()
+    .AddScoped<ControllerBase, MedicineController>()
+    .AddScoped<ControllerBase, SaleMedicineController>()
+    .AddScoped<ControllerBase, SupplieController>()
+    .AddScoped<ControllerBase, SupplieMedicineController>()
+    .AddScoped<ControllerBase, SaleMedicineController>()
+    .AddScoped<ControllerBase, SupplierController>();
 #endregion
 
 builder.Services.AddControllers();//Добавил контроллеры
@@ -69,6 +80,9 @@ builder.Services.AddSwaggerGen(sw =>
         Version = "v1",
         Description = "API",
     });
+    var file = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var path = Path.Combine(AppContext.BaseDirectory, file);
+    sw.IncludeXmlComments(path);
 });
 
 var app = builder.Build();

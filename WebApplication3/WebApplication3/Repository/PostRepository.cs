@@ -32,6 +32,7 @@ namespace WebApplication3.Repository
             if (obj!=null)
             {
                 await db.Post.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
                 return obj.PostId;
             }
             throw new ArgumentNullException();
@@ -49,6 +50,7 @@ namespace WebApplication3.Repository
                 throw new Exception("id больше 0");
             }
             await db.Post.Where(u => u.PostId== key).ExecuteDeleteAsync(token);
+            await db.SaveChangesAsync(token);
         }
 
         /// <summary>

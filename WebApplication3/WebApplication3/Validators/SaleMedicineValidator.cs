@@ -17,9 +17,9 @@ namespace WebApplication3.Validators
             RuleFor(u=>u.ChequeId).NotNull().WithMessage("id должен быть");
             RuleFor(u=>u.MedecineId).NotNull().WithMessage("id должен быть");
             RuleFor(u => u.Count).NotNull().WithMessage("Количество должно быть")
-                .GreaterThan(0).WithMessage("Количество должно быть больше 0");
+                .GreaterThan(-1).WithMessage("Количество должно быть больше -1");
             RuleFor(u => u.PriceSellOne).NotNull().WithMessage("Должна быть цена за ед.")
-                .GreaterThan(0).WithMessage("Цена должна быть больше 0 за ед.");
+                .GreaterThan(-1).WithMessage("Цена должна быть больше -1 за ед.");
         }
     }
 }

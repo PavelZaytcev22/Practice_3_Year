@@ -1,4 +1,7 @@
-﻿namespace WebApplication3.Models
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Serialization;
+
+namespace WebApplication3.Models
 {
     /// <summary>
     /// Модель поставки
@@ -16,7 +19,8 @@
         /// <summary>
         /// Навигационное свойство по внешнему ключу 
         /// </summary>
-        public Supplier Supplier { get; set; } = null!;
+        [JsonIgnore]
+        public Supplier? Supplier { get; set; }
         /// <summary>
         /// Свойство сущности для даты 
         /// </summary>
@@ -25,7 +29,5 @@
         /// Свойство сущности для полной суммы поставки
         /// </summary>
         public int TotalSum { get; set; }
-
-        
     }
 }

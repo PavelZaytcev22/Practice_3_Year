@@ -31,6 +31,7 @@ namespace WebApplication3.Repository
             if (obj != null)
             {
                 await db.Cheque.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
                 return obj.ChequeId;
             }
             throw new ArgumentNullException(); 
@@ -49,6 +50,7 @@ namespace WebApplication3.Repository
                 throw new Exception("id больше 0");
             }
             await db.Cheque.Where(u => u.ChequeId == key).ExecuteDeleteAsync(token);
+            await db.SaveChangesAsync(token);
         }
 
         /// <summary>

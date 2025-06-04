@@ -30,6 +30,7 @@ namespace WebApplication3.Repository
             if (obj != null)
             {
                 await db.SaleMedicine.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
                 return obj.SaleMedecineId;
             }
             throw new ArgumentNullException();
@@ -47,6 +48,7 @@ namespace WebApplication3.Repository
                 throw new Exception("id больше 0");
             }
             await db.SaleMedicine.Where(u => u.SaleMedecineId== key).ExecuteDeleteAsync(token);
+            await db.SaveChangesAsync(token);
         }
         /// <summary>
         /// Метод для обновления продажи в БД 

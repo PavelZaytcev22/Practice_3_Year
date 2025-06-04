@@ -26,6 +26,7 @@ namespace WebApplication3.Repository
             if (obj != null) 
             {
                 await db.Medicine.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
                 return obj.MedicineId;
             }
             throw new ArgumentNullException();
@@ -44,6 +45,7 @@ namespace WebApplication3.Repository
                 throw new Exception("id больше 0");
             }
             await db.Medicine.Where(u => u.MedicineId== key).ExecuteDeleteAsync(token);
+            await db.SaveChangesAsync(token);
         }
 
         /// <summary>

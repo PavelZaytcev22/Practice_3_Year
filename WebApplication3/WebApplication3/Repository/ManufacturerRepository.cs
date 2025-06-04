@@ -32,6 +32,7 @@ namespace WebApplication3.Repository
             if (obj != null) 
             {
                 await db.Manufacturer.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
                 return obj.ManufacturerId;
             }
             throw new ArgumentNullException();
@@ -39,7 +40,7 @@ namespace WebApplication3.Repository
         /// <summary>
         ///  Метод для удаления поставщика из БД 
         /// </summary>
-        /// <param name="obj">Объект потавщик</param>
+        /// <param name="key">Ключ объекта потавщик</param>
         /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения </returns>
         public async Task DeleteAsync(int key, CancellationToken token)
@@ -49,6 +50,7 @@ namespace WebApplication3.Repository
                 throw new Exception("id больше 0");
             }
             await db.Manufacturer.Where(u => u.ManufacturerId== key).ExecuteDeleteAsync(token);
+            await db.SaveChangesAsync();
         }
         /// <summary>
         ///  Метод для обновлении поставщика в БД 

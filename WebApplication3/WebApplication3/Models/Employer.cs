@@ -1,4 +1,6 @@
-﻿namespace WebApplication3.Models
+﻿using System.Text.Json.Serialization;
+
+namespace WebApplication3.Models
 {
     /// <summary>
     /// Модель работника 
@@ -16,7 +18,8 @@
         /// <summary>
         /// Навигационное свойство по должностям 
         /// </summary>
-        public Post Post { get; set; }
+        [JsonIgnore]
+        public Post? Post { get; set; }
        /// <summary>
        /// Свойство для хранения ФИО
        /// </summary>

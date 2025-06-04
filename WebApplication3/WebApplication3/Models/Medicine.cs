@@ -1,4 +1,6 @@
-﻿namespace WebApplication3.Models
+﻿using System.Text.Json.Serialization;
+
+namespace WebApplication3.Models
 {
     /// <summary>
     /// Модель медикамента
@@ -13,10 +15,11 @@
         /// Внешний ключ по производителю 
         /// </summary>
         public int ManufacturerId{ get; set; }
-       /// <summary>
-       /// Навигационное свойство по внешнему ключу 
-       /// </summary>
-        public Manufacturer Manufacturer { get; set; } = null!;
+        /// <summary>
+        /// Навигационное свойство по внешнему ключу 
+        /// </summary>
+        [JsonIgnore]
+        public Manufacturer? Manufacturer { get; set; } = null!;
       /// <summary>
       /// Свойство с названием лекарства
       /// </summary>

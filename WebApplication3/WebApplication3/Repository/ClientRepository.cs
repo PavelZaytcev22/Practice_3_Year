@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
+using Microsoft.IdentityModel.Tokens;
 using WebApplication3.Interfaces;
 using WebApplication3.Models;
 
@@ -33,6 +34,7 @@ namespace WebApplication3.Repository
             if (obj != null)
             {
                 await db.Client.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
                 return obj.ClientId;//Поле автоинкремент(в modelBilder), после сохранения инициализируется
             }
             throw new ArgumentNullException();      
@@ -41,7 +43,7 @@ namespace WebApplication3.Repository
         /// <summary>
         /// Метод для удаления записей из БД 
         /// </summary>
-        /// <param name="obj">Клиент под удаление</param>
+        /// <param name="key">Ключ клиента под удаление</param>
         /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task DeleteAsync(int key, CancellationToken token)
@@ -51,6 +53,7 @@ namespace WebApplication3.Repository
                 throw new Exception("id больше 0");
             }
             await  db.Client.Where(u => u.ClientId == key).ExecuteDeleteAsync(token);
+            await db.SaveChangesAsync(token);
         }
 
         /// <summary>

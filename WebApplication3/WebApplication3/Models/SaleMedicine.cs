@@ -1,4 +1,8 @@
-﻿namespace WebApplication3.Models
+﻿
+
+using System.Text.Json.Serialization;
+
+namespace WebApplication3.Models
 {
     /// <summary>
     /// Модель продажи
@@ -16,7 +20,8 @@
         /// <summary>
         /// Навигационное свойство по внешнему ключу 
         /// </summary>
-        public Medicine Medecine { get; set; } = null!;
+        [JsonIgnore]
+        public Medicine? Medecine { get; set; } = null!;
         /// <summary>
         ///  Внешний ключ сущности по чекам  
         /// </summary>
@@ -24,7 +29,8 @@
         /// <summary>
         /// Навигационное свойство по внешнему ключу 
         /// </summary>
-        public Cheque Cheque { get; set; } = null!;
+        [JsonIgnore]
+        public Cheque? Cheque { get; set; } = null!;
         /// <summary>
         /// Свойство колличества проданных лекарств
         /// </summary>

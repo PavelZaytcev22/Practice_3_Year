@@ -6,11 +6,193 @@
     "version": "v1"
   },
   "paths": {
-    "/api/Client": {
+    "/api/Cheque/getAll": {
+      "get": {
+        "tags": [
+          "Cheque"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cheque"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cheque"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cheque"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cheque/add": {
+      "post": {
+        "tags": [
+          "Cheque"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cheque"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cheque"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cheque"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cheque/getById": {
+      "get": {
+        "tags": [
+          "Cheque"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cheque"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cheque"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cheque"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cheque/deleteById": {
+      "delete": {
+        "tags": [
+          "Cheque"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cheque/update": {
+      "put": {
+        "tags": [
+          "Cheque"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cheque"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cheque"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cheque"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Client/getAll": {
       "get": {
         "tags": [
           "Client"
         ],
+        "summary": "Метод получения всех клентов из БД",
         "responses": {
           "200": {
             "description": "OK",
@@ -42,12 +224,134 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/Client/add": {
+      "post": {
+        "tags": [
+          "Client"
+        ],
+        "summary": "Метод добавления клиентов в БД",
+        "requestBody": {
+          "description": "Объект клиент",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Client/getById": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "summary": "Метод получения клиента по id из БД",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id клиента",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Client/deleteById": {
+      "delete": {
+        "tags": [
+          "Client"
+        ],
+        "summary": "Метод удаления клиента из БД",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id клиента",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Client/update": {
       "put": {
         "tags": [
           "Client"
         ],
+        "summary": "Метод обновления клиента в БД",
         "requestBody": {
+          "description": "Объект клиент",
           "content": {
             "application/json": {
               "schema": {
@@ -73,26 +377,64 @@
         }
       }
     },
-    "/api/Client/add": {
+    "/api/Employer/getAll": {
+      "get": {
+        "tags": [
+          "Employer"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Employer"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Employer"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Employer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Employer/add": {
       "post": {
         "tags": [
-          "Client"
+          "Employer"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Client"
+                "$ref": "#/components/schemas/Employer"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Client"
+                "$ref": "#/components/schemas/Employer"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Client"
+                "$ref": "#/components/schemas/Employer"
               }
             }
           }
@@ -124,16 +466,15 @@
         }
       }
     },
-    "/api/Client/{id}": {
+    "/api/Employer/getById": {
       "get": {
         "tags": [
-          "Client"
+          "Employer"
         ],
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -146,38 +487,1308 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Client"
+                  "$ref": "#/components/schemas/Employer"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Client"
+                  "$ref": "#/components/schemas/Employer"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Client"
+                  "$ref": "#/components/schemas/Employer"
                 }
               }
             }
           }
         }
-      },
+      }
+    },
+    "/api/Employer/deleteById": {
       "delete": {
         "tags": [
-          "Client"
+          "Employer"
         ],
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Employer/update": {
+      "put": {
+        "tags": [
+          "Employer"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Employer"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Employer"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Employer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manufacturer/getAll": {
+      "get": {
+        "tags": [
+          "Manufacturer"
+        ],
+        "summary": "Метод для получения всех производителей из БД",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Manufacturer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Manufacturer/add": {
+      "post": {
+        "tags": [
+          "Manufacturer"
+        ],
+        "summary": "Метод для добавления производителя в БД",
+        "requestBody": {
+          "description": "Объект производитель",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Manufacturer"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Manufacturer"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Manufacturer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Manufacturer/getById": {
+      "get": {
+        "tags": [
+          "Manufacturer"
+        ],
+        "summary": "Метод для получения производителя по id из БД",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id производителя",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Manufacturer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Manufacturer/deleteById": {
+      "delete": {
+        "tags": [
+          "Manufacturer"
+        ],
+        "summary": "Метод для удаления производителя из БД",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id производителя",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manufacturer/update": {
+      "put": {
+        "tags": [
+          "Manufacturer"
+        ],
+        "summary": "Метод для обновления производителя в БД",
+        "requestBody": {
+          "description": "Объект производитель",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Manufacturer"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Manufacturer"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Manufacturer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Medicine/getAll": {
+      "get": {
+        "tags": [
+          "Medicine"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Medicine"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Medicine"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Medicine"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Medicine/add": {
+      "post": {
+        "tags": [
+          "Medicine"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Medicine"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Medicine"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Medicine"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Medicine/getById": {
+      "get": {
+        "tags": [
+          "Medicine"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Medicine"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Medicine"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Medicine"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Medicine/deleteById": {
+      "delete": {
+        "tags": [
+          "Medicine"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Medicine/update": {
+      "put": {
+        "tags": [
+          "Medicine"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Medicine"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Medicine"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Medicine"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Post/getAll": {
+      "get": {
+        "tags": [
+          "Post"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Post"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Post"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Post"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Post/add": {
+      "post": {
+        "tags": [
+          "Post"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Post"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Post"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Post/getById": {
+      "get": {
+        "tags": [
+          "Post"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Post"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Post"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Post"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Post/deleteById": {
+      "delete": {
+        "tags": [
+          "Post"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Post/update": {
+      "put": {
+        "tags": [
+          "Post"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Post"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Post"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SaleMedicine/getAll": {
+      "get": {
+        "tags": [
+          "SaleMedicine"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SaleMedicine"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SaleMedicine"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SaleMedicine"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SaleMedicine/add": {
+      "post": {
+        "tags": [
+          "SaleMedicine"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaleMedicine"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaleMedicine"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaleMedicine"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SaleMedicine/getById": {
+      "get": {
+        "tags": [
+          "SaleMedicine"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaleMedicine"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaleMedicine"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaleMedicine"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SaleMedicine/deleteById": {
+      "delete": {
+        "tags": [
+          "SaleMedicine"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SaleMedicine/update": {
+      "put": {
+        "tags": [
+          "SaleMedicine"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaleMedicine"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaleMedicine"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaleMedicine"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Supplie/getAll": {
+      "get": {
+        "tags": [
+          "Supplie"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Supplie"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Supplie"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Supplie"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Supplie/add": {
+      "post": {
+        "tags": [
+          "Supplie"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplie"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplie"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplie"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Supplie/getById": {
+      "get": {
+        "tags": [
+          "Supplie"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Supplie"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Supplie"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Supplie"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Supplie/deleteById": {
+      "delete": {
+        "tags": [
+          "Supplie"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Supplie/update": {
+      "put": {
+        "tags": [
+          "Supplie"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplie"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplie"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplie"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SupplieMedicine/getAll": {
+      "get": {
+        "tags": [
+          "SupplieMedicine"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SupplieMedicine"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SupplieMedicine"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SupplieMedicine"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SupplieMedicine/add": {
+      "post": {
+        "tags": [
+          "SupplieMedicine"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplieMedicine"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplieMedicine"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplieMedicine"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SupplieMedicine/getById": {
+      "get": {
+        "tags": [
+          "SupplieMedicine"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplieMedicine"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplieMedicine"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplieMedicine"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SupplieMedicine/deleteById": {
+      "delete": {
+        "tags": [
+          "SupplieMedicine"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SupplieMedicine/update": {
+      "put": {
+        "tags": [
+          "SupplieMedicine"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplieMedicine"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplieMedicine"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplieMedicine"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Supplier/getAll": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Supplier"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Supplier"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Supplier"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Supplier/add": {
+      "post": {
+        "tags": [
+          "Supplier"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Supplier/getById": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Supplier"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Supplier"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Supplier"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Supplier/deleteById": {
+      "delete": {
+        "tags": [
+          "Supplier"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Supplier/update": {
+      "put": {
+        "tags": [
+          "Supplier"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -207,23 +1818,260 @@
   },
   "components": {
     "schemas": {
+      "Cheque": {
+        "type": "object",
+        "properties": {
+          "chequeId": {
+            "type": "integer",
+            "description": "Первичный ключ сущности",
+            "format": "int32"
+          },
+          "clientId": {
+            "type": "integer",
+            "description": "Внешний ключ сущности по клиентам",
+            "format": "int32"
+          },
+          "employerId": {
+            "type": "integer",
+            "description": "Внешний ключ по работникам",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string",
+            "description": "Свойство для даты проведения чека",
+            "nullable": true
+          },
+          "totalSum": {
+            "type": "integer",
+            "description": "Свойство для полной суммы чека всех продаж",
+            "format": "int32"
+          },
+          "sumDiscount": {
+            "type": "integer",
+            "description": "Свойство для полной суммы чека всех продаж по скидке",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Модель чека"
+      },
       "Client": {
         "type": "object",
         "properties": {
           "clientId": {
             "type": "integer",
+            "description": "Первичный ключ сущности",
             "format": "int32"
           },
           "phoneNumber": {
             "type": "string",
+            "description": "Свойство для телефонного номера клиента",
             "nullable": true
           },
           "discount": {
             "type": "integer",
+            "description": "Свойство для общей скидки для клиента",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Модель клиента"
+      },
+      "Employer": {
+        "type": "object",
+        "properties": {
+          "employerId": {
+            "type": "integer",
+            "description": "Первичный ключ сущности",
+            "format": "int32"
+          },
+          "postId": {
+            "type": "integer",
+            "description": "Внешний ключ по должностям",
+            "format": "int32"
+          },
+          "fio": {
+            "type": "string",
+            "description": "Свойство для хранения ФИО",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Свойство для телефонного номера работника",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Модель работника"
+      },
+      "Manufacturer": {
+        "type": "object",
+        "properties": {
+          "manufacturerId": {
+            "type": "integer",
+            "description": "Первичный ключ для сущности",
+            "format": "int32"
+          },
+          "manufacturerName": {
+            "type": "string",
+            "description": "Свойство для имени производителя",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Модель производителя"
+      },
+      "Medicine": {
+        "type": "object",
+        "properties": {
+          "medicineId": {
+            "type": "integer",
+            "description": "Первичный ключ сущности",
+            "format": "int32"
+          },
+          "manufacturerId": {
+            "type": "integer",
+            "description": "Внешний ключ по производителю",
+            "format": "int32"
+          },
+          "medicineName": {
+            "type": "string",
+            "description": "Свойство с названием лекарства",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Модель медикамента"
+      },
+      "Post": {
+        "type": "object",
+        "properties": {
+          "postId": {
+            "type": "integer",
+            "description": "Первичный ключ сущности",
+            "format": "int32"
+          },
+          "postName": {
+            "type": "string",
+            "description": "Свойство с названием должности",
+            "nullable": true
+          },
+          "salary": {
+            "type": "integer",
+            "description": "Свойство зарплаты сущности",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Модель должности"
+      },
+      "SaleMedicine": {
+        "type": "object",
+        "properties": {
+          "saleMedecineId": {
+            "type": "integer",
+            "description": "Первичный ключ сущности",
+            "format": "int32"
+          },
+          "medecineId": {
+            "type": "integer",
+            "description": "Внешний ключ сущности по медикаментам",
+            "format": "int32"
+          },
+          "chequeId": {
+            "type": "integer",
+            "description": "Внешний ключ сущности по чекам",
+            "format": "int32"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Свойство колличества проданных лекарств",
+            "format": "int32"
+          },
+          "priceSellOne": {
+            "type": "integer",
+            "description": "Свойство цены продажи за одну единицу",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Модель продажи"
+      },
+      "Supplie": {
+        "type": "object",
+        "properties": {
+          "supplieId": {
+            "type": "integer",
+            "description": "Первичный ключ сущности",
+            "format": "int32"
+          },
+          "supplierId": {
+            "type": "integer",
+            "description": "Внешний ключ по поставщикам",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string",
+            "description": "Свойство сущности для даты",
+            "nullable": true
+          },
+          "totalSum": {
+            "type": "integer",
+            "description": "Свойство сущности для полной суммы поставки",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Модель поставки"
+      },
+      "SupplieMedicine": {
+        "type": "object",
+        "properties": {
+          "suplieMedicineId": {
+            "type": "integer",
+            "description": "Первичный ключ сущности",
+            "format": "int32"
+          },
+          "suplieId": {
+            "type": "integer",
+            "description": "Внешний ключ по поставке",
+            "format": "int32"
+          },
+          "medicineId": {
+            "type": "integer",
+            "description": "Внешний ключ по лекарствам",
+            "format": "int32"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Свойство для количества медикаментов",
+            "format": "int32"
+          },
+          "pricePayOne": {
+            "type": "integer",
+            "description": "Свойство  для хранения для закупки медикамента за 1 единицу",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Модель части поставки"
+      },
+      "Supplier": {
+        "type": "object",
+        "properties": {
+          "supplierId": {
+            "type": "integer",
+            "description": "Первичный ключ сущности",
+            "format": "int32"
+          },
+          "supplierName": {
+            "type": "string",
+            "description": "Свойство для названия поставщика",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Модель поставщика"
       }
     }
   }

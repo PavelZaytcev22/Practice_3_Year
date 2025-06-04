@@ -32,6 +32,7 @@ namespace WebApplication3.Repository
             if (obj !=null)
             {
                 await db.Employer.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
                 return obj.EmployerId;
             }
             throw new ArgumentNullException();
@@ -50,6 +51,7 @@ namespace WebApplication3.Repository
                 throw new Exception("id больше 0");
             }
             await db.Employer.Where(u => u.EmployerId== key).ExecuteDeleteAsync(token);
+            await db.SaveChangesAsync(token);
         }
 
         /// <summary>

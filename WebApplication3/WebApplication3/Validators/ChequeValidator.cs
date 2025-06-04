@@ -18,10 +18,8 @@ namespace WebApplication3.Validators
             RuleFor(u => u.ClientId).NotNull().WithMessage("id должен быть");
             RuleFor(u => u.Date).Matches("^(0[1-9]|1[0-9]|2[0-9]|3[0-1])/(0[1-9]|1[0-2])/[0-9]{4}$").WithMessage("Дата формата дд/мм/гггг")
                 .NotNull().WithMessage("Дата должна быть");
-            RuleFor(u => u.TotalSum).NotNull().WithMessage("Конечная сумма должна быть")
-                .GreaterThan(0).WithMessage("Сумма должна быть больше 0");
-            RuleFor(u => u.SumDiscount).NotNull().WithMessage("Конечная сумма со скидкой должна быть")
-                .GreaterThan(0).WithMessage("Сумма со скидкой должна быть больше 0");
+            RuleFor(u => u.TotalSum).GreaterThan(-1).WithMessage("Сумма должна быть больше -1");
+            RuleFor(u => u.SumDiscount).GreaterThan(-1).WithMessage("Сумма со скидкой должна быть больше -1");
         }
     }
 }

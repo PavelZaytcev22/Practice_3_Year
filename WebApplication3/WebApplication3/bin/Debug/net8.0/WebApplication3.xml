@@ -1,0 +1,1493 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplication3</name>
+    </assembly>
+    <members>
+        <member name="T:WebApplication3.Controllers.ChequeController">
+            <summary>
+            Контроллер для чека
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Controllers.ClientController">
+            <summary>
+            Контроллер для клиента
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.ClientController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.Client})">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="clientService">Сервис контроллера</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.ClientController.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех клентов из БД
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.ClientController.AddAsync(WebApplication3.Models.Client,System.Threading.CancellationToken)">
+            <summary>
+            Метод добавления клиентов в БД
+            </summary>
+            <param name="obj">Объект клиент</param>
+            <param name="token">Токен http запросов</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.ClientController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения клиента по id из БД
+            </summary>
+            <param name="id">id клиента</param>
+            <param name="token">Токен http запросов</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.ClientController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод удаления клиента из БД
+            </summary>
+            <param name="id">id клиента</param>
+            <param name="token">Токен http запросов</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.ClientController.UpdateAsync(WebApplication3.Models.Client,System.Threading.CancellationToken)">
+            <summary>
+            Метод обновления клиента в БД
+            </summary>
+            <param name="obj">Объект клиент</param>
+            <param name="token">Токен http запросов</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApplication3.Controllers.ManufacturerController">
+            <summary>
+            Контроллер для производителя
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.ManufacturerController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.Manufacturer})">
+            <summary>
+            Конструктор контроллера производителя
+            </summary>
+            <param name="service">Сервис для производителя</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.ManufacturerController.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения всех производителей из БД 
+            </summary>
+            <param name="token">Токен для http запросов</param>
+            <returns>Коллекция производителей</returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.ManufacturerController.AddAsync(WebApplication3.Models.Manufacturer,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления производителя в БД
+            </summary>
+            <param name="obj">Объект производитель</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>id добавленного производителя</returns>
+            <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.ManufacturerController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения производителя по id из БД
+            </summary>
+            <param name="id">id производителя</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Объект производитель</returns>
+            <exception cref="T:System.Exception">id находится вне границ [1-..]</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.ManufacturerController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления производителя из БД
+            </summary>
+            <param name="id">id производителя</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция без взвращаемого значения</returns>
+            <exception cref="T:System.Exception">id находится вне границ [1-..]</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.ManufacturerController.UpdateAsync(WebApplication3.Models.Manufacturer,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления производителя в БД 
+            </summary>
+            <param name="obj">Объект производитель</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция без взвращаемого значения</returns>
+            <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:WebApplication3.Models.ApplicationContext" -->
+        <member name="M:WebApplication3.Models.ApplicationContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{WebApplication3.Models.ApplicationContext})">
+            <summary>
+            Конструктор БД 
+            </summary>
+            <param name="options"> Класс с настройками для БД </param>
+        </member>
+        <member name="M:WebApplication3.Models.ApplicationContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Метод для настройки модели БД через ModelBilder 
+            </summary>
+            <param name="modelBuilder">Класс для конфигурации БД </param>
+        </member>
+        <member name="T:WebApplication3.Models.Cheque">
+            <summary>
+            Модель чека
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Cheque.ChequeId">
+            <summary>
+            Первичный ключ сущности 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Cheque.ClientId">
+            <summary>
+            Внешний ключ сущности по клиентам 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Cheque.Client">
+            <summary>
+            Навигационное свойство для внешнего ключа по клиентам
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Cheque.EmployerId">
+            <summary>
+            Внешний ключ по работникам
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Cheque.Employer">
+            <summary>
+            Навигационное свойство для внешнего ключа по работникам 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Cheque.Date">
+            <summary>
+            Свойство для даты проведения чека 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Cheque.TotalSum">
+            <summary>
+            Свойство для полной суммы чека всех продаж 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Cheque.SumDiscount">
+            <summary>
+            Свойство для полной суммы чека всех продаж по скидке
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Models.Client">
+            <summary>
+            Модель клиента
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Client.ClientId">
+            <summary>
+            Первичный ключ сущности
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Client.PhoneNumber">
+            <summary>
+            Свойство для телефонного номера клиента 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Client.Discount">
+            <summary>
+            Свойство для общей скидки для клиента 
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Models.Employer">
+            <summary>
+            Модель работника 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Employer.EmployerId">
+            <summary>
+            Первичный ключ сущности 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Employer.PostId">
+            <summary>
+            Внешний ключ по должностям 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Employer.Post">
+            <summary>
+            Навигационное свойство по должностям 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Employer.Fio">
+            <summary>
+            Свойство для хранения ФИО
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Employer.PhoneNumber">
+            <summary>
+            Свойство для телефонного номера работника 
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Models.Manufacturer">
+            <summary>
+            Модель производителя
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Manufacturer.ManufacturerId">
+            <summary>
+            Первичный ключ для сущности 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Manufacturer.ManufacturerName">
+            <summary>
+            Свойство для имени производителя 
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Models.Medicine">
+            <summary>
+            Модель медикамента
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Medicine.MedicineId">
+            <summary>
+            Первичный ключ сущности 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Medicine.ManufacturerId">
+            <summary>
+            Внешний ключ по производителю 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Medicine.Manufacturer">
+            <summary>
+            Навигационное свойство по внешнему ключу 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Medicine.MedicineName">
+            <summary>
+            Свойство с названием лекарства
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Models.Post">
+            <summary>
+            Модель должности
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Post.PostId">
+            <summary>
+            Первичный ключ сущности
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Post.PostName">
+            <summary>
+            Свойство с названием должности
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Post.Salary">
+            <summary>
+            Свойство зарплаты сущности 
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Models.SaleMedicine">
+            <summary>
+            Модель продажи
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SaleMedicine.SaleMedecineId">
+            <summary>
+            Первичный ключ сущности
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SaleMedicine.MedecineId">
+            <summary>
+            Внешний ключ сущности по медикаментам 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SaleMedicine.Medecine">
+            <summary>
+            Навигационное свойство по внешнему ключу 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SaleMedicine.ChequeId">
+            <summary>
+             Внешний ключ сущности по чекам  
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SaleMedicine.Cheque">
+            <summary>
+            Навигационное свойство по внешнему ключу 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SaleMedicine.Count">
+            <summary>
+            Свойство колличества проданных лекарств
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SaleMedicine.PriceSellOne">
+            <summary>
+            Свойство цены продажи за одну единицу 
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Models.Supplie">
+            <summary>
+            Модель поставки
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Supplie.SupplieId">
+            <summary>
+            Первичный ключ сущности
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Supplie.SupplierId">
+            <summary>
+            Внешний ключ по поставщикам
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Supplie.Supplier">
+            <summary>
+            Навигационное свойство по внешнему ключу 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Supplie.Date">
+            <summary>
+            Свойство сущности для даты 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Supplie.TotalSum">
+            <summary>
+            Свойство сущности для полной суммы поставки
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Models.SupplieMedicine">
+            <summary>
+            Модель части поставки
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SupplieMedicine.SuplieMedicineId">
+            <summary>
+            Первичный ключ сущности 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SupplieMedicine.SuplieId">
+            <summary>
+            Внешний ключ по поставке 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SupplieMedicine.Suplie">
+            <summary>
+            Навигационное свойство по внешнему ключу 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SupplieMedicine.MedicineId">
+            <summary>
+            Внешний ключ по лекарствам 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SupplieMedicine.Medicine">
+            <summary>
+            Навигационное свойство по внешнему ключу 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SupplieMedicine.Count">
+            <summary>
+            Свойство для количества медикаментов 
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.SupplieMedicine.PricePayOne">
+            <summary>
+            Свойство  для хранения для закупки медикамента за 1 единицу  
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Models.Supplier">
+             <summary>
+            Модель поставщика
+             </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Supplier.SupplierId">
+            <summary>
+            Первичный ключ сущности
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.Supplier.SupplierName">
+            <summary>
+            Свойство для названия поставщика
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Repository.ChequeReposirory">
+            <summary>
+            Репозиторий для чека 
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.ChequeReposirory.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            Конструктор репозитория 
+            </summary>
+            <param name="dbContet">Контекст БД </param>
+        </member>
+        <member name="M:WebApplication3.Repository.ChequeReposirory.AddAsync(WebApplication3.Models.Cheque,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления Чека в БД 
+            </summary>
+            <param name="obj">Объект для добавления</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id чека</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ChequeReposirory.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для  удаления чека в БД 
+            </summary>
+            <param name="obj">Объект для уддаления</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операций без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ChequeReposirory.UpdateAsync(WebApplication3.Models.Cheque,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления чека в БД 
+            </summary>
+            <param name="obj">Объект с новой информацией</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операций без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ChequeReposirory.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех атрибутов из БД 
+            </summary>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция с возвратом коллекции</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ChequeReposirory.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи по PK
+            </summary>
+            <param name="key">PK для сущности</param>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="T:WebApplication3.Repository.ClientRepository">
+            <summary>
+            репозиторий клиента 
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.ClientRepository.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            Конструктор репозитория 
+            </summary>
+            <param name="database"> Контекст БД</param>
+        </member>
+        <member name="M:WebApplication3.Repository.ClientRepository.AddAsync(WebApplication3.Models.Client,System.Threading.CancellationToken)">
+            <summary>
+            Метод добавление в БД Клиента
+            </summary>
+            <param name="obj">Новый Клиент</param>
+            <param name="token">Токен http запросов </param>
+            <returns>Асинхронная операция возвращает id нового кдиента </returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ClientRepository.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления записей из БД 
+            </summary>
+            <param name="key">Ключ клиента под удаление</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ClientRepository.UpdateAsync(WebApplication3.Models.Client,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления данных в БД
+            </summary>
+            <param name="obj">Клиент под удаление</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ClientRepository.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех атрибутов из БД 
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция с возвратом коллекции</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ClientRepository.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи по PK
+            </summary>
+            <param name="key">PK для сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="F:WebApplication3.Repository.EmployerRepository.db">
+            <summary>
+            Контекст БД 
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.EmployerRepository.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            Конструктор репозитория
+            </summary>
+            <param name="dbContext"> Контекст БД </param>
+        </member>
+        <member name="M:WebApplication3.Repository.EmployerRepository.AddAsync(WebApplication3.Models.Employer,System.Threading.CancellationToken)">
+            <summary>
+            Добавление работника в БД 
+            </summary>
+            <param name="obj">Объект работник</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id работника</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.EmployerRepository.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления записей из БД 
+            </summary>
+            <param name="key">Работник под удаление</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.EmployerRepository.UpdateAsync(WebApplication3.Models.Employer,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления данных в БД
+            </summary>
+            <param name="obj">Работник под удаление</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.EmployerRepository.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех атрибутов из БД 
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция с возвратом коллекции</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.EmployerRepository.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи по PK
+            </summary>
+            <param name="key">PK для сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="T:WebApplication3.Repository.ManufacturerRepository">
+            <summary>
+            Репозиторий поставщика
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.ManufacturerRepository.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            Конструктор репозитория
+            </summary>
+            <param name="dbContext">Контекст репозитория </param>
+        </member>
+        <member name="M:WebApplication3.Repository.ManufacturerRepository.AddAsync(WebApplication3.Models.Manufacturer,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления поставщика в БД 
+            </summary>
+            <param name="obj">Объект потавщик</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id производителя</returns>
+            
+        </member>
+        <member name="M:WebApplication3.Repository.ManufacturerRepository.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+             Метод для удаления поставщика из БД 
+            </summary>
+            <param name="key">Ключ объекта потавщик</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения </returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ManufacturerRepository.UpdateAsync(WebApplication3.Models.Manufacturer,System.Threading.CancellationToken)">
+            <summary>
+             Метод для обновлении поставщика в БД 
+            </summary>
+            <param name="obj">Объект потавщик</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ManufacturerRepository.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех атрибутов из БД 
+            </summary>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция с возвратом коллекции</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.ManufacturerRepository.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи по PK
+            </summary>
+            <param name="key">PK для сущности</param>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="T:WebApplication3.Repository.MedicineRepository">
+            <summary>
+            Репозиторий медикамента
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.MedicineRepository.AddAsync(WebApplication3.Models.Medicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления медикамента в БД 
+            </summary>
+            <param name="obj">Объект медикамент</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id медикамента</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.MedicineRepository.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления медикамента из БД 
+            </summary>
+            <param name="obj">Объект медикамент</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.MedicineRepository.UpdateAsync(WebApplication3.Models.Medicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления медикамента в БД 
+            </summary>
+            <param name="obj">Объект медикамент</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.MedicineRepository.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех атрибутов из БД 
+            </summary>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция с возвратом коллекции</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.MedicineRepository.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи по PK
+            </summary>
+            <param name="key">PK для сущности</param>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="T:WebApplication3.Repository.PostRepository">
+            <summary>
+            Репозиторий должности
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.PostRepository.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            Конструктор репозитория
+            </summary>
+            <param name="dbContext">Контекст БД</param>
+        </member>
+        <member name="M:WebApplication3.Repository.PostRepository.AddAsync(WebApplication3.Models.Post,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления должности в БД 
+            </summary>
+            <param name="obj">Объект должность</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id должности</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.PostRepository.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления должности из БД 
+            </summary>
+            <param name="obj">Объект должность</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.PostRepository.UpdateAsync(WebApplication3.Models.Post,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления должности в БД 
+            </summary>
+            <param name="obj">Объект должность</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.PostRepository.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех атрибутов из БД 
+            </summary>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция с возвратом коллекции</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.PostRepository.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи по PK
+            </summary>
+            <param name="key">PK для сущности</param>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="T:WebApplication3.Repository.SaleMedicineRepository">
+            <summary>
+            Репозиторий проданной медицины
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.SaleMedicineRepository.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            Конструктор репозитория
+            </summary>
+            <param name="dbContext">Контекст БД </param>
+        </member>
+        <member name="M:WebApplication3.Repository.SaleMedicineRepository.AddAsync(WebApplication3.Models.SaleMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления продажи в БД 
+            </summary>
+            <param name="obj">Объект продажа</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id продажи</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SaleMedicineRepository.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления продажи из БД 
+            </summary>
+            <param name="obj">Объект продажа</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SaleMedicineRepository.UpdateAsync(WebApplication3.Models.SaleMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления продажи в БД 
+            </summary>
+            <param name="obj">Объект продажа</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SaleMedicineRepository.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех атрибутов из БД 
+            </summary>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция с возвратом коллекции</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SaleMedicineRepository.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи по PK
+            </summary>
+            <param name="key">PK для сущности</param>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="T:WebApplication3.Repository.SupplieMedicineRepository">
+            <summary>
+            Репозиторий поставленной медицины
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieMedicineRepository.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            Конструктор репозитория
+            </summary>
+            <param name="dbContext">Контекст БД </param>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieMedicineRepository.AddAsync(WebApplication3.Models.SupplieMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления части поставки в БД 
+            </summary>
+            <param name="obj">Объект часть поставки</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Id части поставки</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieMedicineRepository.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления части поставки из БД 
+            </summary>
+            <param name="obj">Объект часть поставки</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения </returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieMedicineRepository.UpdateAsync(WebApplication3.Models.SupplieMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления части поставки в БД 
+            </summary>
+            <param name="obj">Объект часть поставки</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieMedicineRepository.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех атрибутов из БД 
+            </summary>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция с возвратом коллекции</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieMedicineRepository.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи по PK
+            </summary>
+            <param name="key">PK для сущности</param>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="T:WebApplication3.Repository.SupplieRepository">
+            <summary>
+            Репозиторий поставки
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieRepository.AddAsync(WebApplication3.Models.Supplie,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления поставки в БД 
+            </summary>
+            <param name="obj">Объект поставки</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Id поставки</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieRepository.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления поставки из БД 
+            </summary>
+            <param name="obj">Объект поставки</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieRepository.UpdateAsync(WebApplication3.Models.Supplie,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления поставки в БД 
+            </summary>
+            <param name="obj">Объект поставки</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieRepository.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех атрибутов из БД 
+            </summary>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция с возвратом коллекции</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieRepository.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи по PK
+            </summary>
+            <param name="key">PK для сущности</param>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="T:WebApplication3.Repository.SupplierRepository">
+            <summary>
+            Репозиторий  поставщика
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplierRepository.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            Коструктор репозитория
+            </summary>
+            <param name="dbContext">Контекст БД </param>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplierRepository.AddAsync(WebApplication3.Models.Supplier,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления поставщика в БД 
+            </summary>
+            <param name="obj">Объект поставщик</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Id поставщика </returns>
+            
+        </member>
+        <member name="M:WebApplication3.Repository.SupplierRepository.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления поставщика из БД 
+            </summary>
+            <param name="obj">Объект поставщик</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplierRepository.UpdateAsync(WebApplication3.Models.Supplier,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления поставщика в БД 
+            </summary>
+            <param name="obj">Объект поставщик</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplierRepository.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех атрибутов из БД 
+            </summary>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция с возвратом коллекции</returns>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplierRepository.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи по PK
+            </summary>
+            <param name="key">PK для сущности</param>
+            <param name="token">Токкен для асинхронных операций</param>
+            <returns>Асинхронная операция без возвращаемого значения</returns>
+        </member>
+        <member name="T:WebApplication3.Service.ChequeService">
+            <summary>
+            Сервис для чека
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.ChequeService.#ctor(WebApplication3.Interfaces.IRepository{WebApplication3.Models.Cheque})">
+            <summary>
+            Конструктор сервиса
+            </summary>
+            <param name="reposirory">Репозиторий для сервиса</param>
+        </member>
+        <member name="M:WebApplication3.Service.ChequeService.AddAsync(WebApplication3.Models.Cheque,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления чека в БД
+            </summary>
+            <param name="obj">Объект чек</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id чека</returns>
+        </member>
+        <member name="M:WebApplication3.Service.ChequeService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления чека в БД
+            </summary>
+            <param name="key">PK атрибута сущьности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.ChequeService.UpdateAsync(WebApplication3.Models.Cheque,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления чека в БД
+            </summary>
+            <param name="obj">Объект чек</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.ChequeService.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех записей сущности
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.ChequeService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи из сущьности по PK
+            </summary>
+            <param name="key">PK сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Service.ClientService">
+            <summary>
+            Класс сервис для клиента 
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.ClientService.#ctor(WebApplication3.Interfaces.IRepository{WebApplication3.Models.Client})">
+            <summary>
+            Конструктор клиента 
+            </summary>
+            <param name="clientRep">Репозиторий клиента</param>
+        </member>
+        <member name="M:WebApplication3.Service.ClientService.AddAsync(WebApplication3.Models.Client,System.Threading.CancellationToken)">
+            <summary>
+            Иетод для добавления клиента в БД 
+            </summary>
+            <param name="obj">Новый Клиент</param>
+            <param name="tokken">Токен http запросов</param>
+            <returns>Возвращает Id Нового клиента</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WebApplication3.Service.ClientService.DeleteAsync(System.Int32,System.Threading.CancellationToken)" -->
+        <member name="M:WebApplication3.Service.ClientService.UpdateAsync(WebApplication3.Models.Client,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления данных Клиента в БД 
+            </summary>
+            <param name="obj">класс с новыми данными клиента</param>
+            <param name="tokken">Токен http запросов</param>
+            <returns>void </returns>
+        </member>
+        <member name="M:WebApplication3.Service.ClientService.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех записей сущности
+            </summary>
+            <param name="token">Токен для асинхронных операций</param>
+            <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.ClientService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи из сущьности по PK
+            </summary>
+            <param name="key">PK сущности</param>
+            <param name="token">Токен для асинхронных операций</param>
+            <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Service.EmployerService">
+            <summary>
+            Сервис работник
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.EmployerService.#ctor(WebApplication3.Interfaces.IRepository{WebApplication3.Models.Employer})">
+            <summary>
+            Конструктор сервиса
+            </summary>
+            <param name="reposirory">Репозиторий для сервиса</param>
+        </member>
+        <member name="M:WebApplication3.Service.EmployerService.AddAsync(WebApplication3.Models.Employer,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления работника в БД
+            </summary>
+            <param name="obj">Объект работник</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id работника </returns>
+        </member>
+        <member name="M:WebApplication3.Service.EmployerService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления работника из БД 
+            </summary>
+            <param name="key">PK атрибута сущьности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.EmployerService.UpdateAsync(WebApplication3.Models.Employer,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="obj">Объект работник</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.EmployerService.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех записей сущности
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.EmployerService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи из сущьности по PK
+            </summary>
+            <param name="key">PK сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Service.ManufacturerService">
+            <summary>
+            Сервис для производителя
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.ManufacturerService.#ctor(WebApplication3.Interfaces.IRepository{WebApplication3.Models.Manufacturer})">
+            <summary>
+            Конструктор сервиса
+            </summary>
+            <param name="repository">Репозиторий для сервиса</param>
+        </member>
+        <member name="M:WebApplication3.Service.ManufacturerService.AddAsync(WebApplication3.Models.Manufacturer,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления производителя в БД 
+            </summary>
+            <param name="obj">Объект производителя</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id производителя</returns>
+        </member>
+        <member name="M:WebApplication3.Service.ManufacturerService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления производителя из БД 
+            </summary>
+            <param name="key">PK атрибута сущьности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.ManufacturerService.UpdateAsync(WebApplication3.Models.Manufacturer,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления производителя
+            </summary>
+            <param name="obj">Объект производителя</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.ManufacturerService.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех записей сущности
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.ManufacturerService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи из сущьности по PK
+            </summary>
+            <param name="key">PK сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Service.MedicineService">
+            <summary>
+            Сервис медикамента
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.MedicineService.#ctor(WebApplication3.Interfaces.IRepository{WebApplication3.Models.Medicine})">
+            <summary>
+            Конструктор сервиса
+            </summary>
+            <param name="repository">Репозиторий для сервиса</param>
+        </member>
+        <member name="M:WebApplication3.Service.MedicineService.AddAsync(WebApplication3.Models.Medicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления медикамента в БД 
+            </summary>
+            <param name="obj">Объект медикамент</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.MedicineService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления медикамента из БД 
+            </summary>
+            <param name="key">PK атрибута сущьности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.MedicineService.UpdateAsync(WebApplication3.Models.Medicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления медикамента в БД 
+            </summary>
+            <param name="obj">Объект медикамент</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.MedicineService.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех записей сущности
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.MedicineService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи из сущьности по PK
+            </summary>
+            <param name="key">PK сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Service.PostService">
+            <summary>
+            Сервис для должности
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.PostService.#ctor(WebApplication3.Interfaces.IRepository{WebApplication3.Models.Post})">
+            <summary>
+            Конструктор сервиса
+            </summary>
+            <param name="repository">Репозиторий для сервиса</param>
+        </member>
+        <member name="M:WebApplication3.Service.PostService.AddAsync(WebApplication3.Models.Post,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления должности в БД 
+            </summary>
+            <param name="obj">Объект должность</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id должности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.PostService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления должности из БД 
+            </summary>
+            <param name="key">PK атрибута сущьности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.PostService.UpdateAsync(WebApplication3.Models.Post,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления должности в БД 
+            </summary>
+            <param name="obj">Объект должность</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.PostService.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех записей сущности
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.PostService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи из сущьности по PK
+            </summary>
+            <param name="key">PK сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Service.SaleMedicineService">
+            <summary>
+            Сервис продажи
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.SaleMedicineService.#ctor(WebApplication3.Interfaces.IRepository{WebApplication3.Models.SaleMedicine})">
+            <summary>
+            Конструктор сервиса
+            </summary>
+            <param name="repository">Репозиторий для сервиса</param>
+        </member>
+        <member name="M:WebApplication3.Service.SaleMedicineService.AddAsync(WebApplication3.Models.SaleMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления продажи в БД 
+            </summary>
+            <param name="obj">Объект продажа</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id продажи</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SaleMedicineService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления продажи из БД 
+            </summary>
+            <param name="key">PK атрибута сущьности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SaleMedicineService.UpdateAsync(WebApplication3.Models.SaleMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления продажи в БД 
+            </summary>
+            <param name="obj">Объект продажа</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SaleMedicineService.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех записей сущности
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SaleMedicineService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи из сущьности по PK
+            </summary>
+            <param name="key">PK сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Service.SupplieMedicineService">
+            <summary>
+            Сервис частипоставки
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieMedicineService.#ctor(WebApplication3.Interfaces.IRepository{WebApplication3.Models.SupplieMedicine})">
+            <summary>
+            Конструктор сервиса
+            </summary>
+            <param name="repository">Репозиторий для сервиса</param>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieMedicineService.AddAsync(WebApplication3.Models.SupplieMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавление части поставки в БД
+            </summary>
+            <param name="obj">Объект часть поставки</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id части поставки</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieMedicineService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления части поставки из БД
+            </summary>
+            <param name="key">PK атрибута сущьности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieMedicineService.UpdateAsync(WebApplication3.Models.SupplieMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления части поставки в БД
+            </summary>
+            <param name="obj">Объект часть поставки</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieMedicineService.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех записей сущности
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieMedicineService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи из сущьности по PK
+            </summary>
+            <param name="key">PK сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Service.SupplierService">
+            <summary>
+            Сервис поставщика
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.SupplierService.#ctor(WebApplication3.Interfaces.IRepository{WebApplication3.Models.Supplier})">
+            <summary>
+            Конструктор сервиса
+            </summary>
+            <param name="repository">Репозиторий для сервиса</param>
+        </member>
+        <member name="M:WebApplication3.Service.SupplierService.AddAsync(WebApplication3.Models.Supplier,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления поставщика в БД
+            </summary>
+            <param name="obj">Объект поставщик</param>
+            <param name="token">Токен http запросов</param>
+            <returns>id поставщика</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplierService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления поставщика из БД
+            </summary>
+            <param name="key">PK атрибута сущьности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplierService.UpdateAsync(WebApplication3.Models.Supplier,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления поставщика в БД
+            </summary>
+            <param name="obj">Объект поставщик</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplierService.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех записей сущности
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplierService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи из сущьности по PK
+            </summary>
+            <param name="key">PK сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Service.SupplieService">
+            <summary>
+            Сервис поставки
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieService.#ctor(WebApplication3.Interfaces.IRepository{WebApplication3.Models.Supplie})">
+            <summary>
+            Конструктор сервиса
+            </summary>
+            <param name="repository">Репозиторий для сервиса</param>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieService.AddAsync(WebApplication3.Models.Supplie,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления поставки в БД 
+            </summary>
+            <param name="obj">Объект поставка</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Id поставки</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления поставки из БД 
+            </summary>
+            <param name="key">PK атрибута сущьности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieService.UpdateAsync(WebApplication3.Models.Supplie,System.Threading.CancellationToken)">
+            <summary>
+            Метод для обновления поставки в БД 
+            </summary>
+            <param name="obj">Объект поставка</param>
+            <param name="token">Токен http запросов</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieService.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод получения всех записей сущности
+            </summary>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
+        </member>
+        <member name="M:WebApplication3.Service.SupplieService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод получения записи из сущьности по PK
+            </summary>
+            <param name="key">PK сущности</param>
+            <param name="token">Токен http запросов</param>
+            <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Validators.ChequeValidator">
+            <summary>
+            Валидатор для чека
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Validators.ChequeValidator.#ctor">
+            <summary>
+            Конструктор с настройкими валидации под каждый атрибут сущности
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Validators.ClientValidator">
+            <summary>
+            Валидатор для клиента
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Validators.ClientValidator.#ctor">
+            <summary>
+            Конструктор с настройкими валидации под каждый атрибут сущности
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Validators.EmployerValidator">
+            <summary>
+            Валидатор для работника
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Validators.EmployerValidator.#ctor">
+            <summary>
+            Конструктор с настройкими валидации под каждый атрибут сущности
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Validators.ManufacturerValidator">
+            <summary>
+            Валидатор для производителя
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Validators.ManufacturerValidator.#ctor">
+            <summary>
+            Конструктор с настройкими валидации под каждый атрибут сущности
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Validators.MedicineValidator">
+            <summary>
+            Валидатор для лекарства
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Validators.MedicineValidator.#ctor">
+            <summary>
+            Конструктор с настройкими валидации под каждый атрибут сущности
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Validators.PostValidator">
+            <summary>
+            Валидатор для должности
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Validators.PostValidator.#ctor">
+            <summary>
+            Конструктор с настройкими валидации под каждый атрибут сущности
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Validators.SaleMedicineValidator">
+            <summary>
+            Валидатор для продажи
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Validators.SaleMedicineValidator.#ctor">
+            <summary>
+            Конструктор с настройкими валидации под каждый атрибут сущности
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Validators.SupplieMedicineValidator">
+            <summary>
+            Валидатор для части поставки
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Validators.SupplieMedicineValidator.#ctor">
+            <summary>
+            Конструктор с настройкими валидации под каждый атрибут сущности
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Validators.SupplierValidator">
+            <summary>
+            Валидатор для поставщика
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Validators.SupplierValidator.#ctor">
+            <summary>
+            Конструктор с настройкими валидации под каждый атрибут сущности
+            </summary>
+        </member>
+        <member name="T:WebApplication3.Validators.SupplieValidator">
+            <summary>
+            Валидатор для поставки
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Validators.SupplieValidator.#ctor">
+            <summary>
+            Конструктор с настройкими валидации под каждый атрибут сущности
+            </summary>
+        </member>
+    </members>
+</doc>

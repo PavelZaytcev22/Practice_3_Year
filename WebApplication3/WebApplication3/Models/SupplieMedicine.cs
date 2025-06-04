@@ -1,4 +1,6 @@
-﻿namespace WebApplication3.Models
+﻿using System.Text.Json.Serialization;
+
+namespace WebApplication3.Models
 {
     /// <summary>
     /// Модель части поставки
@@ -16,7 +18,8 @@
         /// <summary>
         /// Навигационное свойство по внешнему ключу 
         /// </summary>
-        public Supplie Suplie { get; set; } = null!;
+        [JsonIgnore]
+        public Supplie? Suplie { get; set; } = null!;
         /// <summary>
         /// Внешний ключ по лекарствам 
         /// </summary>
@@ -24,7 +27,8 @@
         /// <summary>
         /// Навигационное свойство по внешнему ключу 
         /// </summary>
-        public Medicine Medicine { get; set; } = null!;
+        [JsonIgnore]
+        public Medicine? Medicine { get; set; } = null!;
         /// <summary>
         /// Свойство для количества медикаментов 
         /// </summary>

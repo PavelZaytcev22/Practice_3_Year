@@ -33,6 +33,7 @@ namespace WebApplication3.Repository
             if (obj!=null)
             {
                 await db.Supplier.AddAsync(obj, token);
+                await db.SaveChangesAsync(token);
                 return obj.SupplierId;
             }
             throw new ArgumentNullException();
@@ -51,6 +52,7 @@ namespace WebApplication3.Repository
                 throw new Exception("id больше 0");
             }
             await db.Supplier.Where(u => u.SupplierId== key).ExecuteDeleteAsync(token);
+            await db.SaveChangesAsync(token);
         }
 
         /// <summary>
