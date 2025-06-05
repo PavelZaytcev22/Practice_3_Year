@@ -28,13 +28,13 @@ namespace WebApplication3.Repository
         /// <returns>id чека</returns>
         public async Task<int> AddAsync(Cheque obj, CancellationToken token ) 
         {
-            if (obj != null)
+            if (obj == null)
             {
-                await db.Cheque.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
-                return obj.ChequeId;
+                throw new ArgumentNullException();
             }
-            throw new ArgumentNullException(); 
+            await db.Cheque.AddAsync(obj, token);
+            await db.SaveChangesAsync(token);
+            return obj.ChequeId;
         }
 
         /// <summary>

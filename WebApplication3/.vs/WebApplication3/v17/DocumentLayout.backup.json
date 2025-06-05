@@ -35,12 +35,24 @@
       "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\employercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\controllers\\chequecontreoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\chequecontreoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\webapplication3.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\webapplication3.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,21 +62,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "ClientController.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ClientController.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\ClientController.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ClientController.cs",
               "RelativeToolTip": "WebApplication3\\Controllers\\ClientController.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAswFsAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-03T08:51:12.584Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -74,9 +90,9 @@
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\SupplierController.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\SupplierController.cs",
               "RelativeToolTip": "WebApplication3\\Controllers\\SupplierController.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAkwFgAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T15:30:12.232Z",
+              "WhenOpened": "2025-06-05T11:30:26.283Z",
               "EditorCaption": ""
             },
             {
@@ -87,9 +103,9 @@
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\SupplieMedicineController.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\SupplieMedicineController.cs",
               "RelativeToolTip": "WebApplication3\\Controllers\\SupplieMedicineController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAkwFcAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T15:29:49.974Z",
+              "WhenOpened": "2025-06-05T11:30:22.416Z",
               "EditorCaption": ""
             },
             {
@@ -100,9 +116,9 @@
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\SupplieController.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\SupplieController.cs",
               "RelativeToolTip": "WebApplication3\\Controllers\\SupplieController.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAYwFgAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T15:29:27.594Z",
+              "WhenOpened": "2025-06-05T11:30:18.122Z",
               "EditorCaption": ""
             },
             {
@@ -113,9 +129,9 @@
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\SaleMedicineController.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\SaleMedicineController.cs",
               "RelativeToolTip": "WebApplication3\\Controllers\\SaleMedicineController.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAkwFgAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T15:29:04.009Z",
+              "WhenOpened": "2025-06-05T11:30:14.704Z",
               "EditorCaption": ""
             },
             {
@@ -126,9 +142,9 @@
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\PostController.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\PostController.cs",
               "RelativeToolTip": "WebApplication3\\Controllers\\PostController.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAA7wFgAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T15:28:42.587Z",
+              "WhenOpened": "2025-06-05T11:30:11.46Z",
               "EditorCaption": ""
             },
             {
@@ -139,9 +155,22 @@
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\MedicineController.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\MedicineController.cs",
               "RelativeToolTip": "WebApplication3\\Controllers\\MedicineController.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAYwFgAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T15:28:25.983Z",
+              "WhenOpened": "2025-06-05T11:30:07.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManufacturerController.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ManufacturerController.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\ManufacturerController.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ManufacturerController.cs",
+              "RelativeToolTip": "WebApplication3\\Controllers\\ManufacturerController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T11:29:55.562Z",
               "EditorCaption": ""
             },
             {
@@ -152,39 +181,61 @@
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\EmployerController.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\EmployerController.cs",
               "RelativeToolTip": "WebApplication3\\Controllers\\EmployerController.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAYwFgAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T15:27:55.674Z",
+              "WhenOpened": "2025-06-05T11:29:50.619Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ChequeContreoller.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ChequeContreoller.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\ChequeContreoller.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ChequeContreoller.cs",
               "RelativeToolTip": "WebApplication3\\Controllers\\ChequeContreoller.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAowFIAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T15:27:52.28Z",
+              "WhenOpened": "2025-06-05T11:28:39.545Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication3\\appsettings.json",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\appsettings.json",
+              "RelativeToolTip": "WebApplication3\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-05T09:13:11.354Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ManufacturerController.cs",
-              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ManufacturerController.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\ManufacturerController.cs",
-              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ManufacturerController.cs",
-              "RelativeToolTip": "WebApplication3\\Controllers\\ManufacturerController.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAkwBQAAABGAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "WebApplication3",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\WebApplication3.csproj",
+              "RelativeDocumentMoniker": "WebApplication3\\WebApplication3.csproj",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\WebApplication3.csproj",
+              "RelativeToolTip": "WebApplication3\\WebApplication3.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-05T08:23:42.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Program.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Program.cs",
+              "RelativeToolTip": "WebApplication3\\Program.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAcwG8AAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T19:03:33.436Z",
+              "WhenOpened": "2025-06-05T08:16:42.744Z",
               "EditorCaption": ""
             }
           ]

@@ -27,13 +27,13 @@ namespace WebApplication3.Repository
         /// <returns>id продажи</returns>
         public async Task<int> AddAsync(SaleMedicine obj, CancellationToken token)
         {
-            if (obj != null)
+            if (obj == null)
             {
-                await db.SaleMedicine.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
-                return obj.SaleMedecineId;
+                throw new ArgumentNullException();
             }
-            throw new ArgumentNullException();
+            await db.SaleMedicine.AddAsync(obj, token);
+            await db.SaveChangesAsync(token);
+            return obj.SaleMedecineId;
         }
         /// <summary>
         /// Метод для удаления продажи из БД 

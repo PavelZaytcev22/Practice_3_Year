@@ -29,13 +29,13 @@ namespace WebApplication3.Repository
         /// <returns>id должности</returns>
         public async Task<int> AddAsync(Post obj, CancellationToken token)
         {
-            if (obj!=null)
+            if (obj == null)
             {
-                await db.Post.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
-                return obj.PostId;
+                throw new ArgumentNullException();
             }
-            throw new ArgumentNullException();
+            await db.Post.AddAsync(obj, token);
+            await db.SaveChangesAsync(token);
+            return obj.PostId;
         }
         /// <summary>
         /// Метод для удаления должности из БД 

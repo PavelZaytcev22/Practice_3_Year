@@ -8,8 +8,14 @@ using WebApplication3.Service;
 using WebApplication3.Validators;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using WebApplication3.Controllers;
 using System.Reflection;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -85,6 +91,33 @@ builder.Services.AddSwaggerGen(sw =>
     sw.IncludeXmlComments(path);
 });
 
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(opt =>
+    {
+        opt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = "mu_issuer",
+            ValidateAudience = true,
+            ValidAudience = "my_audience",
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("my_super_secret_key_surprise_moment_king")),
+        };
+    }
+    );
+
+builder.Services.AddAuthorization(opt =>
+{
+    opt.AddPolicy("DepartmentOnly", policy => policy.RequireRole("Director"));
+    opt.AddPolicy("DepartmentOnly", policy => policy.RequireRole("Meneger"));
+    opt.AddPolicy("DepartmentOnly", policy => policy.RequireRole("Employer"));
+    opt.AddPolicy("UserOnly", policy => policy.RequireRole("User"));
+}
+);
+
+
+
 var app = builder.Build();
 
 //Check DB connetion 
@@ -104,12 +137,23 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.MapGet("/", () => "Hello World!!!!");
-app.MapControllers();
 app.UseSwagger();
 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json","Demo"); });
+app.UseAuthentication();
+app.UseAuthorization();
+app.Map("/login/{username}", (string username) =>
+{
+    var claims = new List<Claim> { new Claim(ClaimTypes.Name, username) };
+    var jwt = new JwtSecurityToken(
+        issuer: "mu_issuer",
+        audience: "my_audience",
+        claims: claims,
+        expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(3)),
+        signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("my_super_secret_key_surprise_moment_king")), SecurityAlgorithms.HmacSha256)
+        );
+    return new JwtSecurityTokenHandler().WriteToken(jwt);
+}
+);
+app.MapControllers();
 
-/*app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
-    );*/
 app.Run();

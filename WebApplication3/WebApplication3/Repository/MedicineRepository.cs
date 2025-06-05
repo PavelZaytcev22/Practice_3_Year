@@ -23,13 +23,13 @@ namespace WebApplication3.Repository
         /// <returns>id медикамента</returns>
         public async Task<int> AddAsync(Medicine obj, CancellationToken token)
         {
-            if (obj != null) 
+            if (obj == null) 
             {
-                await db.Medicine.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
-                return obj.MedicineId;
+                throw new ArgumentNullException();
             }
-            throw new ArgumentNullException();
+            await db.Medicine.AddAsync(obj, token);
+            await db.SaveChangesAsync(token);
+            return obj.MedicineId;            
         }
 
         /// <summary>

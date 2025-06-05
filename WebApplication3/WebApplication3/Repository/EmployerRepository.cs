@@ -29,13 +29,13 @@ namespace WebApplication3.Repository
         /// <returns>id работника</returns>
         public async Task<int> AddAsync(Employer obj, CancellationToken token)
         {
-            if (obj !=null)
+            if (obj ==null)
             {
-                await db.Employer.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
-                return obj.EmployerId;
+                throw new ArgumentNullException();
             }
-            throw new ArgumentNullException();
+            await db.Employer.AddAsync(obj, token);
+            await db.SaveChangesAsync(token);
+            return obj.EmployerId;
         }
 
         /// <summary>

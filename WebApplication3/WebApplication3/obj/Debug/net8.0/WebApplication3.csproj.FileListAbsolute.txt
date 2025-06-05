@@ -103,3 +103,4 @@ C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\WebApplication3.xml
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\obj\Debug\net8.0\WebApplication3.xml
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

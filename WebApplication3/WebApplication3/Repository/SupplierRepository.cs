@@ -30,13 +30,13 @@ namespace WebApplication3.Repository
         /// 
         public async Task<int> AddAsync(Supplier obj, CancellationToken token)
         {
-            if (obj!=null)
+            if (obj == null)
             {
-                await db.Supplier.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
-                return obj.SupplierId;
+               throw new ArgumentNullException();
             }
-            throw new ArgumentNullException();
+            await db.Supplier.AddAsync(obj, token);
+            await db.SaveChangesAsync(token);
+            return obj.SupplierId;
         }
 
         /// <summary>

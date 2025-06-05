@@ -11,7 +11,10 @@ namespace WebApplication3.Repository
     public class SupplieRepository:IRepository<Supplie>
     {
         private ApplicationContext db;
-
+        /// <summary>
+        /// Конструктор репозитория
+        /// </summary>
+        /// <param name="dbContext">Контекст БД</param>
         public SupplieRepository(ApplicationContext dbContext)
         {
             db = dbContext;
@@ -25,13 +28,13 @@ namespace WebApplication3.Repository
         /// <returns>Id поставки</returns>
         public async Task<int> AddAsync(Supplie obj, CancellationToken token)
         {
-            if (obj!=null)
-            {               
-                    await db.Supplie.AddAsync(obj, token);
-                    await db.SaveChangesAsync(token);
-                    return obj.SupplieId;                 
+            if (obj==null)
+            {
+                throw new ArgumentNullException();
             }
-            throw new ArgumentNullException();
+            await db.Supplie.AddAsync(obj, token);
+            await db.SaveChangesAsync(token);
+            return obj.SupplieId;            
         }
 
         /// <summary>

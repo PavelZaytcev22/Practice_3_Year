@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Service;
 using WebApplication3.Models;
 using WebApplication3.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication3.Controllers
 {
@@ -12,6 +13,7 @@ namespace WebApplication3.Controllers
     [ApiController]
    // [Produces("application/json")]
     [Route("api/[controller]")]
+    [Authorize(Roles = "Director,Employer,Maneger,User")]
     public class ClientController : ControllerBase
     {
         private readonly IService<Client> clientService;

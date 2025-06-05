@@ -31,13 +31,13 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция возвращает id нового кдиента </returns>
         public async Task<int> AddAsync(Client obj, CancellationToken token)
         {
-            if (obj != null)
+            if (obj == null)
             {
-                await db.Client.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
-                return obj.ClientId;//Поле автоинкремент(в modelBilder), после сохранения инициализируется
-            }
-            throw new ArgumentNullException();      
+                throw new ArgumentNullException();
+            }            
+            await db.Client.AddAsync(obj, token);
+            await db.SaveChangesAsync(token);
+            return obj.ClientId;//Поле автоинкремент(в modelBilder), после сохранения инициализируется
         }
 
         /// <summary>

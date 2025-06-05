@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Service;
 using WebApplication3.Models;
 using WebApplication3.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication3.Controllers
 {
@@ -10,8 +11,8 @@ namespace WebApplication3.Controllers
     /// Контроллер для производителя
     /// </summary>
     [ApiController]
-    [Produces("application/json")]
     [Route("api/[controller]")]
+    [Authorize(Policy ="DepartmentOnly")]
     public class ManufacturerController:ControllerBase
     {
         private IService<Manufacturer> service;

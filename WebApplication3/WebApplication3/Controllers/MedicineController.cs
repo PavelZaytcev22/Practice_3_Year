@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Service;
 using WebApplication3.Models;
 using WebApplication3.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication3.Controllers
 {
@@ -11,6 +12,7 @@ namespace WebApplication3.Controllers
     /// </summary>
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Policy = "DepartmentOnly")]
     public class MedicineController : ControllerBase
     {
         private readonly IService<Medicine> service;

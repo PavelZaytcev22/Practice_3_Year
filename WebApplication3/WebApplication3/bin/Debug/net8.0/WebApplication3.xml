@@ -9,6 +9,55 @@
             Контроллер для чека
             </summary>
         </member>
+        <member name="M:WebApplication3.Controllers.ChequeController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.Cheque})">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис контроллера для чека</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.ChequeController.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения всех записей из БД 
+            </summary>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает коллекцию чеков</returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.ChequeController.AddAsync(WebApplication3.Models.Cheque,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления чека в БД 
+            </summary>
+            <param name="obj">Объект чек</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает id чека</returns>
+            <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.ChequeController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения чека из БД по id 
+            </summary>
+            <param name="id">id искомой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает объект чек</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0 </exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.ChequeController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления записи из БД по id
+            </summary>
+            <param name="id">id удаляемой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.ChequeController.UpdateAsync(WebApplication3.Models.Cheque,System.Threading.CancellationToken)">
+            <summary>
+            Мето для добавления обновления записи в БД 
+            </summary>
+            <param name="obj">Объект для изменения</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.ArgumentNullException">Объект null</exception>
+        </member>
         <member name="T:WebApplication3.Controllers.ClientController">
             <summary>
             Контроллер для клиента
@@ -25,7 +74,7 @@
             Метод получения всех клентов из БД
             </summary>
             <param name="token">Токен http запросов</param>
-            <returns></returns>
+            <returns>Асинхронная операция, которая возвращает коллекцию клиентов</returns>
         </member>
         <member name="M:WebApplication3.Controllers.ClientController.AddAsync(WebApplication3.Models.Client,System.Threading.CancellationToken)">
             <summary>
@@ -33,7 +82,7 @@
             </summary>
             <param name="obj">Объект клиент</param>
             <param name="token">Токен http запросов</param>
-            <returns></returns>
+            <returns>Асинхронная операция, которая возвращает id добавленного клиента</returns>
         </member>
         <member name="M:WebApplication3.Controllers.ClientController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
             <summary>
@@ -41,7 +90,7 @@
             </summary>
             <param name="id">id клиента</param>
             <param name="token">Токен http запросов</param>
-            <returns></returns>
+            <returns>Асинхронная операция, которая возвращает объект клиент</returns>    
         </member>
         <member name="M:WebApplication3.Controllers.ClientController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
             <summary>
@@ -49,7 +98,7 @@
             </summary>
             <param name="id">id клиента</param>
             <param name="token">Токен http запросов</param>
-            <returns></returns>
+            <returns>Асинхронная операция </returns>
         </member>
         <member name="M:WebApplication3.Controllers.ClientController.UpdateAsync(WebApplication3.Models.Client,System.Threading.CancellationToken)">
             <summary>
@@ -57,7 +106,61 @@
             </summary>
             <param name="obj">Объект клиент</param>
             <param name="token">Токен http запросов</param>
-            <returns></returns>
+            <returns>Асинхронная операция</returns>
+        </member>
+        <member name="T:WebApplication3.Controllers.EmployerController">
+            <summary>
+            Контролер для работника
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.EmployerController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.Employer})">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис контроллера для работника</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.EmployerController.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения всех записей из БД 
+            </summary>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает коллекцию работников</returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.EmployerController.AddAsync(WebApplication3.Models.Employer,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления работника в БД 
+            </summary>
+            <param name="obj">Объект работник</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает id работника</returns>
+            <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.EmployerController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения чека из БД по id 
+            </summary>
+            <param name="id">id искомой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает объект работник</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0 </exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.EmployerController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления записи из БД по id
+            </summary>
+            <param name="id">id удаляемой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.EmployerController.UpdateAsync(WebApplication3.Models.Employer,System.Threading.CancellationToken)">
+            <summary>
+            Мето для добавления обновления записи в БД 
+            </summary>
+            <param name="obj">Объект для изменения</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.ArgumentNullException">Объект null</exception>
         </member>
         <member name="T:WebApplication3.Controllers.ManufacturerController">
             <summary>
@@ -66,9 +169,9 @@
         </member>
         <member name="M:WebApplication3.Controllers.ManufacturerController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.Manufacturer})">
             <summary>
-            Конструктор контроллера производителя
+            Конструктор контроллера
             </summary>
-            <param name="service">Сервис для производителя</param>
+            <param name="service">Сервис контроллера для производителя</param>
         </member>
         <member name="M:WebApplication3.Controllers.ManufacturerController.GetAllAsync(System.Threading.CancellationToken)">
             <summary>
@@ -112,6 +215,330 @@
             <param name="token">Токен для http запросов</param>
             <returns>Асинхронная операция без взвращаемого значения</returns>
             <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <member name="T:WebApplication3.Controllers.MedicineController">
+            <summary>
+            Контроллер для лекарства
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.MedicineController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.Medicine})">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис контроллера для лекарства</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.MedicineController.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения всех записей из БД 
+            </summary>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает коллекцию лекарств</returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.MedicineController.AddAsync(WebApplication3.Models.Medicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления лекарства в БД 
+            </summary>
+            <param name="obj">Объект лекарство</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает id лекарства</returns>
+            <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.MedicineController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения чека из БД по id 
+            </summary>
+            <param name="id">id искомой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает объект лекарство</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0 </exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.MedicineController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления записи из БД по id
+            </summary>
+            <param name="id">id удаляемой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.MedicineController.UpdateAsync(WebApplication3.Models.Medicine,System.Threading.CancellationToken)">
+            <summary>
+            Мето для добавления обновления записи в БД 
+            </summary>
+            <param name="obj">Объект для изменения</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.ArgumentNullException">Объект null</exception>
+        </member>
+        <member name="T:WebApplication3.Controllers.PostController">
+            <summary>
+            Контроллер для должности
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.PostController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.Post})">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис контроллера для должности</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.PostController.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения всех записей из БД 
+            </summary>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает коллекцию должностей</returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.PostController.AddAsync(WebApplication3.Models.Post,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления чека в БД 
+            </summary>
+            <param name="obj">Объект должности</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает id должности</returns>
+            <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.PostController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            метод для получения чека из Бд по id 
+            </summary>
+            <param name="id">id искомой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает объект должность</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0 </exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.PostController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления записи из БД по id
+            </summary>
+            <param name="id">id удаляемой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.PostController.UpdateAsync(WebApplication3.Models.Post,System.Threading.CancellationToken)">
+            <summary>
+            Мето для добавления обновления записи в БД 
+            </summary>
+            <param name="obj">Объект для изменения</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.ArgumentNullException">Объект null</exception>
+        </member>
+        <member name="T:WebApplication3.Controllers.SaleMedicineController">
+            <summary>
+            Контроллер для части продажи
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.SaleMedicineController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.SaleMedicine})">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис контроллера для продажи</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.SaleMedicineController.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения всех записей из БД 
+            </summary>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает коллекцию продаж</returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.SaleMedicineController.AddAsync(WebApplication3.Models.SaleMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления продажи в БД 
+            </summary>
+            <param name="obj">Объект продажа</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает id продажи</returns>
+            <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SaleMedicineController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения чека из Бд по id 
+            </summary>
+            <param name="id">id искомой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает объект продажа</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0 </exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SaleMedicineController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления записи из БД по id
+            </summary>
+            <param name="id">id удаляемой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SaleMedicineController.UpdateAsync(WebApplication3.Models.SaleMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Мето для добавления обновления записи в БД 
+            </summary>
+            <param name="obj">Объект для изменения</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.ArgumentNullException">Объект null</exception>
+        </member>
+        <member name="T:WebApplication3.Controllers.SupplieController">
+            <summary>
+            Контроллер для поставки
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.Supplie})">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис контроллера для поставки</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieController.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения всех записей из БД 
+            </summary>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает коллекцию поставок</returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieController.AddAsync(WebApplication3.Models.Supplie,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления поставки в БД 
+            </summary>
+            <param name="obj">Объект поставка</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает id поставки</returns>
+            <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения чека из Бд по id 
+            </summary>
+            <param name="id">id искомой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает объект поставка</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0 </exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления записи из БД по id
+            </summary>
+            <param name="id">id удаляемой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieController.UpdateAsync(WebApplication3.Models.Supplie,System.Threading.CancellationToken)">
+            <summary>
+            Мето для добавления обновления записи в БД 
+            </summary>
+            <param name="obj">Объект для изменения</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.ArgumentNullException">Объект null</exception>
+        </member>
+        <member name="T:WebApplication3.Controllers.SupplieMedicineController">
+            <summary>
+            Контроллер для части поставки
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieMedicineController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.SupplieMedicine})">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис контроллера для части поставки</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieMedicineController.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения всех записей из БД 
+            </summary>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает коллекцию частей поставок</returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieMedicineController.AddAsync(WebApplication3.Models.SupplieMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления части поставки в БД 
+            </summary>
+            <param name="obj">Объект часть поставки</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает id части поставки</returns>
+            <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieMedicineController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения чека из Бд по id 
+            </summary>
+            <param name="id">id искомой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает объект часть поставки</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0 </exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieMedicineController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления записи из БД по id
+            </summary>
+            <param name="id">id удаляемой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplieMedicineController.UpdateAsync(WebApplication3.Models.SupplieMedicine,System.Threading.CancellationToken)">
+            <summary>
+            Мето для добавления обновления записи в БД 
+            </summary>
+            <param name="obj">Объект для изменения</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.ArgumentNullException">Объект null</exception>
+        </member>
+        <member name="T:WebApplication3.Controllers.SupplierController">
+            <summary>
+            Контроллер для поставщика
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplierController.#ctor(WebApplication3.Interfaces.IService{WebApplication3.Models.Supplier})">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис контроллера для поставщика</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplierController.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения всех записей из БД 
+            </summary>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает коллекцию поставщиков</returns>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplierController.AddAsync(WebApplication3.Models.Supplier,System.Threading.CancellationToken)">
+            <summary>
+            Метод для добавления поставщика в БД 
+            </summary>
+            <param name="obj">Объект поставщик</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает id поставщика</returns>
+            <exception cref="T:System.ArgumentNullException">Объект был null</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplierController.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для получения чека из Бд по id 
+            </summary>
+            <param name="id">id искомой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция, которая возвращает объект поставщик </returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0 </exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplierController.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Метод для удаления записи из БД по id
+            </summary>
+            <param name="id">id удаляемой записи</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.Exception">id не может быть меньше 0</exception>
+        </member>
+        <member name="M:WebApplication3.Controllers.SupplierController.UpdateAsync(WebApplication3.Models.Supplier,System.Threading.CancellationToken)">
+            <summary>
+            Мето для добавления обновления записи в БД 
+            </summary>
+            <param name="obj">Объект для изменения</param>
+            <param name="token">Токен для http запросов</param>
+            <returns>Асинхронная операция</returns>
+            <exception cref="T:System.ArgumentNullException">Объект null</exception>
         </member>
         <!-- Badly formed XML comment ignored for member "T:WebApplication3.Models.ApplicationContext" -->
         <member name="M:WebApplication3.Models.ApplicationContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{WebApplication3.Models.ApplicationContext})">
@@ -805,6 +1232,12 @@
             <summary>
             Репозиторий поставки
             </summary>
+        </member>
+        <member name="M:WebApplication3.Repository.SupplieRepository.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            Конструктор репозитория
+            </summary>
+            <param name="dbContext">Контекст БД</param>
         </member>
         <member name="M:WebApplication3.Repository.SupplieRepository.AddAsync(WebApplication3.Models.Supplie,System.Threading.CancellationToken)">
             <summary>

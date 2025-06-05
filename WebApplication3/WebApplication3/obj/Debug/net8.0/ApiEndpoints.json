@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_2",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -383,7 +383,9 @@
       {
         "Type": "System.Int32",
         "MediaTypes": [
-          "application/json"
+          "text/plain",
+          "application/json",
+          "text/json"
         ],
         "StatusCode": 200
       }
@@ -423,7 +425,9 @@
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApplication3.Models.Manufacturer, WebApplication3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
-          "application/json"
+          "text/plain",
+          "application/json",
+          "text/json"
         ],
         "StatusCode": 200
       }
@@ -447,7 +451,9 @@
       {
         "Type": "WebApplication3.Models.Manufacturer",
         "MediaTypes": [
-          "application/json"
+          "text/plain",
+          "application/json",
+          "text/json"
         ],
         "StatusCode": 200
       }

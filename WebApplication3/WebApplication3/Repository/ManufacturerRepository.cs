@@ -29,13 +29,13 @@ namespace WebApplication3.Repository
         /// 
         public async Task<int> AddAsync(Manufacturer obj, CancellationToken token) 
         {
-            if (obj != null) 
+            if (obj == null) 
             {
-                await db.Manufacturer.AddAsync(obj, token);
-                await db.SaveChangesAsync(token);
-                return obj.ManufacturerId;
+                throw new ArgumentNullException();
             }
-            throw new ArgumentNullException();
+            await db.Manufacturer.AddAsync(obj, token);
+            await db.SaveChangesAsync(token);
+            return obj.ManufacturerId;            
         }
         /// <summary>
         ///  Метод для удаления поставщика из БД 
