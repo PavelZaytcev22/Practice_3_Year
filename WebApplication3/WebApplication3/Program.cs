@@ -109,9 +109,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization(opt =>
 {
-    opt.AddPolicy("DepartmentOnly", policy => policy.RequireRole("Director"));
-    opt.AddPolicy("DepartmentOnly", policy => policy.RequireRole("Meneger"));
-    opt.AddPolicy("DepartmentOnly", policy => policy.RequireRole("Employer"));
+    opt.AddPolicy("DepartmentOnly", policy => policy.RequireRole("Director", "Maneger", "Employer"));
     opt.AddPolicy("UserOnly", policy => policy.RequireRole("User"));
 }
 );
