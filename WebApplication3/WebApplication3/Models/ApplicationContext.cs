@@ -88,7 +88,7 @@ namespace WebApplication3.Models
             modelBuilder.Entity<SupplieMedicine>().HasKey(u => u.SuplieMedicineId);
             modelBuilder.Entity<SupplieMedicine>().Property(p => p.SuplieMedicineId).ValueGeneratedOnAdd();//Автоинкремент
             modelBuilder.Entity<SupplieMedicine>()
-                .HasOne(u=>u.Suplie)
+                .HasOne(u=>u.Supplie)
                 .WithMany()
                 .HasForeignKey(u=>u.SuplieId);
             modelBuilder.Entity<SupplieMedicine>()
@@ -106,9 +106,9 @@ namespace WebApplication3.Models
                 .HasForeignKey(u => u.ChequeId);
 
             modelBuilder.Entity<SaleMedicine>()
-               .HasOne(u => u.Medecine)
+               .HasOne(u => u.Medicine)
                .WithMany()
-               .HasForeignKey(u => u.MedecineId);
+               .HasForeignKey(u => u.MedicineId);
             #endregion
 
             #region Для сущности Cheque 

@@ -33,8 +33,7 @@ builder.Services.AddDbContext<ApplicationContext>(
     }
     );
 
-//builder.Services.AddDbContext<ApplicationContext>();
-#region Регистрация репозиториев
+#region Registration Repositories
 builder.Services.AddScoped<IRepository<Client>, ClientRepository>();
 builder.Services.AddScoped<IRepository<Employer>, EmployerRepository>();
 builder.Services.AddScoped<IRepository<Manufacturer>, ManufacturerRepository>();
@@ -98,11 +97,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         opt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
             ValidateIssuer = true,
-            ValidIssuer = "mu_issuer",
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidateAudience = true,
-            ValidAudience = "my_audience",
+            ValidAudience = builder.Configuration["Jwt:Audience"],
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("my_super_secret_key_surprise_moment_king")),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt: Key"])),
         };
     }
     );
@@ -113,8 +112,6 @@ builder.Services.AddAuthorization(opt =>
     opt.AddPolicy("UserOnly", policy => policy.RequireRole("User"));
 }
 );
-
-
 
 var app = builder.Build();
 
@@ -143,11 +140,11 @@ app.Map("/login/{username}", (string username) =>
 {
     var claims = new List<Claim> { new Claim(ClaimTypes.Name, username) };
     var jwt = new JwtSecurityToken(
-        issuer: "mu_issuer",
-        audience: "my_audience",
+        issuer: builder.Configuration["Jwt:Issuer"],
+        audience: builder.Configuration["Jwt:Audience"],
         claims: claims,
-        expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(3)),
-        signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("my_super_secret_key_surprise_moment_king")), SecurityAlgorithms.HmacSha256)
+        expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(int.Parse(builder.Configuration["Jwt:Minutes"]))),
+        signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])), SecurityAlgorithms.HmacSha256)
         );
     return new JwtSecurityTokenHandler().WriteToken(jwt);
 }

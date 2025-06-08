@@ -19,7 +19,7 @@ namespace WebApplication3.Models
         /// Навигационное свойство по внешнему ключу 
         /// </summary>
         [JsonIgnore]
-        public Supplie? Suplie { get; set; } = null!;
+        public Supplie? Supplie { get; set; } = null!;
         /// <summary>
         /// Внешний ключ по лекарствам 
         /// </summary>
@@ -37,5 +37,7 @@ namespace WebApplication3.Models
         /// Свойство  для хранения для закупки медикамента за 1 единицу  
         /// </summary>
         public int PricePayOne { get; set; }
+
+        
     }
 }

@@ -16,12 +16,12 @@ namespace WebApplication3.Models
         /// <summary>
         /// Внешний ключ сущности по медикаментам 
         /// </summary>
-        public int MedecineId { get; set; }
+        public int MedicineId { get; set; }
         /// <summary>
         /// Навигационное свойство по внешнему ключу 
         /// </summary>
         [JsonIgnore]
-        public Medicine? Medecine { get; set; } = null!;
+        public Medicine? Medicine { get; set; } = null!;
         /// <summary>
         ///  Внешний ключ сущности по чекам  
         /// </summary>

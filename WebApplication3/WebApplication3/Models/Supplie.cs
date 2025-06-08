@@ -29,5 +29,15 @@ namespace WebApplication3.Models
         /// Свойство сущности для полной суммы поставки
         /// </summary>
         public int TotalSum { get; set; }
+        /// <summary>
+        /// Метод для представления класса в виде строки 
+        /// </summary>
+        /// <returns>Строка с данными класса</returns>
+        /// <exception cref="ArgumentNullException">Навигационное свойство равно нулю</exception>
+        public override string ToString()
+        {
+            if (this.Supplier!= null) { throw new ArgumentNullException(); }
+            return this.SupplieId+" | "+Date + " | " + Supplier.SupplierName;
+        }
     }
 }

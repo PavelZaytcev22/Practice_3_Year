@@ -39,6 +39,19 @@ namespace WebApplication3.Models
         /// <summary>
         /// Свойство для полной суммы чека всех продаж по скидке
         /// </summary>
-        public int SumDiscount { get; set; }        
+        public int SumDiscount { get; set; }
+        /// <summary>
+        /// Мето возвращает строку с данными чека о клиенте и дате
+        /// </summary>
+        /// <returns>Строка с данными о чеке</returns>
+        /// <exception cref="ArgumentNullException">Навигационное свойство null</exception>
+        public override string ToString()
+        {
+            if (Client==null) 
+            {
+                throw new ArgumentNullException();
+            }
+            return"("+ Client.PhoneNumber + ") | (" + Date+")";
+        }
     }
 }
