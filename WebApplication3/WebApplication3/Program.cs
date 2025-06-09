@@ -70,7 +70,10 @@ builder.Services.AddScoped<ControllerBase, ClientController>()
     .AddScoped<ControllerBase, SupplieController>()
     .AddScoped<ControllerBase, SupplieMedicineController>()
     .AddScoped<ControllerBase, SaleMedicineController>()
-    .AddScoped<ControllerBase, SupplierController>();
+    .AddScoped<ControllerBase, SupplierController>()
+
+    .AddTransient<ControllerBase, AuthorizationController>()
+    .AddTransient<ControllerBase, ExelController>();
 #endregion
 
 builder.Services.AddControllers();//Добавил контроллеры
@@ -136,19 +139,7 @@ app.UseSwagger();
 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json","Demo"); });
 app.UseAuthentication();
 app.UseAuthorization();
-app.Map("/login/{username}", (string username) =>
-{
-    var claims = new List<Claim> { new Claim(ClaimTypes.Name, username) };
-    var jwt = new JwtSecurityToken(
-        issuer: builder.Configuration["Jwt:Issuer"],
-        audience: builder.Configuration["Jwt:Audience"],
-        claims: claims,
-        expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(int.Parse(builder.Configuration["Jwt:Minutes"]))),
-        signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])), SecurityAlgorithms.HmacSha256)
-        );
-    return new JwtSecurityTokenHandler().WriteToken(jwt);
-}
-);
+
 app.MapControllers();
 
 app.Run();
