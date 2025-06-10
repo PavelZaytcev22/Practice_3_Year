@@ -9,15 +9,45 @@ namespace WebApplication3.Models
     public class ApplicationContext:DbContext
     {
         #region Коллекции БД 
+        /// <summary>
+        /// Коллекция записей для клиентов
+        /// </summary>
         public DbSet<Client> Client { get; set; } = null!;
+        /// <summary>
+        /// Коллекция записей для чеков
+        /// </summary>
         public DbSet<Cheque> Cheque { get; set; } = null!;
+        /// <summary>
+        /// Коллекция записей для работников
+        /// </summary>
         public DbSet<Employer> Employer { get; set; } = null!;
+        /// <summary>
+        /// Коллекция записей для производителей
+        /// </summary>
         public DbSet<Manufacturer> Manufacturer { get; set; } = null!;
+        /// <summary>
+        /// Коллекция записей для лекарств
+        /// </summary>
         public DbSet<Medicine> Medicine { get; set; } = null!;
+        /// <summary>
+        /// Коллекция записей для должностей
+        /// </summary>
         public DbSet<Post> Post { get; set; } =null!;
+        /// <summary>
+        /// Коллекция записей для продаж
+        /// </summary>
         public DbSet<SaleMedicine> SaleMedicine { get; set; } = null!;
+        /// <summary>
+        /// Коллекция записей для поставок
+        /// </summary>
         public DbSet<Supplie> Supplie { get; set; } = null!;
+        /// <summary>
+        /// Коллекция записей для частей поставок
+        /// </summary>
         public DbSet<SupplieMedicine> SupplieMedicine { get; set; } = null!;
+        /// <summary>
+        /// Коллекция записей для  поставщиков 
+        /// </summary>
         public DbSet<Supplier> Supplier { get; set; } = null!;
         #endregion
 
@@ -85,12 +115,12 @@ namespace WebApplication3.Models
             #endregion
 
             #region Для сущности SupplieMed
-            modelBuilder.Entity<SupplieMedicine>().HasKey(u => u.SuplieMedicineId);
-            modelBuilder.Entity<SupplieMedicine>().Property(p => p.SuplieMedicineId).ValueGeneratedOnAdd();//Автоинкремент
+            modelBuilder.Entity<SupplieMedicine>().HasKey(u => u.SupplieMedicineId);
+            modelBuilder.Entity<SupplieMedicine>().Property(p => p.SupplieMedicineId).ValueGeneratedOnAdd();//Автоинкремент
             modelBuilder.Entity<SupplieMedicine>()
                 .HasOne(u=>u.Supplie)
                 .WithMany()
-                .HasForeignKey(u=>u.SuplieId);
+                .HasForeignKey(u=>u.SupplieId);
             modelBuilder.Entity<SupplieMedicine>()
                .HasOne(u => u.Medicine)
                .WithMany()
@@ -98,8 +128,8 @@ namespace WebApplication3.Models
             #endregion
 
             #region Для сущности SaleMedicine
-            modelBuilder.Entity<SaleMedicine>().HasKey(u => u.SaleMedecineId);
-            modelBuilder.Entity<SaleMedicine>().Property(p => p.SaleMedecineId).ValueGeneratedOnAdd();//Автоинкремент
+            modelBuilder.Entity<SaleMedicine>().HasKey(u => u.SaleMedicineId);
+            modelBuilder.Entity<SaleMedicine>().Property(p => p.SaleMedicineId).ValueGeneratedOnAdd();//Автоинкремент
             modelBuilder.Entity<SaleMedicine>()
                 .HasOne(u => u.Cheque)
                 .WithMany()

@@ -13,8 +13,8 @@ namespace WebApplication3.Validators
         /// </summary>
         public SupplieMedicineValidator() 
         {
-            RuleFor(u => u.SuplieMedicineId).NotNull().WithMessage("id должен быть не null");
-            RuleFor(u=>u.SuplieId).NotNull().WithMessage("id должен быть не null");
+            RuleFor(u => u.SupplieMedicineId).NotNull().WithMessage("id должен быть не null");
+            RuleFor(u=>u.SupplieId).NotNull().WithMessage("id должен быть не null");
             RuleFor(u=>u.MedicineId).NotNull().WithMessage("id должен быть не null");
             RuleFor(u => u.Count).NotNull().WithMessage("Число должно быть")
                 .GreaterThan(-1).WithMessage("Количество больше -1 должно быть");

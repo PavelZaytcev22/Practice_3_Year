@@ -35,7 +35,7 @@ namespace WebApplication3.Repository
             }
             await db.SupplieMedicine.AddAsync(obj, token);
             await db.SaveChangesAsync(token);
-            return obj.SuplieMedicineId;            
+            return obj.SupplieMedicineId;            
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace WebApplication3.Repository
             {
                 throw new Exception("id больше 0");
             }
-            await db.SupplieMedicine.Where(u => u.SuplieMedicineId== key).ExecuteDeleteAsync(token);
+            await db.SupplieMedicine.Where(u => u.SupplieMedicineId== key).ExecuteDeleteAsync(token);
             await db.SaveChangesAsync(token);
         }
 
@@ -88,7 +88,7 @@ namespace WebApplication3.Repository
         /// <returns>Асинхронная операция без возвращаемого значения</returns>
         public async Task<SupplieMedicine> GetByIdAsync(int key, CancellationToken token)
         {
-            return await db.SupplieMedicine.FirstOrDefaultAsync(u => u.SuplieMedicineId == key, token);
+            return await db.SupplieMedicine.FirstOrDefaultAsync(u => u.SupplieMedicineId == key, token);
         }
 
     }

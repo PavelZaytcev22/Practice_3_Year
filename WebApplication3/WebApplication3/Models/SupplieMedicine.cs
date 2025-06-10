@@ -10,11 +10,11 @@ namespace WebApplication3.Models
         /// <summary>
         /// Первичный ключ сущности 
         /// </summary>
-        public int SuplieMedicineId { get; set;  }
+        public int SupplieMedicineId { get; set;  }
         /// <summary>
         /// Внешний ключ по поставке 
         /// </summary>
-        public int SuplieId { get; set; }
+        public int SupplieId { get; set; }
         /// <summary>
         /// Навигационное свойство по внешнему ключу 
         /// </summary>

@@ -13,9 +13,9 @@ namespace WebApplication3.Validators
         /// </summary>
         public SaleMedicineValidator() 
         {
-            RuleFor(u => u.SaleMedecineId).NotNull().WithMessage("id должен быть");
+            RuleFor(u => u.SaleMedicineId).NotNull().WithMessage("id должен быть");
             RuleFor(u=>u.ChequeId).NotNull().WithMessage("id должен быть");
-            RuleFor(u=>u.MedecineId).NotNull().WithMessage("id должен быть");
+            RuleFor(u=>u.MedicineId).NotNull().WithMessage("id должен быть");
             RuleFor(u => u.Count).NotNull().WithMessage("Количество должно быть")
                 .GreaterThan(-1).WithMessage("Количество должно быть больше -1");
             RuleFor(u => u.PriceSellOne).NotNull().WithMessage("Должна быть цена за ед.")

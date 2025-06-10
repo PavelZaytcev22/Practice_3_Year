@@ -4,6 +4,24 @@
         <name>WebApplication3</name>
     </assembly>
     <members>
+        <member name="T:WebApplication3.Controllers.AuthorizationController">
+            <summary>
+            Контроллер для авторизации 
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.AuthorizationController.#ctor(Microsoft.Extensions.Options.IOptions{WebApplication3.Settings.JwtSettings})">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="settings">Настройки для jwt токена полученные с помощью сервиса IOptions</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.AuthorizationController.Login(System.String)">
+            <summary>
+            Метод для получения jwt токена
+            </summary>
+            <param name="username">Имя пользователя для jwt токена</param>
+            <returns>Асинхронная операция, которая возвращает строку с wt токеном</returns>
+        </member>
         <member name="T:WebApplication3.Controllers.ChequeController">
             <summary>
             Контроллер для чека
@@ -161,6 +179,17 @@
             <param name="token">Токен для http запросов</param>
             <returns>Асинхронная операция</returns>
             <exception cref="T:System.ArgumentNullException">Объект null</exception>
+        </member>
+        <member name="T:WebApplication3.Controllers.ExсelController">
+            <summary>
+            Контроллер для выгрузки xls файла 
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Controllers.ExсelController.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            Конструктор контроллера 
+            </summary>
+            <param name="dataBaseContext">Контекст БД</param>
         </member>
         <member name="T:WebApplication3.Controllers.ManufacturerController">
             <summary>
@@ -540,7 +569,69 @@
             <returns>Асинхронная операция</returns>
             <exception cref="T:System.ArgumentNullException">Объект null</exception>
         </member>
+        <member name="T:WebApplication3.Functions">
+            <summary>
+            класс функция для проекта
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Functions.PascalCaseToUpperCase(System.String)">
+            <summary>
+            Функция для преобразования из Pascal_case в Upper_case 
+            </summary>
+            <param name="str">Исходная строка в Pascal_case</param>
+            <returns>Cтрока в Upper_Case</returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "T:WebApplication3.Models.ApplicationContext" -->
+        <member name="P:WebApplication3.Models.ApplicationContext.Client">
+            <summary>
+            Коллекция записей для клиентов
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.ApplicationContext.Cheque">
+            <summary>
+            Коллекция записей для чеков
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.ApplicationContext.Employer">
+            <summary>
+            Коллекция записей для работников
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.ApplicationContext.Manufacturer">
+            <summary>
+            Коллекция записей для производителей
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.ApplicationContext.Medicine">
+            <summary>
+            Коллекция записей для лекарств
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.ApplicationContext.Post">
+            <summary>
+            Коллекция записей для должностей
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.ApplicationContext.SaleMedicine">
+            <summary>
+            Коллекция записей для продаж
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.ApplicationContext.Supplie">
+            <summary>
+            Коллекция записей для поставок
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.ApplicationContext.SupplieMedicine">
+            <summary>
+            Коллекция записей для частей поставок
+            </summary>
+        </member>
+        <member name="P:WebApplication3.Models.ApplicationContext.Supplier">
+            <summary>
+            Коллекция записей для  поставщиков 
+            </summary>
+        </member>
         <member name="M:WebApplication3.Models.ApplicationContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{WebApplication3.Models.ApplicationContext})">
             <summary>
             Конструктор БД 
@@ -597,6 +688,13 @@
             <summary>
             Свойство для полной суммы чека всех продаж по скидке
             </summary>
+        </member>
+        <member name="M:WebApplication3.Models.Cheque.ToString">
+            <summary>
+            Мето возвращает строку с данными чека о клиенте и дате
+            </summary>
+            <returns>Строка с данными о чеке</returns>
+            <exception cref="T:System.ArgumentNullException">Навигационное свойство null</exception>
         </member>
         <member name="T:WebApplication3.Models.Client">
             <summary>
@@ -713,17 +811,17 @@
             Модель продажи
             </summary>
         </member>
-        <member name="P:WebApplication3.Models.SaleMedicine.SaleMedecineId">
+        <member name="P:WebApplication3.Models.SaleMedicine.SaleMedicineId">
             <summary>
             Первичный ключ сущности
             </summary>
         </member>
-        <member name="P:WebApplication3.Models.SaleMedicine.MedecineId">
+        <member name="P:WebApplication3.Models.SaleMedicine.MedicineId">
             <summary>
             Внешний ключ сущности по медикаментам 
             </summary>
         </member>
-        <member name="P:WebApplication3.Models.SaleMedicine.Medecine">
+        <member name="P:WebApplication3.Models.SaleMedicine.Medicine">
             <summary>
             Навигационное свойство по внешнему ключу 
             </summary>
@@ -778,22 +876,29 @@
             Свойство сущности для полной суммы поставки
             </summary>
         </member>
+        <member name="M:WebApplication3.Models.Supplie.ToString">
+            <summary>
+            Метод для представления класса в виде строки 
+            </summary>
+            <returns>Строка с данными класса</returns>
+            <exception cref="T:System.ArgumentNullException">Навигационное свойство равно нулю</exception>
+        </member>
         <member name="T:WebApplication3.Models.SupplieMedicine">
             <summary>
             Модель части поставки
             </summary>
         </member>
-        <member name="P:WebApplication3.Models.SupplieMedicine.SuplieMedicineId">
+        <member name="P:WebApplication3.Models.SupplieMedicine.SupplieMedicineId">
             <summary>
             Первичный ключ сущности 
             </summary>
         </member>
-        <member name="P:WebApplication3.Models.SupplieMedicine.SuplieId">
+        <member name="P:WebApplication3.Models.SupplieMedicine.SupplieId">
             <summary>
             Внешний ключ по поставке 
             </summary>
         </member>
-        <member name="P:WebApplication3.Models.SupplieMedicine.Suplie">
+        <member name="P:WebApplication3.Models.SupplieMedicine.Supplie">
             <summary>
             Навигационное свойство по внешнему ключу 
             </summary>

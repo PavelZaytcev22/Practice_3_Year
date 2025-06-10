@@ -16,6 +16,7 @@ using System.Text;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
+using WebApplication3.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -73,7 +74,7 @@ builder.Services.AddScoped<ControllerBase, ClientController>()
     .AddScoped<ControllerBase, SupplierController>()
 
     .AddTransient<ControllerBase, AuthorizationController>()
-    .AddTransient<ControllerBase, ExelController>();
+    .AddScoped<ControllerBase, ExñelController>();
 #endregion
 
 builder.Services.AddControllers();//Äîáàâèë êîíòðîëëåðû
@@ -99,12 +100,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     {
         opt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
+            
             ValidateIssuer = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidateAudience = true,
             ValidAudience = builder.Configuration["Jwt:Audience"],
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt: Key"])),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
         };
     }
     );
@@ -115,6 +117,8 @@ builder.Services.AddAuthorization(opt =>
     opt.AddPolicy("UserOnly", policy => policy.RequireRole("User"));
 }
 );
+
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 
 var app = builder.Build();
 
@@ -135,8 +139,11 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.MapGet("/", () => "Hello World!!!!");
+
 app.UseSwagger();
 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json","Demo"); });
+app.UseDeveloperExceptionPage();
+
 app.UseAuthentication();
 app.UseAuthorization();
 

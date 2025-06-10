@@ -104,3 +104,11 @@ C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\WebApplication3.xml
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\obj\Debug\net8.0\WebApplication3.xml
 C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\ClosedXML.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\ClosedXML.Parser.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\ExcelNumberFormat.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\RBush.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\SixLabors.Fonts.dll
+C:\Users\pvl2z\Desktop\Practice_3_Year\WebApplication3\WebApplication3\bin\Debug\net8.0\System.IO.Packaging.dll

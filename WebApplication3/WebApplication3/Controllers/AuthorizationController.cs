@@ -3,6 +3,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using WebApplication3.Settings;
+using Microsoft.Extensions.Options;
 
 namespace WebApplication3.Controllers
 {
@@ -13,14 +15,14 @@ namespace WebApplication3.Controllers
     [Route("api/[controller]")]
     public class AuthorizationController:ControllerBase
     {
-        private IConfiguration configuration;
+        private JwtSettings settings;
         /// <summary>
         /// Конструктор контроллера
         /// </summary>
-        /// <param name="configuration">Конфигурация web приложения </param>
-        public AuthorizationController(IConfiguration configuration) 
+        /// <param name="settings">Настройки для jwt токена полученные с помощью сервиса IOptions</param>
+        public AuthorizationController(IOptions<JwtSettings> settings) 
         {
-            this.configuration = configuration;
+            this.settings = settings.Value;
         }
         /// <summary>
         /// Метод для получения jwt токена
@@ -30,19 +32,17 @@ namespace WebApplication3.Controllers
         [HttpGet("login/{username}")]
         public async Task<string> Login(string username)
         {
+            if (username.IsNullOrEmpty()) throw new ArgumentNullException();
+
             var claims = new List<Claim> { new Claim(ClaimTypes.Name, username) };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
             var token = new JwtSecurityToken(
-                issuer: configuration["Jwt:Issuer"],
-                audience: configuration["Jwt:Audience"],
+                issuer: settings.Issuer,
+                audience: settings.Audience,
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(int.Parse(configuration["Jwt:Minutes"])),
-                signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])), SecurityAlgorithms.HmacSha256)        
+                expires: DateTime.UtcNow.AddMinutes(settings.Minutes),
+                signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(settings.Key)), SecurityAlgorithms.HmacSha256)        
             );
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            return  new  JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }

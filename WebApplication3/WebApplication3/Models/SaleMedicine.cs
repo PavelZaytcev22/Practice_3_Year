@@ -12,7 +12,7 @@ namespace WebApplication3.Models
         /// <summary>
         /// Первичный ключ сущности
         /// </summary>
-        public int SaleMedecineId { get; set; }
+        public int SaleMedicineId { get; set; }
         /// <summary>
         /// Внешний ключ сущности по медикаментам 
         /// </summary>

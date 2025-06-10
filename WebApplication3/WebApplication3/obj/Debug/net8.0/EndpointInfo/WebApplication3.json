@@ -6,6 +6,47 @@
     "version": "v1"
   },
   "paths": {
+    "/api/Authorization/login/{username}": {
+      "get": {
+        "tags": [
+          "Authorization"
+        ],
+        "summary": "Метод для получения jwt токена",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "Имя пользователя для jwt токена",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Cheque/getAll": {
       "get": {
         "tags": [
@@ -569,6 +610,18 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Exсel/getXLS": {
+      "get": {
+        "tags": [
+          "Exсel"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -2078,12 +2131,12 @@
       "SaleMedicine": {
         "type": "object",
         "properties": {
-          "saleMedecineId": {
+          "saleMedicineId": {
             "type": "integer",
             "description": "Первичный ключ сущности",
             "format": "int32"
           },
-          "medecineId": {
+          "medicineId": {
             "type": "integer",
             "description": "Внешний ключ сущности по медикаментам",
             "format": "int32"
@@ -2137,12 +2190,12 @@
       "SupplieMedicine": {
         "type": "object",
         "properties": {
-          "suplieMedicineId": {
+          "supplieMedicineId": {
             "type": "integer",
             "description": "Первичный ключ сущности",
             "format": "int32"
           },
-          "suplieId": {
+          "supplieId": {
             "type": "integer",
             "description": "Внешний ключ по поставке",
             "format": "int32"

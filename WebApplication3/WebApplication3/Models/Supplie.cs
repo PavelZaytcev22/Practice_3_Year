@@ -36,8 +36,8 @@ namespace WebApplication3.Models
         /// <exception cref="ArgumentNullException">Навигационное свойство равно нулю</exception>
         public override string ToString()
         {
-            if (this.Supplier!= null) { throw new ArgumentNullException(); }
-            return this.SupplieId+" | "+Date + " | " + Supplier.SupplierName;
+            //if (this.Supplier== null) { throw new ArgumentNullException(); }
+            return this.SupplieId+" | "+Date + " | " /*+ Supplier.SupplierName*/;
         }
     }
 }
