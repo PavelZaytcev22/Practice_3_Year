@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ClosedXML.Excel;
 using WebApplication3.Models;
+using WebApplication3.Service;
 using DocumentFormat.OpenXml.Bibliography;
 using System.Reflection;
 using DocumentFormat.OpenXml.CustomProperties;
@@ -10,73 +11,39 @@ using System.IO;
 namespace WebApplication3.Controllers
 {
     /// <summary>
-    /// Контроллер для выгрузки xls файла 
+    /// Контроллер для выгрузки xls файла в wep_api 
     /// </summary>
     [ApiController]
     [Route("api/[controller]")]
-    public class ExсelController:ControllerBase
+    public class ExcelController:ControllerBase
     {
-        ApplicationContext dataBaseContext;
+        ExcelService service;
         /// <summary>
         /// Конструктор контроллера 
         /// </summary>
-        /// <param name="dataBaseContext">Контекст БД</param>
-        public ExсelController(ApplicationContext dataBaseContext) 
+        /// <param name="service">Сервис контроллера</param>
+        public ExcelController(ExcelService service) 
         {
-            this. dataBaseContext=dataBaseContext;
+            this.service=service;
         }
-
-        static List<string> names = new List<string>() { "Database", "ChangeTracker", "Model", "ContextId" };
+        /// <summary>
+        /// Метод для получения xls файла 
+        /// </summary>
+        /// <returns>Асинхронная операция с </returns>
+        /// <exception cref="ArgumentNullException">Если сервис равен нулю</exception>
         [HttpGet("getXLS")]
         public async Task<FileStreamResult> GetXlsFile()
         {
-            if (dataBaseContext==null) { throw new ArgumentNullException(); }
-
-            XLWorkbook book = new XLWorkbook();
-
-            Type type = dataBaseContext.GetType();
-            var DBproperties = type.GetProperties();
-            //Перебираем свойства(DbSet) контекста 
-            foreach (var i in DBproperties)
-            {
-                if (!names.Contains(i.Name)) 
-                {
-                    // Console.WriteLine(" " + i.PropertyType+ "");
-                    Type entityType = i.PropertyType.GetGenericArguments()[0];//Тип для заголовка
-                    var dbSet = i.GetValue(dataBaseContext) as IEnumerable<object>;
-
-                    var bookSheet = book.Worksheets.Add(entityType.Name);//Создаем лист
-                    int zz = 1;
-
-                    //Заполняем заголовки таблицы 
-                    foreach (var b in entityType.GetProperties())
-                    {
-                        if (!names.Contains(b.Name))
-                        {
-                            bookSheet.Cell(1, zz).Value = b.Name;
-                            zz++;
-                        }
-                    }
-                    //Заполняем тело таблицы
-                    zz = 2;                    
-                    foreach (var h in dbSet) 
-                    {
-                        int bb = 1;
-                        foreach (var n in h.GetType().GetProperties())
-                        {
-                            bookSheet.Cell(zz, bb).Value = n.GetValue(h) != null? n.GetValue(h).ToString():"null";
-                            bb++;
-                        }
-                        zz++;
-                    }
-                }
+            if (service == null) 
+            { 
+            throw new ArgumentNullException(); 
             }
-
+            XLWorkbook book = await service.GetXlsFile();
             var memoryStream = new MemoryStream();
             book.SaveAs(memoryStream);
             memoryStream.Position = 0;
-
-            return File(memoryStream, "application/vnd.ms-excel", "DataBase.xls");
+            return File(memoryStream, "application/vnd.ms-excel", "DataBase.xls");            
+                      
 
            /* var sheet = book.Worksheets.Add("Клиент");
             sheet.Cell(1, 1).Value = "ID";

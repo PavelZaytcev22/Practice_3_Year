@@ -180,16 +180,23 @@
             <returns>Асинхронная операция</returns>
             <exception cref="T:System.ArgumentNullException">Объект null</exception>
         </member>
-        <member name="T:WebApplication3.Controllers.ExсelController">
+        <member name="T:WebApplication3.Controllers.ExcelController">
             <summary>
-            Контроллер для выгрузки xls файла 
+            Контроллер для выгрузки xls файла в wep_api 
             </summary>
         </member>
-        <member name="M:WebApplication3.Controllers.ExсelController.#ctor(WebApplication3.Models.ApplicationContext)">
+        <member name="M:WebApplication3.Controllers.ExcelController.#ctor(WebApplication3.Service.ExcelService)">
             <summary>
             Конструктор контроллера 
             </summary>
-            <param name="dataBaseContext">Контекст БД</param>
+            <param name="service">Сервис контроллера</param>
+        </member>
+        <member name="M:WebApplication3.Controllers.ExcelController.GetXlsFile">
+            <summary>
+            Метод для получения xls файла 
+            </summary>
+            <returns>Асинхронная операция с </returns>
+            <exception cref="T:System.ArgumentNullException">Если сервис равен нулю</exception>
         </member>
         <member name="T:WebApplication3.Controllers.ManufacturerController">
             <summary>
@@ -1576,6 +1583,24 @@
             <param name="key">PK сущности</param>
             <param name="token">Токен http запросов</param>
             <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
+        </member>
+        <member name="T:WebApplication3.Service.ExcelService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Service.ExcelService.#ctor(WebApplication3.Models.ApplicationContext)">
+            <summary>
+            конструктор сервиса 
+            </summary>
+            <param name="dataBaseContext"></param>
+        </member>
+        <member name="M:WebApplication3.Service.ExcelService.GetXlsFile">
+            <summary>
+            Метод для формирования класса XLWorkbook
+            </summary>
+            <returns>Класс для формирования xls файла</returns>
+            <exception cref="T:System.ArgumentNullException">Если контекст базы данных равен null</exception>
         </member>
         <member name="T:WebApplication3.Service.ManufacturerService">
             <summary>

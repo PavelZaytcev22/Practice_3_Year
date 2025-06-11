@@ -617,11 +617,12 @@
         }
       }
     },
-    "/api/Exсel/getXLS": {
+    "/api/Excel/getXLS": {
       "get": {
         "tags": [
-          "Exсel"
+          "Excel"
         ],
+        "summary": "Метод для получения xls файла",
         "responses": {
           "200": {
             "description": "OK"

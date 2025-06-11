@@ -57,7 +57,8 @@ builder.Services.AddScoped<IService<Client>, ClientService>()
 .AddScoped<IService<Supplier>, SupplierService>()
 .AddScoped<IService<SaleMedicine>, SaleMedicineService>()
 .AddScoped<IService<SupplieMedicine>, SupplieMedicineService>()
-.AddScoped<IService<Cheque>, ChequeService>();
+.AddScoped<IService<Cheque>, ChequeService>()
+.AddScoped<ExcelService>();
 #endregion
 
 #region Registration Controllers
@@ -74,7 +75,7 @@ builder.Services.AddScoped<ControllerBase, ClientController>()
     .AddScoped<ControllerBase, SupplierController>()
 
     .AddTransient<ControllerBase, AuthorizationController>()
-    .AddScoped<ControllerBase, ExсelController>();
+    .AddScoped<ControllerBase, ExcelController>();
 #endregion
 
 builder.Services.AddControllers();//Добавил контроллеры

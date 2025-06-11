@@ -392,9 +392,9 @@
     ]
   },
   {
-    "ContainingType": "WebApplication3.Controllers.Ex\u0441elController",
+    "ContainingType": "WebApplication3.Controllers.ExcelController",
     "Method": "GetXlsFile",
-    "RelativePath": "api/Ex\u0441el/getXLS",
+    "RelativePath": "api/Excel/getXLS",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
