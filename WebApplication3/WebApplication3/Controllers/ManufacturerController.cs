@@ -15,7 +15,7 @@ namespace WebApplication3.Controllers
     [Authorize(Policy ="DepartmentOnly")]
     public class ManufacturerController:ControllerBase
     {
-        private IService<Manufacturer> service;
+        private readonly IService<Manufacturer> service;
         /// <summary>
         /// Конструктор контроллера
         /// </summary>

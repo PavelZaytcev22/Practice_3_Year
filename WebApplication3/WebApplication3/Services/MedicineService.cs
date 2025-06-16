@@ -5,27 +5,28 @@ using WebApplication3.Repository;
 namespace WebApplication3.Service
 {
     /// <summary>
-    /// Сервис поставщика
+    /// Сервис медикамента
     /// </summary>
-    public class SupplierService: IService<Supplier>
+    public class MedicineService:IService<Medicine>
     {
-        IRepository<Supplier> repository;
+        private IRepository<Medicine> repository;
+
         /// <summary>
         /// Конструктор сервиса
         /// </summary>
         /// <param name="repository">Репозиторий для сервиса</param>
-        public SupplierService(IRepository<Supplier> repository) 
+        public MedicineService(IRepository<Medicine> repository) 
         {
             this.repository = repository;
         }
 
         /// <summary>
-        /// Метод для добавления поставщика в БД
+        /// Метод для добавления медикамента в БД 
         /// </summary>
-        /// <param name="obj">Объект поставщик</param>
+        /// <param name="obj">Объект медикамент</param>
         /// <param name="token">Токен http запросов</param>
-        /// <returns>id поставщика</returns>
-        public async Task<int> AddAsync(Supplier obj, CancellationToken token)
+        /// <returns>void</returns>
+        public async Task<int> AddAsync(Medicine obj, CancellationToken token)
         {
             if (obj == null)
             {
@@ -34,14 +35,13 @@ namespace WebApplication3.Service
             return await repository.AddAsync(obj, token);
         }
 
-
         /// <summary>
-        /// Метод для удаления поставщика из БД
+        /// Метод для удаления медикамента из БД 
         /// </summary>
         /// <param name="key">PK атрибута сущьности</param>
         /// <param name="token">Токен http запросов</param>
         /// <returns>void</returns>
-        public async Task DeleteAsync(int key , CancellationToken token)
+        public async Task DeleteAsync(int key, CancellationToken token)
         {
             if (key <= 0)
             {
@@ -51,12 +51,12 @@ namespace WebApplication3.Service
         }
 
         /// <summary>
-        /// Метод для обновления поставщика в БД
+        /// Метод для обновления медикамента в БД 
         /// </summary>
-        /// <param name="obj">Объект поставщик</param>
+        /// <param name="obj">Объект медикамент</param>
         /// <param name="token">Токен http запросов</param>
         /// <returns>void</returns>
-        public async Task UpdateAsync(Supplier obj, CancellationToken token)
+        public async Task UpdateAsync(Medicine obj, CancellationToken token)
         {
             if (obj == null)
             {
@@ -70,7 +70,7 @@ namespace WebApplication3.Service
         /// </summary>
         /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
-        public async Task<IEnumerable<Supplier>> GetAllAsync(CancellationToken token)
+        public async Task<IEnumerable<Medicine>> GetAllAsync(CancellationToken token)
         {
             return await repository.GetAllAsync(token);
         }
@@ -81,7 +81,7 @@ namespace WebApplication3.Service
         /// <param name="key">PK сущности</param>
         /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
-        public async Task<Supplier> GetByIdAsync(int key, CancellationToken token)
+        public async Task<Medicine> GetByIdAsync(int key, CancellationToken token)
         {
             if (key <= 0)
             {

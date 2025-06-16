@@ -4,30 +4,31 @@ using WebApplication3.Repository;
 
 namespace WebApplication3.Service
 {
-    /// <summary>
-    /// Сервис для производителя
+/// <summary>
+    /// Сервис поставки
     /// </summary>
-    public class ManufacturerService:IService<Manufacturer>
+    public class SupplieService : IService<Supplie>
     {
-        IRepository<Manufacturer> repository;
+        private IRepository<Supplie> repository;
+
         /// <summary>
         /// Конструктор сервиса
         /// </summary>
         /// <param name="repository">Репозиторий для сервиса</param>
-        public ManufacturerService(IRepository<Manufacturer> repository) 
+        public SupplieService(IRepository<Supplie> repository ) 
         {
             this.repository = repository;
         }
 
         /// <summary>
-        /// Метод для добавления производителя в БД 
+        /// Метод для добавления поставки в БД 
         /// </summary>
-        /// <param name="obj">Объект производителя</param>
+        /// <param name="obj">Объект поставка</param>
         /// <param name="token">Токен http запросов</param>
-        /// <returns>id производителя</returns>
-        public async Task<int> AddAsync(Manufacturer obj, CancellationToken token)
+        /// <returns>Id поставки</returns>
+        public async Task<int> AddAsync(Supplie obj, CancellationToken token)
         {
-            if (obj == null)
+            if (obj==null) 
             {
                 throw new ArgumentNullException();
             }
@@ -35,7 +36,7 @@ namespace WebApplication3.Service
         }
 
         /// <summary>
-        /// Метод для удаления производителя из БД 
+        /// Метод для удаления поставки из БД 
         /// </summary>
         /// <param name="key">PK атрибута сущьности</param>
         /// <param name="token">Токен http запросов</param>
@@ -50,12 +51,12 @@ namespace WebApplication3.Service
         }
 
         /// <summary>
-        /// Метод для обновления производителя
+        /// Метод для обновления поставки в БД 
         /// </summary>
-        /// <param name="obj">Объект производителя</param>
+        /// <param name="obj">Объект поставка</param>
         /// <param name="token">Токен http запросов</param>
         /// <returns>void</returns>
-        public async Task UpdateAsync(Manufacturer obj, CancellationToken token)
+        public async Task UpdateAsync(Supplie  obj, CancellationToken token)
         {
             if (obj == null)
             {
@@ -69,7 +70,7 @@ namespace WebApplication3.Service
         /// </summary>
         /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
-        public async Task<IEnumerable<Manufacturer>> GetAllAsync(CancellationToken token)
+        public async Task<IEnumerable<Supplie>> GetAllAsync(CancellationToken token)
         {
             return await repository.GetAllAsync(token);
         }
@@ -80,7 +81,7 @@ namespace WebApplication3.Service
         /// <param name="key">PK сущности</param>
         /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
-        public async Task<Manufacturer> GetByIdAsync(int key, CancellationToken token)
+        public async Task<Supplie> GetByIdAsync(int key, CancellationToken token)
         {
             if (key <= 0)
             {
@@ -88,5 +89,6 @@ namespace WebApplication3.Service
             }
             return await repository.GetByIdAsync(key, token);
         }
+
     }
 }

@@ -11,9 +11,8 @@ namespace WebApplication3.Controllers
     /// Контроллер для клиента
     /// </summary>
     [ApiController]
-   // [Produces("application/json")]
     [Route("api/[controller]")]
-    [Authorize(Roles = "Director,Employer,Maneger,User")]
+    //[Authorize(Roles = "Director,Employer,Maneger,User")]
     public class ClientController : ControllerBase
     {
         private readonly IService<Client> clientService;

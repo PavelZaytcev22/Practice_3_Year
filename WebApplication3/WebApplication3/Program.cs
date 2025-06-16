@@ -17,6 +17,7 @@ using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using WebApplication3.Settings;
+using WebApplication3.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -78,6 +79,7 @@ builder.Services.AddScoped<ControllerBase, ClientController>()
     .AddScoped<ControllerBase, ExcelController>();
 #endregion
 
+
 builder.Services.AddControllers();//ƒобавил контроллеры
 builder.Services.AddFluentValidationAutoValidation();//ƒобавил валидацию 
 builder.Services.AddValidatorsFromAssemblyContaining<ClientValidator>();//зарегистрировал все валидаторы
@@ -101,7 +103,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     {
         opt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
-            
+
             ValidateIssuer = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidateAudience = true,
@@ -139,15 +141,16 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-app.MapGet("/", () => "Hello World!!!!");
-
-app.UseSwagger();
-app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json","Demo"); });
 app.UseDeveloperExceptionPage();
+app.UseMiddleware<ExceptionMiddleware>();
+app.UseSwagger();
+app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Demo"); });
+app.UseRouting();
 
+
+app.MapGet("/", () => "Hello World!!!!");
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

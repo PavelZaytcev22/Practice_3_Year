@@ -588,6 +588,32 @@
             <param name="str">Исходная строка в Pascal_case</param>
             <returns>Cтрока в Upper_Case</returns>
         </member>
+        <member name="T:WebApplication3.Middlewares.ExceptionMiddleware">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebApplication3.Middlewares.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Конструктор middleware 
+            </summary>
+            <param name="next">Делегат со всеми middleware</param>
+        </member>
+        <member name="M:WebApplication3.Middlewares.ExceptionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Метод для обработки ошибок или перехода к следующему middleware 
+            </summary>
+            <param name="context">Контекст http запроса</param>
+            <returns>Асинхронная операция</returns>
+        </member>
+        <member name="M:WebApplication3.Middlewares.ExceptionMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext,System.Exception)">
+            <summary>
+            Метод обработки ошибок в данном middleware
+            </summary>
+            <param name="context">Контекст http запроса</param>
+            <param name="ex">Пойманная ошибка</param>
+            <returns>Асинхронная операция</returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "T:WebApplication3.Models.ApplicationContext" -->
         <member name="P:WebApplication3.Models.ApplicationContext.Client">
             <summary>

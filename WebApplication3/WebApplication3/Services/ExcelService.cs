@@ -7,6 +7,8 @@ using System.Linq;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using DocumentFormat.OpenXml.CustomProperties;
 using System.ComponentModel.Design;
+using System.Collections;
+using System.Collections.Immutable;
 
 
 namespace WebApplication3.Service
@@ -50,10 +52,10 @@ namespace WebApplication3.Service
                     Type entityType = i.PropertyType.GetGenericArguments()[0];//Тип для заголовка
                     var dbSet = i.GetValue(dataBaseContext);
 
-                    var toListMethod = typeof(Enumerable).GetMethod("ToList").MakeGenericMethod(entityType);
-                    var list = toListMethod.Invoke(null, new object[] { dbSet }) as IEnumerable<object>;
+                    var toListMethod = typeof(Enumerable).GetMethod("ToArray").MakeGenericMethod(entityType);
+                    var set = (object[])toListMethod.Invoke(null, new[] { dbSet });
 
-                    var bookSheet = book.Worksheets.Add(entityType.Name);//Создаем лист
+                    var bookSheet = book.Worksheets.Add(entityType.Name);//Создаем лист excel 
 
 
                     //Заполняем заголовки таблицы 
@@ -74,9 +76,9 @@ namespace WebApplication3.Service
                      }*/
                     
                     //Заполняем тело таблицы
-                    for (int row1 = 2; row1 <= list.Count() + 1; row1++)
+                    for (int row1 = 2; row1 <= set.Count() + 1; row1++)
                     {
-                        var type1 = list.ToArray()[row1 - 2];
+                        var type1 = set[row1-2];
                         var property = type1.GetType().GetProperties();
                         for (int collumn = 1; collumn <= property.Length; collumn++)
                         {

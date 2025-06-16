@@ -1,32 +1,31 @@
-﻿using Microsoft.Identity.Client.Kerberos;
-using WebApplication3.Interfaces;
+﻿using WebApplication3.Interfaces;
 using WebApplication3.Models;
 using WebApplication3.Repository;
 
 namespace WebApplication3.Service
 {
     /// <summary>
-    /// Сервис частипоставки
+    /// Сервис продажи
     /// </summary>
-    public class SupplieMedicineService:IService<SupplieMedicine>
+    public class SaleMedicineService:IService<SaleMedicine>
     {
-        IRepository<SupplieMedicine> repository;
+        private IRepository<SaleMedicine> repository;
         /// <summary>
         /// Конструктор сервиса
         /// </summary>
         /// <param name="repository">Репозиторий для сервиса</param>
-        public SupplieMedicineService(IRepository<SupplieMedicine> repository) 
+        public SaleMedicineService(IRepository<SaleMedicine> repository) 
         {
             this.repository = repository;
         }
 
         /// <summary>
-        /// Метод для добавление части поставки в БД
+        /// Метод для добавления продажи в БД 
         /// </summary>
-        /// <param name="obj">Объект часть поставки</param>
+        /// <param name="obj">Объект продажа</param>
         /// <param name="token">Токен http запросов</param>
-        /// <returns>id части поставки</returns>
-        public async Task<int> AddAsync(SupplieMedicine obj, CancellationToken token)
+        /// <returns>id продажи</returns>
+        public async Task<int> AddAsync(SaleMedicine obj, CancellationToken token)
         {
             if (obj == null)
             {
@@ -36,12 +35,12 @@ namespace WebApplication3.Service
         }
 
         /// <summary>
-        /// Метод для удаления части поставки из БД
+        /// Метод для удаления продажи из БД 
         /// </summary>
         /// <param name="key">PK атрибута сущьности</param>
         /// <param name="token">Токен http запросов</param>
         /// <returns>void</returns>
-        public async Task DeleteAsync(int key, CancellationToken token)
+        public async Task DeleteAsync(int  key, CancellationToken token)
         {
             if (key <= 0)
             {
@@ -51,12 +50,12 @@ namespace WebApplication3.Service
         }
 
         /// <summary>
-        /// Метод для обновления части поставки в БД
+        /// Метод для обновления продажи в БД 
         /// </summary>
-        /// <param name="obj">Объект часть поставки</param>
+        /// <param name="obj">Объект продажа</param>
         /// <param name="token">Токен http запросов</param>
         /// <returns>void</returns>
-        public async Task UpdateAsync(SupplieMedicine obj, CancellationToken token)
+        public async Task UpdateAsync(SaleMedicine obj, CancellationToken token)
         {
             if (obj == null)
             {
@@ -70,7 +69,7 @@ namespace WebApplication3.Service
         /// </summary>
         /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронныя операция, которая возвращает коллекцию записей сущности</returns>
-        public async Task<IEnumerable<SupplieMedicine>> GetAllAsync(CancellationToken token)
+        public async Task<IEnumerable<SaleMedicine>> GetAllAsync(CancellationToken token)
         {
             return await repository.GetAllAsync(token);
         }
@@ -81,7 +80,7 @@ namespace WebApplication3.Service
         /// <param name="key">PK сущности</param>
         /// <param name="token">Токен http запросов</param>
         /// <returns>Асинхронныя операция, которая возвращает атрибут сущности</returns>
-        public async Task<SupplieMedicine> GetByIdAsync(int key, CancellationToken token)
+        public async Task<SaleMedicine> GetByIdAsync(int key, CancellationToken token)
         {
             if (key <= 0)
             {
