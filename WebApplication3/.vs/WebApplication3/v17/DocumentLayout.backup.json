@@ -7,20 +7,24 @@
       "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\repositories\\chequerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repositories\\chequerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\controllers\\chequecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\chequecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\validators\\clientvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\validators\\clientvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\controllers\\chequecontreoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\chequecontreoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1445FD6E-3BEC-4944-BB3A-D6F8AE485624}|WebApplication3\\WebApplication3.csproj|c:\\users\\pvl2z\\desktop\\practice_3_year\\webapplication3\\webapplication3\\services\\excelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,9 +46,9 @@
               "Title": "ExceptionMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Middlewares\\ExceptionMiddleware.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Middlewares\\ExceptionMiddleware.cs",
-              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Middlewares\\ExceptionMiddleware.cs*",
-              "RelativeToolTip": "WebApplication3\\Middlewares\\ExceptionMiddleware.cs*",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAUwDgAAAArAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Middlewares\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "WebApplication3\\Middlewares\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAADgAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-12T19:42:14.701Z",
               "IsPinned": true,
@@ -57,6 +61,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ChequeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Repositories\\ChequeRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Repositories\\ChequeRepository.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Repositories\\ChequeRepository.cs",
+              "RelativeToolTip": "WebApplication3\\Repositories\\ChequeRepository.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwBEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T11:29:29.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ClientValidator.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Validators\\ClientValidator.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Validators\\ClientValidator.cs",
@@ -64,12 +80,11 @@
               "RelativeToolTip": "WebApplication3\\Validators\\ClientValidator.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAowA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T19:15:18.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T19:15:18.399Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ClientController.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ClientController.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\ClientController.cs",
@@ -77,25 +92,23 @@
               "RelativeToolTip": "WebApplication3\\Controllers\\ClientController.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAowEIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T19:15:18.41Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T19:15:18.41Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ChequeContreoller.cs",
-              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ChequeContreoller.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\ChequeContreoller.cs",
-              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ChequeContreoller.cs",
-              "RelativeToolTip": "WebApplication3\\Controllers\\ChequeContreoller.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ChequeController.cs",
+              "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ChequeController.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\ChequeController.cs",
+              "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Controllers\\ChequeController.cs",
+              "RelativeToolTip": "WebApplication3\\Controllers\\ChequeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T19:08:37.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T19:08:37.331Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ExcelService.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Services\\ExcelService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\ExcelService.cs",
@@ -103,18 +116,17 @@
               "RelativeToolTip": "WebApplication3\\Services\\ExcelService.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAADgv1AAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T19:53:45.926Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T19:53:45.926Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Program.cs",
               "ToolTip": "C:\\Users\\pvl2z\\Desktop\\Practice_3_Year\\WebApplication3\\WebApplication3\\Program.cs",
               "RelativeToolTip": "WebApplication3\\Program.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAAAHIAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAALYAAAAAAAAAAAAAAGYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T08:16:42.744Z",
               "EditorCaption": ""

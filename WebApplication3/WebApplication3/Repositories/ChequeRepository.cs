@@ -8,14 +8,14 @@ namespace WebApplication3.Repository
     /// <summary>
     /// Репозиторий для чека 
     /// </summary>
-    public class ChequeReposirory:IRepository<Cheque>
+    public class ChequeRepository: IRepository<Cheque>
     {
         private ApplicationContext db;//Через контекст для каждой сущьности нужно делать 
         /// <summary>
         /// Конструктор репозитория 
         /// </summary>
         /// <param name="dbContet">Контекст БД </param>
-        public ChequeReposirory(ApplicationContext dbContet) 
+        public ChequeRepository(ApplicationContext dbContet) 
         {
             db = dbContet;
         }

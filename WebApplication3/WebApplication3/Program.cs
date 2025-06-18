@@ -18,6 +18,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using WebApplication3.Settings;
 using WebApplication3.Middlewares;
+using System.Data.Entity.Core.Metadata.Edm;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +37,15 @@ builder.Services.AddDbContext<ApplicationContext>(
     );
 
 #region Registration Repositories
-builder.Services.AddScoped<IRepository<Client>, ClientRepository>();
+var repositoryTypes = Assembly.GetExecutingAssembly().GetTypes()
+    .Where(t => t.IsClass && t.Name.EndsWith("Repository"));
+foreach (var i in repositoryTypes) 
+{
+    var myInterface = i.GetInterfaces().FirstOrDefault(u=>u.GetGenericTypeDefinition()==typeof(IRepository<>));
+    builder.Services.AddScoped(myInterface,i);
+    Console.WriteLine(myInterface.Name+" | "+i.Name);
+}
+/*builder.Services.AddScoped<IRepository<Client>, ClientRepository>();
 builder.Services.AddScoped<IRepository<Employer>, EmployerRepository>();
 builder.Services.AddScoped<IRepository<Manufacturer>, ManufacturerRepository>();
 builder.Services.AddScoped<IRepository<Medicine>, MedicineRepository>();
@@ -45,11 +54,21 @@ builder.Services.AddScoped<IRepository<Supplie>, SupplieRepository>();
 builder.Services.AddScoped<IRepository<Supplier>, SupplierRepository>();
 builder.Services.AddScoped<IRepository<SaleMedicine>, SaleMedicineRepository>();
 builder.Services.AddScoped<IRepository<SupplieMedicine>, SupplieMedicineRepository>();
-builder.Services.AddScoped<IRepository<Cheque>, ChequeReposirory>();
+builder.Services.AddScoped<IRepository<Cheque>, ChequeRepository>();*/
+
 #endregion
 
 #region Registration Services 
-builder.Services.AddScoped<IService<Client>, ClientService>()
+var serviceTypes = Assembly.GetExecutingAssembly().GetTypes()
+    .Where(t => t.IsClass && t.Name.EndsWith("Service") && !t.Name.Contains("Excel"));
+foreach (var i in serviceTypes)
+{
+    var myInterface = i.GetInterfaces().FirstOrDefault(u => u.GetGenericTypeDefinition() == typeof(IService<>));
+    builder.Services.AddScoped(myInterface, i);
+    Console.WriteLine(myInterface.Name + " | " + i.Name);
+}
+builder.Services.AddScoped<ExcelService>();
+/*builder.Services.AddScoped<IService<Client>, ClientService>()
 .AddScoped<IService<Employer>, EmployerService>()
 .AddScoped<IService<Manufacturer>, ManufacturerService>()
 .AddScoped<IService<Medicine>, MedicineService>()
@@ -59,11 +78,19 @@ builder.Services.AddScoped<IService<Client>, ClientService>()
 .AddScoped<IService<SaleMedicine>, SaleMedicineService>()
 .AddScoped<IService<SupplieMedicine>, SupplieMedicineService>()
 .AddScoped<IService<Cheque>, ChequeService>()
-.AddScoped<ExcelService>();
+.AddScoped<ExcelService>();*/
 #endregion
 
 #region Registration Controllers
-builder.Services.AddScoped<ControllerBase, ClientController>()
+var controllerTypes = Assembly.GetExecutingAssembly().GetTypes()
+    .Where(t => t.IsClass && t.Name.EndsWith("Controller"));
+foreach (var i in controllerTypes)
+{
+    var myInterface = i.BaseType;
+    builder.Services.AddScoped(myInterface, i);
+    Console.WriteLine(myInterface.Name + " | " + i.Name);
+}
+/*builder.Services.AddScoped<ControllerBase, ClientController>()
     .AddScoped<ControllerBase, ManufacturerController>()
     .AddScoped<ControllerBase, PostController>()
     .AddScoped<ControllerBase, ChequeController>()
@@ -74,9 +101,8 @@ builder.Services.AddScoped<ControllerBase, ClientController>()
     .AddScoped<ControllerBase, SupplieMedicineController>()
     .AddScoped<ControllerBase, SaleMedicineController>()
     .AddScoped<ControllerBase, SupplierController>()
-
     .AddTransient<ControllerBase, AuthorizationController>()
-    .AddScoped<ControllerBase, ExcelController>();
+    .AddScoped<ControllerBase, ExcelController>();*/
 #endregion
 
 

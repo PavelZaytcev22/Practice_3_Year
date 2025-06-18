@@ -11,13 +11,16 @@ namespace WebApplication3.Middlewares
     public class ExceptionMiddleware
     {
         private readonly RequestDelegate next;
+        private readonly ILogger<ExceptionMiddleware> logger; 
         /// <summary>
         /// Конструктор middleware 
         /// </summary>
         /// <param name="next">Делегат со всеми middleware</param>
-        public ExceptionMiddleware(RequestDelegate next)
+        /// <param name="logger">Объект логгер</param>
+        public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
         {
             this.next = next;
+            this.logger = logger;
         }
         /// <summary>
         /// Метод для обработки ошибок или перехода к следующему middleware 
@@ -32,6 +35,7 @@ namespace WebApplication3.Middlewares
             }            
             catch (Exception ex)
             {
+                logger.LogWarning("Ошибка в ExceptionMiddleware");//Логиррование полученной ошибки (в консоли будет видно)
                 await Invoke(context, ex);
             }
         }

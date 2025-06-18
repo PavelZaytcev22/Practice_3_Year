@@ -590,14 +590,15 @@
         </member>
         <member name="T:WebApplication3.Middlewares.ExceptionMiddleware">
             <summary>
-            
+            Класс для обработки ошибок
             </summary>
         </member>
-        <member name="M:WebApplication3.Middlewares.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+        <member name="M:WebApplication3.Middlewares.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{WebApplication3.Middlewares.ExceptionMiddleware})">
             <summary>
             Конструктор middleware 
             </summary>
             <param name="next">Делегат со всеми middleware</param>
+            <param name="logger">Объект логгер</param>
         </member>
         <member name="M:WebApplication3.Middlewares.ExceptionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
             <summary>
@@ -971,18 +972,18 @@
             Свойство для названия поставщика
             </summary>
         </member>
-        <member name="T:WebApplication3.Repository.ChequeReposirory">
+        <member name="T:WebApplication3.Repository.ChequeRepository">
             <summary>
             Репозиторий для чека 
             </summary>
         </member>
-        <member name="M:WebApplication3.Repository.ChequeReposirory.#ctor(WebApplication3.Models.ApplicationContext)">
+        <member name="M:WebApplication3.Repository.ChequeRepository.#ctor(WebApplication3.Models.ApplicationContext)">
             <summary>
             Конструктор репозитория 
             </summary>
             <param name="dbContet">Контекст БД </param>
         </member>
-        <member name="M:WebApplication3.Repository.ChequeReposirory.AddAsync(WebApplication3.Models.Cheque,System.Threading.CancellationToken)">
+        <member name="M:WebApplication3.Repository.ChequeRepository.AddAsync(WebApplication3.Models.Cheque,System.Threading.CancellationToken)">
             <summary>
             Метод для добавления Чека в БД 
             </summary>
@@ -990,7 +991,7 @@
             <param name="token">Токен http запросов</param>
             <returns>id чека</returns>
         </member>
-        <member name="M:WebApplication3.Repository.ChequeReposirory.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:WebApplication3.Repository.ChequeRepository.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Метод для  удаления чека в БД 
             </summary>
@@ -998,7 +999,7 @@
             <param name="token">Токен http запросов</param>
             <returns>Асинхронная операций без возвращаемого значения</returns>
         </member>
-        <member name="M:WebApplication3.Repository.ChequeReposirory.UpdateAsync(WebApplication3.Models.Cheque,System.Threading.CancellationToken)">
+        <member name="M:WebApplication3.Repository.ChequeRepository.UpdateAsync(WebApplication3.Models.Cheque,System.Threading.CancellationToken)">
             <summary>
             Метод для обновления чека в БД 
             </summary>
@@ -1006,14 +1007,14 @@
             <param name="token">Токен http запросов</param>
             <returns>Асинхронная операций без возвращаемого значения</returns>
         </member>
-        <member name="M:WebApplication3.Repository.ChequeReposirory.GetAllAsync(System.Threading.CancellationToken)">
+        <member name="M:WebApplication3.Repository.ChequeRepository.GetAllAsync(System.Threading.CancellationToken)">
             <summary>
             Метод получения всех атрибутов из БД 
             </summary>
             <param name="token">Токкен для асинхронных операций</param>
             <returns>Асинхронная операция с возвратом коллекции</returns>
         </member>
-        <member name="M:WebApplication3.Repository.ChequeReposirory.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:WebApplication3.Repository.ChequeRepository.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Метод получения записи по PK
             </summary>
